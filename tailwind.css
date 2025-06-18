@@ -1,0 +1,183 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --abu-bg: rgba(245, 245, 245, 1);
+  --abu-stroke: rgba(235, 235, 235, 1);
+  --app-primary: rgba(26, 60, 52, 1);
+  --app-secondary: rgba(74, 139, 123, 1);
+  --black: rgba(27, 27, 27, 1);
+  --body-large-body-large-regular-font-family: "Inter", Helvetica;
+  --body-large-body-large-regular-font-size: 16px;
+  --body-large-body-large-regular-font-style: normal;
+  --body-large-body-large-regular-font-weight: 400;
+  --body-large-body-large-regular-letter-spacing: 0px;
+  --body-large-body-large-regular-line-height: 24px;
+  --body-large-body-large-semibold-font-family: "SF Pro Display", Helvetica;
+  --body-large-body-large-semibold-font-size: 16px;
+  --body-large-body-large-semibold-font-style: normal;
+  --body-large-body-large-semibold-font-weight: 400;
+  --body-large-body-large-semibold-letter-spacing: 0px;
+  --body-large-body-large-semibold-line-height: 24px;
+  --body-medium-body-medium-bold-font-family: "SF Pro Display", Helvetica;
+  --body-medium-body-medium-bold-font-size: 14px;
+  --body-medium-body-medium-bold-font-style: normal;
+  --body-medium-body-medium-bold-font-weight: 700;
+  --body-medium-body-medium-bold-letter-spacing: 0px;
+  --body-medium-body-medium-bold-line-height: 20px;
+  --body-medium-body-medium-regular-font-family: "SF Pro Display", Helvetica;
+  --body-medium-body-medium-regular-font-size: 14px;
+  --body-medium-body-medium-regular-font-style: normal;
+  --body-medium-body-medium-regular-font-weight: 400;
+  --body-medium-body-medium-regular-letter-spacing: 0px;
+  --body-medium-body-medium-regular-line-height: 20px;
+  --dark-green: rgba(16, 84, 71, 1);
+  --h1-h1-semibold-font-family: "SF Pro Display", Helvetica;
+  --h1-h1-semibold-font-size: 64px;
+  --h1-h1-semibold-font-style: normal;
+  --h1-h1-semibold-font-weight: 400;
+  --h1-h1-semibold-letter-spacing: 0px;
+  --h1-h1-semibold-line-height: 72px;
+  --h2-h2-bold-font-family: "Inter", Helvetica;
+  --h2-h2-bold-font-size: 48px;
+  --h2-h2-bold-font-style: normal;
+  --h2-h2-bold-font-weight: 700;
+  --h2-h2-bold-letter-spacing: 0px;
+  --h2-h2-bold-line-height: 56px;
+  --h3-h3-semibold-font-family: "Inter", Helvetica;
+  --h3-h3-semibold-font-size: 40px;
+  --h3-h3-semibold-font-style: normal;
+  --h3-h3-semibold-font-weight: 600;
+  --h3-h3-semibold-letter-spacing: 0px;
+  --h3-h3-semibold-line-height: 48px;
+  --h4-h4-semibold-font-family: "Inter", Helvetica;
+  --h4-h4-semibold-font-size: 32px;
+  --h4-h4-semibold-font-style: normal;
+  --h4-h4-semibold-font-weight: 600;
+  --h4-h4-semibold-letter-spacing: 0px;
+  --h4-h4-semibold-line-height: 40px;
+  --h5-h5-bold-font-family: "SF Pro Display", Helvetica;
+  --h5-h5-bold-font-size: 24px;
+  --h5-h5-bold-font-style: normal;
+  --h5-h5-bold-font-weight: 700;
+  --h5-h5-bold-letter-spacing: 0px;
+  --h5-h5-bold-line-height: 32px;
+  --h5-h5-semibold-font-family: "Inter", Helvetica;
+  --h5-h5-semibold-font-size: 24px;
+  --h5-h5-semibold-font-style: normal;
+  --h5-h5-semibold-font-weight: 600;
+  --h5-h5-semibold-letter-spacing: 0px;
+  --h5-h5-semibold-line-height: 32px;
+  --h6-h6-regular-font-family: "SF Pro Display", Helvetica;
+  --h6-h6-regular-font-size: 18px;
+  --h6-h6-regular-font-style: normal;
+  --h6-h6-regular-font-weight: 400;
+  --h6-h6-regular-letter-spacing: 0px;
+  --h6-h6-regular-line-height: 26px;
+  --h6-h6-semibold-font-family: "Inter", Helvetica;
+  --h6-h6-semibold-font-size: 18px;
+  --h6-h6-semibold-font-style: normal;
+  --h6-h6-semibold-font-weight: 600;
+  --h6-h6-semibold-letter-spacing: 0px;
+  --h6-h6-semibold-line-height: 26px;
+  --highlight-c1: rgba(156, 172, 174, 1);
+  --logo-color: rgba(27, 27, 27, 0.16);
+  --neutral-100: rgba(10, 10, 10, 1);
+  --neutral-50: rgba(115, 115, 115, 1);
+  --neutralwhite: rgba(255, 255, 255, 1);
+  --tag-green: rgba(219, 240, 228, 1);
+  --text: rgba(87, 87, 87, 1);
+  --textblack: rgba(27, 27, 27, 1);
+  --texthighlight: rgba(219, 240, 228, 1);
+  --textwhite: rgba(255, 255, 255, 1);
+  --white: rgba(255, 255, 255, 1);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
