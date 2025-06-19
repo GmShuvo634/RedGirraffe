@@ -79,7 +79,7 @@ export const NavigationSection = (): JSX.Element => {
     <section className="flex flex-col items-center gap-[60px] py-[120px] px-5 md:px-20 w-full">
       <div className="flex flex-col items-center gap-[60px] max-w-[1280px]">
         <header className="flex flex-col items-center gap-5 max-w-[800px]">
-          <h2 className="font-h3-h3-semibold text-[#1a3c34] text-center">
+        <h2 className="w-full font-h3-h3-semibold text-[#1a3c34] text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-[var(--h3-h3-semibold-line-height)]">
             Industries We Serve
           </h2>
           <p className="font-h6-h6-regular text-[#4a8b7b] text-center px-10">
@@ -98,11 +98,11 @@ export const NavigationSection = (): JSX.Element => {
                   key={`${industry.title}-${index}`}
                   className="w-60 h-[280px] bg-[#f5f5f5] rounded-[20px] border border-[#ebebeb]"
                 >
-                  <CardContent className="flex flex-col items-start gap-5 p-5 pt-10 h-full">
-                    <h3 className="font-h5-h5-semibold text-black h-16">
+                  <CardContent className="flex flex-col items-start gap-3 p-5 pt-10 h-full">
+                    <h3 className="font-h6-h6-semibold font-[number:var(--h6-h6-semibold-font-weight)] text-black text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] h-16">
                       {industry.title}
                     </h3>
-                    <p className="font-h6-h6-regular text-text">
+                    <p className="font-h6-h6-regular font-[number:var(--h6-h6-regular-font-weight)] text-text text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)]">
                       {industry.description}
                     </p>
                   </CardContent>

@@ -15,12 +15,12 @@ export const Homepage = (): JSX.Element => {
   return (
     <div className="bg-white flex flex-col items-center w-full">
       <div className="w-full max-w-[1440px]">
-        <NavigationSection />
         <HeroSection />
+        <LayoutSection />
         <MainContentSection />
         <ContentSection />
+        <NavigationSection />
         <FeatureHighlightSection />
-        <LayoutSection />
         <UserTestimonialsSection />
         <PricingPlansSection />
         <CallToActionSection />

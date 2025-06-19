@@ -82,14 +82,14 @@ export const CallToActionSection = (): JSX.Element => {
 
         {/* Action buttons */}
         <div className="flex items-center gap-5">
-          <Button className="w-[270px] gap-3 px-10 py-4 rounded-[48px] bg-app-primary text-white">
+          <Button className="w-[270px] gap-3 px-10 py-8 rounded-[48px] bg-app-primary text-white">
             <ArrowRightIcon className="w-6 h-6" />
             <span className="font-h6-h6-semibold font-[number:var(--h6-h6-semibold-font-weight)] text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] [font-style:var(--h6-h6-semibold-font-style)]">
               Request a Demo
             </span>
           </Button>
 
-          <Button className="w-[270px] gap-3 px-10 py-4 rounded-[48px] bg-[#4a8b7b] text-white">
+          <Button className="w-[270px] gap-3 px-10 py-8 rounded-[48px] bg-[#4a8b7b] text-white">
             <ArrowRightIcon className="w-6 h-6" />
             <span className="font-h6-h6-semibold font-[number:var(--h6-h6-semibold-font-weight)] text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] [font-style:var(--h6-h6-semibold-font-style)]">
               Contact Sales
@@ -102,7 +102,9 @@ export const CallToActionSection = (): JSX.Element => {
           {pricingCards.map((card, index) => (
             <Card
               key={index}
-              className={`flex flex-col ${index === 1 ? "w-[420px]" : "w-[410px]"} gap-10 p-10 rounded-xl border ${
+              className={`flex flex-col ${
+                index === 1 ? "w-[420px]" : "w-[410px]"
+              } gap-10 p-10 rounded-xl border ${
                 card.variant === "white"
                   ? "bg-white border-[#ebebeb]"
                   : "[background:url(..//frame-1455.png)_50%_50%_/_cover,linear-gradient(30deg,rgba(8,43,36,1)_0%,rgba(16,84,71,0.7)_100%)]"
@@ -130,9 +132,19 @@ export const CallToActionSection = (): JSX.Element => {
               <CardContent className="p-0 flex flex-col gap-3">
                 {card.features.map((feature, idx) => (
                   <div key={idx} className="inline-flex items-center gap-3">
-                    <CheckIcon
-                      className={`w-6 h-6 ${card.variant === "white" ? "text-app-secondary" : "text-white"}`}
-                    />
+                    <div className={`w-6 h-6 rounded-full flex items-center justify-center ${
+                          card.variant === "white"
+                            ? "bg-[#4a8b7b]"
+                            : "bg-white"
+                        }`}>
+                      <CheckIcon
+                        className={`w-4 h-4 ${
+                          card.variant === "white"
+                            ? "text-white"
+                            : "text-[#4a8b7b]"
+                        }`}
+                      />
+                    </div>
                     <span
                       className={`font-body-medium-body-medium-regular font-[number:var(--body-medium-body-medium-regular-font-weight)] text-[length:var(--body-medium-body-medium-regular-font-size)] tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-[var(--body-medium-body-medium-regular-line-height)] [font-style:var(--body-medium-body-medium-regular-font-style)] ${
                         card.variant === "white" ? "text-black" : "text-white"
@@ -146,7 +158,7 @@ export const CallToActionSection = (): JSX.Element => {
 
               <CardFooter className="p-0">
                 <Button
-                  className={`w-[330px] px-10 py-4 rounded-[48px] ${
+                  className={`w-[330px] px-10 py-8 rounded-[48px] ${
                     card.variant === "white"
                       ? "bg-[#4a8b7b] text-white"
                       : "bg-textwhite text-app-primary"

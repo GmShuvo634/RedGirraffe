@@ -1,5 +1,4 @@
 import { ArrowRightIcon } from "lucide-react";
-import React from "react";
 import { Button } from "../../../../components/ui/button";
 import {
   Card,
@@ -78,7 +77,7 @@ const featureRows = [
 
 export const FeatureHighlightSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col items-center gap-[60px] pt-20 pb-[120px] px-20 w-full">
+    <section className="flex flex-col items-center gap-[60px] pt-15 pb-[120px] px-20 w-full">
       <div className="flex flex-col items-center gap-[60px] w-full">
         {/* Header Section */}
         <div className="flex flex-col w-full max-w-[800px] items-center gap-5">
@@ -98,7 +97,7 @@ export const FeatureHighlightSection = (): JSX.Element => {
               className="flex-1 p-10 rounded-[20px] border border-[#ebebeb]"
             >
               <CardHeader className="p-0 flex flex-col items-center gap-5">
-                <CardTitle className="w-[440px] font-h5-h5-semibold font-[number:var(--h5-h5-semibold-font-weight)] text-[#1a3c34] text-[length:var(--h5-h5-semibold-font-size)] text-center tracking-[var(--h5-h5-semibold-letter-spacing)] leading-[var(--h5-h5-semibold-line-height)] [font-style:var(--h5-h5-semibold-font-style)]">
+                <CardTitle className="w-[440px] font-h6-h6-semibold font-[number:var(--h6-h6-semibold-font-weight)] text-[#1a3c34] text-[length:var(--h6-h6-semibold-font-size)] text-center tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] [font-style:var(--h6-h6-semibold-font-style)]">
                   {card.title}
                 </CardTitle>
                 <Separator className="w-[540px] h-px" />
@@ -110,7 +109,7 @@ export const FeatureHighlightSection = (): JSX.Element => {
                       key={pointIndex}
                       className="flex items-start gap-2.5 w-full"
                     >
-                      <img className="w-6 h-6" alt="Label" src="/label.svg" />
+                      <img className="w-6 h-6" alt="Label" src="/src/public/thin-arrow.svg" />
                       <p className="flex-1 mt-[-1.00px] font-h6-h6-regular font-[number:var(--h6-h6-regular-font-weight)] text-text text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)] [font-style:var(--h6-h6-regular-font-style)]">
                         {point}
                       </p>
@@ -137,10 +136,10 @@ export const FeatureHighlightSection = (): JSX.Element => {
               {row.map((feature, featureIndex) => (
                 <Card
                   key={featureIndex}
-                  className="flex-1 bg-abu-bg rounded-[10px] border border-[#ebebeb]"
+                  className="flex-1 bg-abu-bg rounded-[10px] border border-[#ebebeb] pb-4"
                 >
                   <CardContent className="flex flex-col gap-2.5 pt-10 pb-5 px-10">
-                    <CardTitle className="h-16 font-h5-h5-semibold font-[number:var(--h5-h5-semibold-font-weight)] text-black text-[length:var(--h5-h5-semibold-font-size)] tracking-[var(--h5-h5-semibold-letter-spacing)] leading-[var(--h5-h5-semibold-line-height)] [font-style:var(--h5-h5-semibold-font-style)]">
+                    <CardTitle className="h-16 font-h6-h6-semibold font-[number:var(--h6-h6-semibold-font-weight)] text-black text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] [font-style:var(--h6-h6-semibold-font-style)]">
                       {feature.title}
                     </CardTitle>
                     <p className="h-[84px] font-h6-h6-regular font-[number:var(--h6-h6-regular-font-weight)] text-text text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)] [font-style:var(--h6-h6-regular-font-style)]">

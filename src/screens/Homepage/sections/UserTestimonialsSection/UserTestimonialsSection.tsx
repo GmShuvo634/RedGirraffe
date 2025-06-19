@@ -44,7 +44,7 @@ export const UserTestimonialsSection = (): JSX.Element => {
         {testimonialData.map((item, index) => (
           <React.Fragment key={index}>
             {index > 0 && (
-              <Separator orientation="vertical" className="h-[184px]" />
+              <Separator orientation="vertical" className="h-[184px] bg-[#00d959] w-[1px]" />
             )}
             <Card className="flex flex-col w-[400px] items-start p-10 bg-white rounded-[10px] border-none">
               <CardContent className="flex flex-col items-start gap-5 p-0 w-full">

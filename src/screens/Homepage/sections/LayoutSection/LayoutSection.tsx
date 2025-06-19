@@ -63,7 +63,7 @@ const solutionsData = [
   {
     title: "Banks",
     hasBorder: true,
-    bgColor: "bg-white",
+    bgColor: "bg-transparent",
     items: [
       "Low-Risk Card Spend: Capture high-volume, low-risk B2B transactions.",
       "Maker Checker: Reduce fraud risks with robust approvals.",
@@ -91,7 +91,7 @@ const solutionsData = [
   {
     title: "Vendors",
     hasBorder: true,
-    bgColor: "bg-white",
+    bgColor: "bg-transparent",
     items: [
       "Instant Settlements: Receive payments in real time, no waiting.",
       "Global Support: Access funds in 150+ currencies.",
@@ -117,11 +117,11 @@ export const LayoutSection = (): JSX.Element => {
         {/* Problem Section */}
         <div className="flex flex-col items-center gap-10 w-full rounded-[20px]">
           <div className="flex flex-col items-start justify-center gap-20 w-full">
-            <div className="flex items-center justify-center gap-20 w-full">
+            <div className="flex items-start justify-center gap-20 w-full">
               {/* Left Column - Problem Title and Visual */}
               <div className="flex flex-col gap-[60px] items-center">
                 <div className="w-[400px] flex flex-col items-center gap-5">
-                  <div className="flex items-center gap-3 w-full">
+                  <div className="flex items-start gap-3 w-full">
                     <h3 className="w-full font-h4-h4-semibold text-[#c42027] text-[length:var(--h4-h4-semibold-font-size)] text-center leading-[var(--h4-h4-semibold-line-height)]">
                       The Problem
                     </h3>
@@ -131,50 +131,20 @@ export const LayoutSection = (): JSX.Element => {
 
                 <div className="flex w-[400px] items-center justify-center relative">
                   <div className="flex flex-1 items-center relative">
-                    <div className="flex flex-col items-center justify-center gap-[8.51px] flex-1 self-stretch">
+                    {/* <div className="flex flex-col items-center justify-center gap-[8.51px] flex-1 self-stretch">
                       <span className="font-body-medium-body-medium-regular text-neutral-50 text-[length:var(--body-medium-body-medium-regular-font-size)] text-center tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-[var(--body-medium-body-medium-regular-line-height)]">
                         Legacy Issues
                       </span>
                       <span className="font-body-medium-body-medium-bold text-neutral-100 text-[length:var(--body-medium-body-medium-bold-font-size)] text-center tracking-[var(--body-medium-body-medium-bold-letter-spacing)] leading-[var(--body-medium-body-medium-bold-line-height)]">
                         Blocking Growth
                       </span>
-                    </div>
+                    </div> */}
 
                     <div className="absolute w-[404px] h-[404px] -top-0.5 -left-0.5">
                       <img
-                        className="absolute w-[210px] h-[364px] top-0 left-[195px]"
+                        className=""
                         alt="Ellipse"
-                        src="/ellipse-5.svg"
-                      />
-                      <img
-                        className="absolute w-[79px] h-[70px] top-[334px] left-[129px]"
-                        alt="Ellipse"
-                        src="/ellipse-2.svg"
-                      />
-                      <img
-                        className="absolute w-[151px] h-[162px] top-[231px] left-1"
-                        alt="Ellipse"
-                        src="/ellipse-6.svg"
-                      />
-                      <img
-                        className="absolute w-[72px] h-32 top-[121px] left-0"
-                        alt="Ellipse"
-                        src="/ellipse-4.svg"
-                      />
-                      <img
-                        className="absolute w-[101px] h-[107px] top-[42px] left-[15px]"
-                        alt="Ellipse"
-                        src="/ellipse-3.svg"
-                      />
-                      <img
-                        className="absolute w-[123px] h-[92px] top-0 left-[76px]"
-                        alt="Ellipse"
-                        src="/ellipse.svg"
-                      />
-                      <img
-                        className="absolute w-[123px] h-[90px] top-[314px] left-[202px]"
-                        alt="Ellipse"
-                        src="/ellipse-1.svg"
+                        src="/src/public/chart-container.png"
                       />
                     </div>
                   </div>
@@ -285,7 +255,7 @@ export const LayoutSection = (): JSX.Element => {
             {solutionsData.map((solution, index) => (
               <Card
                 key={`solution-${index}`}
-                className={`flex-1 ${solution.bgColor} rounded-[20px] ${solution.hasBorder ? "border border-solid border-[#4a8b7b]" : ""}`}
+                className={`flex-1 h-[733px] ${solution.bgColor} rounded-[20px] ${solution.hasBorder ? "border border-solid border-[#4a8b7b]" : ""}`}
               >
                 <CardContent className="flex flex-col items-start gap-10 p-10">
                   <h4 className="w-full font-h5-h5-semibold text-black text-[length:var(--h5-h5-semibold-font-size)] tracking-[var(--h5-h5-semibold-letter-spacing)] leading-[var(--h5-h5-semibold-line-height)]">
@@ -297,7 +267,7 @@ export const LayoutSection = (): JSX.Element => {
                         key={`solution-item-${index}-${itemIndex}`}
                         className="flex items-start gap-2.5 w-full"
                       >
-                        <img className="w-6 h-6" alt="Label" src="/label.svg" />
+                        <img className="w-6 h-6" alt="Label" src="/src/public/thin-arrow.svg" />
                         <p className="flex-1 mt-[-1.00px] font-h6-h6-regular text-text text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)]">
                           {item}
                         </p>

@@ -54,16 +54,27 @@ export const PricingPlansSection = (): JSX.Element => {
                 className={`relative w-[430px] h-5 ${index > 0 ? "ml-[-5px]" : ""}`}
               >
                 <div className="relative h-5">
-                  <img
-                    className="absolute w-[215px] h-1 top-2 left-0"
-                    alt="Line"
-                    src={index === 0 ? "/line-723-1.svg" : "/line-723.svg"}
-                  />
-                  <img
-                    className="absolute w-[215px] h-1 top-2 left-[215px]"
-                    alt="Line"
-                    src="/line-723.svg"
-                  />
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[20px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[40px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[60px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[80px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[100px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[120px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[140px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[160px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[180px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[200px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[220px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[240px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[260px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[280px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[300px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[320px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[340px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[360px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[380px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[400px] border-dashed border-[1px] border-[#4a8b7b]"/>
                   <div
                     className="absolute w-5 h-5 top-0 bg-[#1a3c34] rounded-[10px]"
                     style={{ left: index === 0 ? "200px" : "210px" }}

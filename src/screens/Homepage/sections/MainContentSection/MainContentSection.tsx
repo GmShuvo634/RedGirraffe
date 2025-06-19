@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Separator } from "../../../../components/ui/separator";
+import { ArrowRightIcon } from "lucide-react";
 
 // Data for the "For Banks" section
 const bankFeatures = [
@@ -89,11 +90,7 @@ export const MainContentSection = (): JSX.Element => {
             <h3 className="w-full max-w-[440px] font-h5-h5-semibold text-[#1a3c34] text-[length:var(--h5-h5-semibold-font-size)] text-center tracking-[var(--h5-h5-semibold-letter-spacing)] leading-[var(--h5-h5-semibold-line-height)]">
               For Banks
             </h3>
-            <img
-              className="w-full max-w-[540px] h-px"
-              alt="Line"
-              src="/line-717.svg"
-            />
+            <Separator className="w-[540px] h-px bg-[#4a8b7b]" />
           </div>
 
           <div className="grid grid-cols-2 gap-5 w-full">
@@ -137,11 +134,7 @@ export const MainContentSection = (): JSX.Element => {
             <h3 className="w-full max-w-[440px] font-h5-h5-semibold text-[#1a3c34] text-[length:var(--h5-h5-semibold-font-size)] text-center tracking-[var(--h5-h5-semibold-letter-spacing)] leading-[var(--h5-h5-semibold-line-height)]">
               For Cardholding Enterprises
             </h3>
-            <img
-              className="w-full max-w-[540px] h-px"
-              alt="Line"
-              src="/line-717.svg"
-            />
+            <Separator className="w-[540px] h-px bg-[#4a8b7b]" />
           </div>
 
           <div className="grid grid-cols-2 gap-5 w-full">
@@ -177,14 +170,10 @@ export const MainContentSection = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="flex w-full max-w-[1280px] justify-center">
-        <Button className="flex items-center justify-center gap-3 px-10 py-4 bg-[#4a8b7b] rounded-[48px] w-[330px]">
-          <img
-            className="w-6 h-6"
-            alt="Arrow right alt"
-            src="/arrow-right-alt-3.png"
-          />
-          <span className="font-h6-h6-semibold text-white text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
+      <div className="flex flex-col items-center gap-2.5 w-full">
+        <Button className="flex items-center justify-center gap-3 px-10 py-4 bg-[#4a8b7b] rounded-[48px] text-white">
+          <ArrowRightIcon className="w-6 h-6" />
+          <span className="font-h6-h6-semibold text-white text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] whitespace-nowrap">
             Request a Demo
           </span>
         </Button>
