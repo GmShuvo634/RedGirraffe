@@ -47,12 +47,12 @@ const officeLocations = [
   {
     country: "Singapore",
     company: "RedGirraffe Holdings",
-    address: "3 Temasek Avenue, Centennial Tower, #17-01, Singapore 039190.",
+    address: ["3 Temasek Avenue, Centennial Tower, #17-01, Singapore 039190."],
   },
   {
     country: "United Kingdom",
     company: "RedGirraffe Inc.",
-    address: "Harben House, Harben Parade, Finchley Road, London, NW3 6LH.",
+    address: ["Harben House, Harben Parade, Finchley Road, London, NW3 6LH."],
   },
   {
     country: "India",
@@ -66,11 +66,11 @@ const officeLocations = [
 
 // Data for social media links
 const socialMediaLinks = [
-  { name: "YouTube", icon: "📺" },
-  { name: "TikTok", icon: "🎵" },
-  { name: "LinkedIn", icon: "💼" },
-  { name: "Instagram", icon: "📷" },
-  { name: "Facebook", icon: "📘" },
+  { name: "YouTube", icon: "/src/public/youtube.png" },
+  { name: "TikTok", icon: "/src/public/tiktok.png" },
+  { name: "LinkedIn", icon: "/src/public/linkedin.png" },
+  { name: "Instagram", icon: "/src/public/instagram.png" },
+  { name: "Facebook", icon: "/src/public/facebook.png" },
 ];
 
 export const FooterSection = (): JSX.Element => {
@@ -86,9 +86,7 @@ export const FooterSection = (): JSX.Element => {
                 {/* Logo and company name */}
                 <div className="flex items-center gap-3">
                   <div className="relative w-6 h-6 lg:w-8 lg:h-8 bg-[#00d959] rounded overflow-hidden">
-                    <div className="absolute inset-0 bg-[#00d959] rounded flex items-center justify-center">
-                      <div className="w-3 h-3 lg:w-5 lg:h-5 bg-white rounded-sm"></div>
-                    </div>
+                    <img src="/src/public/logo.png" alt="" />
                   </div>
                   <div className="font-h5-h5-bold text-white text-lg lg:text-xl whitespace-nowrap">
                     RedGirraffe
@@ -137,9 +135,9 @@ export const FooterSection = (): JSX.Element => {
             {/* Payment methods */}
             <div className="flex items-center gap-3 lg:gap-[13.33px]">
               {[1, 2, 3, 4].map((_, index) => (
-                <div key={index} className="flex items-center justify-center p-[2.67px] bg-[#ffffff] rounded">
-                  <div className="w-8 h-6 lg:w-10 lg:h-[26.67px] bg-gray-200 rounded flex items-center justify-center">
-                    <span className="text-xs">💳</span>
+                <div key={index} className="flex items-center justify-center rounded">
+                  <div className="w-8 h-6 lg:w-10 lg:h-[26.67px] rounded flex items-center justify-center">
+                    <img src={`/src/public/falg_${index+1}.png`} alt="" />
                   </div>
                 </div>
               ))}
@@ -278,7 +276,7 @@ export const FooterSection = (): JSX.Element => {
               <p className="w-full font-h6-h6-regular text-highlight-c1 text-sm">
                 {officeLocations[2].company}
               </p>
-              {officeLocations[2].addresses.map((address, index) => (
+              {officeLocations[2].addresses?.map((address, index) => (
                 <p
                   key={index}
                   className="w-full font-body-medium-body-medium-regular text-tag-green text-xs leading-relaxed"
@@ -295,19 +293,12 @@ export const FooterSection = (): JSX.Element => {
           <Separator className="w-full h-px bg-[#366f65] border border-solid border-[#9cacae]" />
           <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-4">
             <p className="font-body-large-body-large-regular text-highlight-c1 text-sm whitespace-nowrap">
-              © 2024 RedGirraffe. All rights reserved.
+              © {new Date().getFullYear()} RedGirraffe. All rights reserved.
             </p>
             <div className="flex items-center gap-3 lg:gap-5">
               <div className="flex items-start gap-3 lg:gap-[15px]">
                 {socialMediaLinks.map((social, index) => (
-                  <Button
-                    key={index}
-                    variant="outline"
-                    size="icon"
-                    className="p-2 lg:p-3 bg-[#0000000d] rounded-[100px] border border-solid border-[#9cacae] hover:bg-[#00000020] w-8 h-8 lg:w-10 lg:h-10"
-                  >
-                    <span className="text-sm lg:text-base">{social.icon}</span>
-                  </Button>
+                  <img src={social.icon} alt="" key={index} className="w-6 h-6 lg:w-10 lg:h-10" />
                 ))}
               </div>
             </div>

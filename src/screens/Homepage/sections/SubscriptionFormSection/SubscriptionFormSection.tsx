@@ -150,14 +150,13 @@ export const SubscriptionFormSection = (): JSX.Element => {
                   className="p-6 bg-white rounded-xl border border-solid border-[#ebebeb] font-body-large-body-large-regular text-text flex justify-between items-center"
                 >
                   <SelectValue placeholder="Home Loan" />
-                  <ChevronDownIcon className="w-6 h-6" />
                 </SelectTrigger>
               </Select>
             </div>
           </div>
 
           {/* Submit Button */}
-          <Button className="flex items-center justify-center gap-3 px-10 py-4 bg-[#4a8b7b] rounded-[48px] w-[330px]">
+          <Button className="flex items-center justify-center gap-3 px-10 py-8 bg-[#4a8b7b] rounded-[48px] w-[330px]">
             <ArrowRightIcon className="w-6 h-6 text-white" />
             <span className="font-h6-h6-semibold font-[number:var(--h6-h6-semibold-font-weight)] text-white text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] whitespace-nowrap [font-style:var(--h6-h6-semibold-font-style)]">
               Request a Demo
