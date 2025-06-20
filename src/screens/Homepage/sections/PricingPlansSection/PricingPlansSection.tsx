@@ -125,7 +125,7 @@ export const PricingPlansSection = (): JSX.Element => {
 
           {/* CTA Button */}
           <div className="flex flex-col w-full items-center gap-2.5">
-            <Button className="flex w-[330px] items-center justify-center gap-3 px-10 py-4 bg-[#4a8b7b] rounded-[48px] text-white">
+            <Button className="flex w-[330px] items-center justify-center gap-3 px-10 py-8 bg-[#4a8b7b] rounded-[48px] text-white">
               <ArrowRightIcon className="w-6 h-6" />
               <span className="font-h6-h6-semibold font-[number:var(--h6-h6-semibold-font-weight)] text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] [font-style:var(--h6-h6-semibold-font-style)]">
                 Request a Demo

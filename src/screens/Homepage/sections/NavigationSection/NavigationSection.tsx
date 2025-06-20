@@ -114,7 +114,7 @@ export const NavigationSection = (): JSX.Element => {
       </div>
 
       <div className="flex justify-center w-full max-w-[1280px]">
-        <Button className="flex items-center justify-center gap-3 px-10 py-4 bg-[#4a8b7b] rounded-[48px] text-white w-[330px]">
+        <Button className="flex items-center justify-center gap-3 px-10 py-8 bg-[#4a8b7b] rounded-[48px] text-white w-[330px]">
           <ArrowRightIcon className="w-6 h-6" />
           <span className="font-h6-h6-semibold">Request a Demo</span>
         </Button>

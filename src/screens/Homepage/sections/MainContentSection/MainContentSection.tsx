@@ -171,7 +171,7 @@ export const MainContentSection = (): JSX.Element => {
       </div>
 
       <div className="flex flex-col items-center gap-2.5 w-full">
-        <Button className="flex items-center justify-center gap-3 px-10 py-4 bg-[#4a8b7b] rounded-[48px] text-white">
+        <Button className="flex items-center justify-center gap-3 px-10 py-8 bg-[#4a8b7b] rounded-[48px] text-white">
           <ArrowRightIcon className="w-6 h-6" />
           <span className="font-h6-h6-semibold text-white text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] whitespace-nowrap">
             Request a Demo
