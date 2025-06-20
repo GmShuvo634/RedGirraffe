@@ -80,11 +80,11 @@ export const HeroSection = (): JSX.Element => {
       </div>
 
       {/* Hero Content */}
-      <div className="flex flex-col xl:flex-row items-center gap-6 sm:gap-8 lg:gap-10 xl:gap-20 px-4 sm:px-6 lg:px-8 xl:px-0 w-full max-w-7xl mx-auto">
+      <div className="flex flex-col xl:flex-row mt-16 md:mt-0 items-center gap-6 sm:gap-8 lg:gap-10 xl:gap-20 px-4 sm:px-6 lg:px-8 xl:px-0 w-full max-w-7xl mx-auto">
         {/* Left Content */}
-        <div className="flex flex-col w-full xl:w-[560px] items-start gap-6 sm:gap-8 lg:gap-10 xl:gap-[60px] relative bg-white">
+        <div className="flex flex-col w-full xl:w-[560px] items-center gap-6 sm:gap-8 lg:gap-10 xl:gap-[60px] relative bg-white">
           {/* Hero Text Content */}
-          <div className="flex flex-col items-start gap-4 lg:gap-5 w-full">
+          <div className="flex flex-col place-items-center xl:place-items-start gap-4 lg:gap-5 w-full">
             {/* Toggle Group */}
             <ToggleGroup
               type="single"
@@ -110,12 +110,12 @@ export const HeroSection = (): JSX.Element => {
             </ToggleGroup>
 
             {/* Heading - Mobile optimized */}
-            <h1 className="responsive-h1 font-h1-h1-semibold text-app-primary tracking-[var(--h1-h1-semibold-letter-spacing)]">
+            <h1 className="responsive-h1 font-h1-h1-semibold text-app-primary tracking-[var(--h1-h1-semibold-letter-spacing)] xl:text-left text-center w-full">
               RedGirraffe Global Commercial Card
             </h1>
 
             {/* Subheading - Mobile optimized */}
-            <p className="responsive-body font-body-large-body-large-semibold text-app-secondary tracking-[var(--body-large-body-large-semibold-letter-spacing)]">
+            <p className="responsive-body font-body-large-body-large-semibold text-app-secondary tracking-[var(--body-large-body-large-semibold-letter-spacing)] xl:text-left text-center w-full">
               Simplify payments, reduce costs, and unlock smarter cash flow with
               seamless recurring payouts in 97+ countries.
             </p>
@@ -152,10 +152,10 @@ export const HeroSection = (): JSX.Element => {
           </div>
 
           {/* Tooltip - Hidden on mobile */}
-          <div className="hidden lg:block absolute w-[163px] h-[45px] top-[-45px] left-[260px]">
+          <div className="block absolute md:w-[163px] w-[120px] md:h-[45px] h-[30px] md:top-[-45px] top-[-45px] md:left-[260px] left-[230px]">
             <div className="relative h-[45px]">
               <Card className="inline-flex items-center justify-center gap-2.5 px-3.5 py-1 absolute top-0 left-[31px] bg-[#00d959] rounded-[55px] overflow-hidden border-none">
-                <span className="font-body-large-body-large-regular text-[#1b1b1b] text-[length:var(--body-large-body-large-regular-font-size)] text-center tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-[var(--body-large-body-large-regular-line-height)] whitespace-nowrap">
+                <span className="font-body-large-body-large-regular text-[#1b1b1b] text-[length:var(--body-large-body-large-regular-font-size)] text-center tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-[var(--body-large-body-large-regular-line-height)] whitespace-nowrap text-sm sm:text-base ">
                   Click to change
                 </span>
               </Card>
