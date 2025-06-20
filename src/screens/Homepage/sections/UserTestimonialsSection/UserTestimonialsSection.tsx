@@ -23,16 +23,16 @@ const testimonialData = [
 
 export const UserTestimonialsSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col items-center gap-[60px] px-20 py-[120px] w-full bg-[#e0eae8]">
-      <div className="max-w-[800px] flex flex-col items-start gap-5">
+    <section className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] px-4 sm:px-6 lg:px-8 xl:px-20 py-12 sm:py-16 lg:py-20 xl:py-[120px] w-full bg-[#e0eae8]">
+      <div className="max-w-4xl flex flex-col items-start gap-4 sm:gap-5">
         <div className="flex items-center justify-center w-full">
-          <h2 className="font-h3-h3-semibold font-[number:var(--h3-h3-semibold-font-weight)] text-[#1a3c34] text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-[var(--h3-h3-semibold-line-height)] [font-style:var(--h3-h3-semibold-font-style)]">
+          <h2 className="font-h3-h3-semibold text-[#1a3c34] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]">
             Scale Globally with Unmatched Reliability
           </h2>
         </div>
 
-        <div className="flex items-center justify-center px-10 w-full">
-          <p className="font-h6-h6-regular font-[number:var(--h6-h6-regular-font-weight)] text-[#4a8b7b] text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)] [font-style:var(--h6-h6-regular-font-style)]">
+        <div className="flex items-center justify-center px-4 sm:px-6 lg:px-10 w-full">
+          <p className="font-h6-h6-regular text-[#4a8b7b] text-sm sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
             Serving 97+ countries with 99.9% uptime and support for 150+
             currencies—RedGirraffe processes $20B+ annually with top-tier
             security.
@@ -40,24 +40,24 @@ export const UserTestimonialsSection = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="flex items-start gap-5 max-w-[1280px] w-full justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-5 max-w-7xl w-full justify-center">
         {testimonialData.map((item, index) => (
           <React.Fragment key={index}>
             {index > 0 && (
-              <Separator orientation="vertical" className="h-[184px] bg-[#00d959] w-[1px]" />
+              <Separator orientation="vertical" className="hidden md:block h-[184px] bg-[#00d959] w-[1px] justify-self-center" />
             )}
-            <Card className="flex flex-col w-[400px] items-start p-10 bg-white rounded-[10px] border-none">
-              <CardContent className="flex flex-col items-start gap-5 p-0 w-full">
+            <Card className="flex flex-col w-full items-start p-6 sm:p-8 lg:p-10 bg-white rounded-[10px] border-none touch-manipulation">
+              <CardContent className="flex flex-col items-start gap-4 sm:gap-5 p-0 w-full">
                 <div className="flex flex-col items-start justify-center gap-2.5 w-full">
                   <div className="flex items-start gap-2.5 w-full">
                     <div className="inline-flex items-start justify-center">
-                      <span className="font-h2-h2-bold font-[number:var(--h2-h2-bold-font-weight)] text-dark-green text-[length:var(--h2-h2-bold-font-size)] tracking-[var(--h2-h2-bold-letter-spacing)] leading-[var(--h2-h2-bold-line-height)] whitespace-nowrap [font-style:var(--h2-h2-bold-font-style)]">
+                      <span className="font-h2-h2-bold text-dark-green text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[length:var(--h2-h2-bold-font-size)] tracking-[var(--h2-h2-bold-letter-spacing)] leading-tight xl:leading-[var(--h2-h2-bold-line-height)] whitespace-nowrap">
                         {item.metric}
                       </span>
                     </div>
 
                     <div className="flex items-end gap-2.5 pt-0 pb-2 flex-1 self-stretch">
-                      <span className="font-h6-h6-regular font-[number:var(--h6-h6-regular-font-weight)] text-app-secondary text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)] whitespace-nowrap [font-style:var(--h6-h6-regular-font-style)]">
+                      <span className="font-h6-h6-regular text-app-secondary text-sm sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)] whitespace-nowrap">
                         {item.label}
                       </span>
                     </div>
@@ -65,7 +65,7 @@ export const UserTestimonialsSection = (): JSX.Element => {
                 </div>
 
                 <div className="flex items-center justify-center gap-2.5 w-full">
-                  <p className="font-h6-h6-regular font-[number:var(--h6-h6-regular-font-weight)] text-textblack text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)] [font-style:var(--h6-h6-regular-font-style)]">
+                  <p className="font-h6-h6-regular text-textblack text-xs sm:text-sm lg:text-base xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
                     {item.description}
                   </p>
                 </div>

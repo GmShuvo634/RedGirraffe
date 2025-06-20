@@ -53,73 +53,71 @@ const pricingCards = [
 
 export const CallToActionSection = (): JSX.Element => {
   return (
-    <section className="py-[120px] px-20 bg-[#e0eae8] w-full">
-      <div className="flex flex-col items-center gap-[60px] w-full">
+    <section className="py-12 sm:py-16 lg:py-20 xl:py-[120px] px-4 sm:px-6 lg:px-8 xl:px-20 bg-[#e0eae8] w-full">
+      <div className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] w-full max-w-7xl mx-auto">
         {/* Heading and description */}
-        <div className="flex flex-col w-full max-w-[800px] items-center gap-5">
-          <h2 className="font-h3-h3-semibold font-[number:var(--h3-h3-semibold-font-weight)] text-[#1a3c34] text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-[var(--h3-h3-semibold-line-height)] [font-style:var(--h3-h3-semibold-font-style)]">
+        <div className="flex flex-col w-full max-w-4xl items-center gap-4 sm:gap-5">
+          <h2 className="font-h3-h3-semibold text-[#1a3c34] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]">
             RedGirraffe Global Commercial Card Pricing
           </h2>
 
-          <p className="text-[#4a8b7b] text-lg text-center px-10 [font-family:'Inter',Helvetica] font-normal leading-[26px]">
+          <p className="text-[#4a8b7b] text-sm sm:text-base lg:text-lg text-center px-4 sm:px-6 lg:px-10 font-normal leading-relaxed">
             <span>
               Pricing is subject to a commercial arrangement between your bank
               and RedGirraffe or its authorised PSPs. Please contact your
               commercial bank to confirm your{" "}
             </span>
 
-            <span className="font-[number:var(--h6-h6-semibold-font-weight)] leading-[var(--h6-h6-semibold-line-height)] font-h6-h6-semibold [font-style:var(--h6-h6-semibold-font-style)] tracking-[var(--h6-h6-semibold-letter-spacing)] text-[length:var(--h6-h6-semibold-font-size)]">
+            <span className="font-semibold">
               RedGirraffe Pay-Pulse Commercial Credit Card
             </span>
 
             <span>
               {" "}
-              high value recurring rates on Visa, MasterCard &amp; other leading
+              high value recurring rates on Visa, MasterCard & other leading
               global Payment Networks.
             </span>
           </p>
         </div>
 
         {/* Action buttons */}
-        <div className="flex items-center gap-5">
-          <Button className="w-[270px] gap-3 px-10 py-8 rounded-[48px] bg-app-primary text-white">
-            <ArrowRightIcon className="w-6 h-6" />
-            <span className="font-h6-h6-semibold font-[number:var(--h6-h6-semibold-font-weight)] text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] [font-style:var(--h6-h6-semibold-font-style)]">
+        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 w-full max-w-[600px]">
+          <Button className="w-full sm:flex-1 max-w-[270px] gap-3 px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 rounded-[48px] bg-app-primary text-white touch-manipulation">
+            <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6" />
+            <span className="font-h6-h6-semibold text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
               Request a Demo
             </span>
           </Button>
 
-          <Button className="w-[270px] gap-3 px-10 py-8 rounded-[48px] bg-[#4a8b7b] text-white">
-            <ArrowRightIcon className="w-6 h-6" />
-            <span className="font-h6-h6-semibold font-[number:var(--h6-h6-semibold-font-weight)] text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] [font-style:var(--h6-h6-semibold-font-style)]">
+          <Button className="w-full sm:flex-1 max-w-[270px] gap-3 px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 rounded-[48px] bg-[#4a8b7b] text-white touch-manipulation">
+            <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6" />
+            <span className="font-h6-h6-semibold text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
               Contact Sales
             </span>
           </Button>
         </div>
 
         {/* Pricing cards */}
-        <div className="flex items-center gap-5 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-5 w-full">
           {pricingCards.map((card, index) => (
             <Card
               key={index}
-              className={`flex flex-col ${
-                index === 1 ? "w-[420px]" : "w-[410px]"
-              } gap-10 p-10 rounded-xl border ${
+              className={`flex flex-col gap-6 sm:gap-8 lg:gap-10 p-6 sm:p-8 lg:p-10 rounded-xl border ${
                 card.variant === "white"
                   ? "bg-white border-[#ebebeb]"
                   : "[background:url(..//frame-1455.png)_50%_50%_/_cover,linear-gradient(30deg,rgba(8,43,36,1)_0%,rgba(16,84,71,0.7)_100%)]"
-              } shadow-[8px_12px_20px_#00000014]`}
+              } shadow-[8px_12px_20px_#00000014] touch-manipulation`}
             >
               <CardHeader className="p-0">
                 <CardTitle
-                  className={`font-h4-h4-semibold font-[number:var(--h4-h4-semibold-font-weight)] text-[length:var(--h4-h4-semibold-font-size)] tracking-[var(--h4-h4-semibold-letter-spacing)] leading-[var(--h4-h4-semibold-line-height)] [font-style:var(--h4-h4-semibold-font-style)] ${
+                  className={`font-h4-h4-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[length:var(--h4-h4-semibold-font-size)] tracking-[var(--h4-h4-semibold-letter-spacing)] leading-tight xl:leading-[var(--h4-h4-semibold-line-height)] ${
                     card.variant === "white" ? "text-black" : "text-white"
                   }`}
                 >
                   {card.title}
                 </CardTitle>
                 <p
-                  className={`mt-5 font-body-large-body-large-regular font-[number:var(--body-large-body-large-regular-font-weight)] text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-[var(--body-large-body-large-regular-line-height)] [font-style:var(--body-large-body-large-regular-font-style)] ${
+                  className={`mt-4 sm:mt-5 font-body-large-body-large-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)] ${
                     card.variant === "white" ? "text-text" : "text-[#dbf0e4]"
                   }`}
                 >
@@ -132,13 +130,13 @@ export const CallToActionSection = (): JSX.Element => {
               <CardContent className="p-0 flex flex-col gap-3">
                 {card.features.map((feature, idx) => (
                   <div key={idx} className="inline-flex items-center gap-3">
-                    <div className={`w-6 h-6 rounded-full flex items-center justify-center ${
+                    <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center flex-shrink-0 ${
                           card.variant === "white"
                             ? "bg-[#4a8b7b]"
                             : "bg-white"
                         }`}>
                       <CheckIcon
-                        className={`w-4 h-4 ${
+                        className={`w-3 h-3 sm:w-4 sm:h-4 ${
                           card.variant === "white"
                             ? "text-white"
                             : "text-[#4a8b7b]"
@@ -146,7 +144,7 @@ export const CallToActionSection = (): JSX.Element => {
                       />
                     </div>
                     <span
-                      className={`font-body-medium-body-medium-regular font-[number:var(--body-medium-body-medium-regular-font-weight)] text-[length:var(--body-medium-body-medium-regular-font-size)] tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-[var(--body-medium-body-medium-regular-line-height)] [font-style:var(--body-medium-body-medium-regular-font-style)] ${
+                      className={`font-body-medium-body-medium-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-medium-body-medium-regular-font-size)] tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-medium-body-medium-regular-line-height)] ${
                         card.variant === "white" ? "text-black" : "text-white"
                       }`}
                     >
@@ -158,13 +156,13 @@ export const CallToActionSection = (): JSX.Element => {
 
               <CardFooter className="p-0">
                 <Button
-                  className={`w-[330px] px-10 py-8 rounded-[48px] ${
+                  className={`w-full px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 rounded-[48px] touch-manipulation ${
                     card.variant === "white"
                       ? "bg-[#4a8b7b] text-white"
                       : "bg-textwhite text-app-primary"
                   }`}
                 >
-                  <span className="font-h6-h6-semibold font-[number:var(--h6-h6-semibold-font-weight)] text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] [font-style:var(--h6-h6-semibold-font-style)]">
+                  <span className="font-h6-h6-semibold text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
                     {card.buttonText}
                   </span>
                 </Button>

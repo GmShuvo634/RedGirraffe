@@ -28,53 +28,39 @@ const processSteps = [
 
 export const PricingPlansSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col items-start gap-2.5 px-20 py-[120px] w-full bg-white">
-      <div className="flex items-center gap-[120px] w-full">
-        <div className="flex flex-col items-center gap-[60px] flex-1">
+    <section className="flex flex-col items-start gap-2.5 px-4 sm:px-6 lg:px-8 xl:px-20 py-12 sm:py-16 lg:py-20 xl:py-[120px] w-full bg-white">
+      <div className="flex items-center gap-8 sm:gap-12 lg:gap-16 xl:gap-[120px] w-full max-w-7xl mx-auto">
+        <div className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] flex-1">
           {/* Section Header */}
-          <div className="flex flex-col w-[800px] items-start gap-5">
+          <div className="flex flex-col w-full max-w-4xl items-start gap-4 sm:gap-5">
             <div className="flex items-center justify-center gap-2.5 w-full">
-              <h2 className="flex-1 mt-[-1.00px] font-h3-h3-semibold font-[number:var(--h3-h3-semibold-font-weight)] text-[#1a3c34] text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-[var(--h3-h3-semibold-line-height)] [font-style:var(--h3-h3-semibold-font-style)]">
+              <h2 className="flex-1 font-h3-h3-semibold text-[#1a3c34] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]">
                 How RedGirraffe Works
               </h2>
             </div>
 
-            <div className="flex items-center justify-center gap-2.5 px-10 py-0 w-full">
-              <p className="flex-1 mt-[-1.00px] font-h6-h6-regular font-[number:var(--h6-h6-regular-font-weight)] text-[#4a8b7b] text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)] [font-style:var(--h6-h6-regular-font-style)]">
+            <div className="flex items-center justify-center gap-2.5 px-4 sm:px-6 lg:px-10 py-0 w-full">
+              <p className="flex-1 font-h6-h6-regular text-[#4a8b7b] text-sm sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
                 Simplify your payments in three seamless steps.
               </p>
             </div>
           </div>
 
-          {/* Progress Indicator */}
-          <div className="flex items-center">
+          {/* Progress Indicator - Hidden on mobile */}
+          <div className="hidden lg:flex items-center">
             {[1, 2, 3].map((step, index) => (
               <div
                 key={step}
                 className={`relative w-[430px] h-5 ${index > 0 ? "ml-[-5px]" : ""}`}
               >
                 <div className="relative h-5">
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[20px] border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[40px] border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[60px] border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[80px] border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[100px] border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[120px] border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[140px] border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[160px] border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[180px] border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[200px] border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[220px] border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[240px] border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[260px] border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[280px] border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[300px] border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[320px] border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[340px] border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[360px] border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[380px] border-dashed border-[1px] border-[#4a8b7b]"/>
-                  <div className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 left-[400px] border-dashed border-[1px] border-[#4a8b7b]"/>
+                  {Array.from({ length: 21 }, (_, i) => (
+                    <div
+                      key={i}
+                      className="absolute w-[10px] h-[.8px] bg-[#4a8b7b] top-2 border-dashed border-[1px] border-[#4a8b7b]"
+                      style={{ left: `${i * 20}px` }}
+                    />
+                  ))}
                   <div
                     className="absolute w-5 h-5 top-0 bg-[#1a3c34] rounded-[10px]"
                     style={{ left: index === 0 ? "200px" : "210px" }}
@@ -85,18 +71,18 @@ export const PricingPlansSection = (): JSX.Element => {
           </div>
 
           {/* Process Cards */}
-          <div className="flex items-start gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 w-full">
             {processSteps.map((step, index) => (
               <Card
                 key={index}
-                className="w-[400px] h-[400px] rounded-[20px] border-[#ebebeb] shadow-[16px_8px_20px_#1b1b1b05]"
+                className="w-full h-auto lg:h-[400px] rounded-[20px] border-[#ebebeb] shadow-[16px_8px_20px_#1b1b1b05] touch-manipulation"
               >
-                <CardContent className="flex flex-col items-start gap-10 p-10 h-full">
-                  <div className="flex flex-col items-start gap-5 w-full">
-                    <h3 className="w-fit mt-[-1.00px] font-h4-h4-semibold font-[number:var(--h4-h4-semibold-font-weight)] text-black text-[length:var(--h4-h4-semibold-font-size)] tracking-[var(--h4-h4-semibold-letter-spacing)] leading-[var(--h4-h4-semibold-line-height)] whitespace-nowrap [font-style:var(--h4-h4-semibold-font-style)]">
+                <CardContent className="flex flex-col items-start gap-6 sm:gap-8 lg:gap-10 p-6 sm:p-8 lg:p-10 h-full">
+                  <div className="flex flex-col items-start gap-4 sm:gap-5 w-full">
+                    <h3 className="w-fit font-h4-h4-semibold text-black text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[length:var(--h4-h4-semibold-font-size)] tracking-[var(--h4-h4-semibold-letter-spacing)] leading-tight xl:leading-[var(--h4-h4-semibold-line-height)] whitespace-nowrap">
                       {step.title}
                     </h3>
-                    <p className="self-stretch h-[104px] font-h6-h6-regular font-[number:var(--h6-h6-regular-font-weight)] text-text text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)] [font-style:var(--h6-h6-regular-font-style)]">
+                    <p className="self-stretch font-h6-h6-regular text-text text-xs sm:text-sm lg:text-base xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
                       {step.description}
                     </p>
                   </div>
@@ -106,14 +92,14 @@ export const PricingPlansSection = (): JSX.Element => {
                       {step.tags.slice(0, 2).map((tag, tagIndex) => (
                         <Badge
                           key={tagIndex}
-                          className="px-5 py-2 bg-[#f5f5f5] text-[#1a3c34] rounded-[40px] font-body-large-body-large-regular font-[number:var(--body-large-body-large-regular-font-weight)] text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-[var(--body-large-body-large-regular-line-height)] [font-style:var(--body-large-body-large-regular-font-style)]"
+                          className="px-3 sm:px-4 lg:px-5 py-1.5 sm:py-2 bg-[#f5f5f5] text-[#1a3c34] rounded-[40px] font-body-large-body-large-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)] touch-manipulation"
                         >
                           {tag}
                         </Badge>
                       ))}
                     </div>
                     {step.tags[2] && (
-                      <Badge className="px-5 py-2 bg-[#f5f5f5] text-[#1a3c34] rounded-[40px] font-body-large-body-large-regular font-[number:var(--body-large-body-large-regular-font-weight)] text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-[var(--body-large-body-large-regular-line-height)] [font-style:var(--body-large-body-large-regular-font-style)]">
+                      <Badge className="px-3 sm:px-4 lg:px-5 py-1.5 sm:py-2 bg-[#f5f5f5] text-[#1a3c34] rounded-[40px] font-body-large-body-large-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)] touch-manipulation">
                         {step.tags[2]}
                       </Badge>
                     )}
@@ -125,9 +111,9 @@ export const PricingPlansSection = (): JSX.Element => {
 
           {/* CTA Button */}
           <div className="flex flex-col w-full items-center gap-2.5">
-            <Button className="flex w-[330px] items-center justify-center gap-3 px-10 py-8 bg-[#4a8b7b] rounded-[48px] text-white">
-              <ArrowRightIcon className="w-6 h-6" />
-              <span className="font-h6-h6-semibold font-[number:var(--h6-h6-semibold-font-weight)] text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] [font-style:var(--h6-h6-semibold-font-style)]">
+            <Button className="flex w-full max-w-[330px] items-center justify-center gap-3 px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 bg-[#4a8b7b] rounded-[48px] text-white touch-manipulation">
+              <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6" />
+              <span className="font-h6-h6-semibold text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
                 Request a Demo
               </span>
             </Button>

@@ -1,6 +1,5 @@
 import {
   ArrowRightIcon,
-  ChevronDownIcon,
   MailIcon,
   PhoneIcon,
 } from "lucide-react";
@@ -19,12 +18,12 @@ export const SubscriptionFormSection = (): JSX.Element => {
   // Contact information data
   const contactInfo = [
     {
-      icon: <PhoneIcon className="w-6 h-6" />,
+      icon: <PhoneIcon className="w-5 h-5 sm:w-6 sm:h-6" />,
       title: "+91 80 1019 1019",
       description: "The Best Way to get Faster Answer",
     },
     {
-      icon: <MailIcon className="w-6 h-6" />,
+      icon: <MailIcon className="w-5 h-5 sm:w-6 sm:h-6" />,
       title: "connect@redgirraffe.com",
       description: "We Are Always Ready to Help",
     },
@@ -45,123 +44,125 @@ export const SubscriptionFormSection = (): JSX.Element => {
     },
     {
       id: "phone",
-      label: "PhoneIcon Number",
-      placeholder: "Enter Your Company",
+      label: "Phone Number",
+      placeholder: "Enter Your Phone",
     },
   ];
 
   return (
-    <section className="flex flex-col items-center gap-[60px] px-20 py-[120px] bg-white w-full">
+    <section className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] px-4 sm:px-6 lg:px-8 xl:px-20 py-12 sm:py-16 lg:py-20 xl:py-[120px] bg-white w-full">
       {/* Heading Section */}
-      <div className="flex flex-col items-start gap-5 max-w-[800px] w-full">
-        <h2 className="w-full font-h3-h3-semibold font-[number:var(--h3-h3-semibold-font-weight)] text-[#1a3c34] text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-[var(--h3-h3-semibold-line-height)] [font-style:var(--h3-h3-semibold-font-style)]">
+      <div className="flex flex-col items-start gap-4 sm:gap-5 max-w-4xl w-full">
+        <h2 className="w-full font-h3-h3-semibold text-[#1a3c34] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]">
           Ready to Transform Your Business Payments?
         </h2>
 
-        <p className="w-full px-10 font-h6-h6-regular font-[number:var(--h6-h6-regular-font-weight)] text-[#4a8b7b] text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)] [font-style:var(--h6-h6-regular-font-style)]">
+        <p className="w-full px-4 sm:px-6 lg:px-10 font-h6-h6-regular text-[#4a8b7b] text-sm sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
           Join thousands of enterprises, banks, and PSPs simplifying payments
           with RedGirraffe
         </p>
       </div>
 
       {/* Contact Information */}
-      <div className="flex items-start justify-center gap-5 w-full max-w-[1280px]">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-5 w-full max-w-4xl">
         {contactInfo.map((info, index) => (
           <React.Fragment key={index}>
-            <div className="flex flex-col items-center gap-2.5 bg-white">
-              <div className="flex items-center gap-2.5 w-full">
-                <div className="w-8 h-8 flex items-center justify-center">
+            <div className="flex flex-col items-center gap-2.5 bg-white text-center sm:text-left">
+              <div className="flex items-center gap-2.5 w-full justify-center sm:justify-start">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center">
                   {info.icon}
                 </div>
-                <span className="font-h5-h5-semibold text-[length:var(--h5-h5-semibold-font-size)] leading-[var(--h5-h5-semibold-line-height)] whitespace-nowrap font-[number:var(--h5-h5-semibold-font-weight)] text-[#1b1b1b] tracking-[var(--h5-h5-semibold-letter-spacing)] [font-style:var(--h5-h5-semibold-font-style)]">
+                <span className="font-h5-h5-semibold text-[#1b1b1b] text-sm sm:text-base lg:text-lg xl:text-[length:var(--h5-h5-semibold-font-size)] leading-tight xl:leading-[var(--h5-h5-semibold-line-height)] tracking-[var(--h5-h5-semibold-letter-spacing)] whitespace-nowrap">
                   {info.title}
                 </span>
               </div>
-              <p className="font-body-large-body-large-regular font-[number:var(--body-large-body-large-regular-font-weight)] text-black text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-[var(--body-large-body-large-regular-line-height)] [font-style:var(--body-large-body-large-regular-font-style)]">
+              <p className="font-body-large-body-large-regular text-black text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)]">
                 {info.description}
               </p>
             </div>
             {index === 0 && (
-              <Separator orientation="vertical" className="h-[66px]" />
+              <Separator orientation="vertical" className="hidden sm:block h-[66px]" />
             )}
           </React.Fragment>
         ))}
       </div>
 
       {/* Subscription Form */}
-      <Card className="w-full bg-abu-bg border border-solid border-[#ebebeb] rounded-[20px]">
-        <CardContent className="p-10 flex flex-col items-start gap-[60px]">
-          <div className="flex flex-col items-start gap-5 w-full">
+      <Card className="w-full bg-abu-bg border border-solid border-[#ebebeb] rounded-[20px] max-w-6xl">
+        <CardContent className="p-6 sm:p-8 lg:p-10 flex flex-col items-start gap-8 sm:gap-10 lg:gap-[60px]">
+          <div className="flex flex-col items-start gap-4 sm:gap-5 w-full">
             {/* First row of form fields */}
-            <div className="flex w-full items-start gap-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 w-full">
               {formFields.slice(0, 2).map((field) => (
                 <div
                   key={field.id}
-                  className="flex flex-col items-start gap-2.5 flex-1"
+                  className="flex flex-col items-start gap-2.5 w-full"
                 >
                   <label
                     htmlFor={field.id}
-                    className="self-stretch font-body-medium-body-medium-regular font-[number:var(--body-medium-body-medium-regular-font-weight)] text-black text-[length:var(--body-medium-body-medium-regular-font-size)] tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-[var(--body-medium-body-medium-regular-line-height)] [font-style:var(--body-medium-body-medium-regular-font-style)]"
+                    className="self-stretch font-body-medium-body-medium-regular text-black text-sm sm:text-base lg:text-[length:var(--body-medium-body-medium-regular-font-size)] tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-medium-body-medium-regular-line-height)]"
                   >
                     {field.label}
                   </label>
                   <Input
                     id={field.id}
                     placeholder={field.placeholder}
-                    className="p-6 bg-white rounded-xl border border-solid border-[#ebebeb] font-body-large-body-large-regular text-text"
+                    className="p-4 sm:p-5 lg:p-6 bg-white rounded-xl border border-solid border-[#ebebeb] font-body-large-body-large-regular text-text text-sm sm:text-base touch-manipulation"
                   />
                 </div>
               ))}
             </div>
 
             {/* Second row of form fields */}
-            <div className="flex w-full items-start gap-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 w-full">
               {formFields.slice(2, 4).map((field) => (
                 <div
                   key={field.id}
-                  className="flex flex-col items-start gap-2.5 flex-1"
+                  className="flex flex-col items-start gap-2.5 w-full"
                 >
                   <label
                     htmlFor={field.id}
-                    className="self-stretch font-body-medium-body-medium-regular font-[number:var(--body-medium-body-medium-regular-font-weight)] text-black text-[length:var(--body-medium-body-medium-regular-font-size)] tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-[var(--body-medium-body-medium-regular-line-height)] [font-style:var(--body-medium-body-medium-regular-font-style)]"
+                    className="self-stretch font-body-medium-body-medium-regular text-black text-sm sm:text-base lg:text-[length:var(--body-medium-body-medium-regular-font-size)] tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-medium-body-medium-regular-line-height)]"
                   >
                     {field.label}
                   </label>
                   <Input
                     id={field.id}
                     placeholder={field.placeholder}
-                    className="p-6 bg-white rounded-xl border border-solid border-[#ebebeb] font-body-large-body-large-regular text-text"
+                    className="p-4 sm:p-5 lg:p-6 bg-white rounded-xl border border-solid border-[#ebebeb] font-body-large-body-large-regular text-text text-sm sm:text-base touch-manipulation"
                   />
                 </div>
               ))}
             </div>
 
             {/* Monthly Payment Volume dropdown */}
-            <div className="flex flex-col w-[580px] items-start gap-2.5">
+            <div className="flex flex-col w-full lg:w-[580px] items-start gap-2.5">
               <label
                 htmlFor="paymentVolume"
-                className="self-stretch font-body-medium-body-medium-regular font-[number:var(--body-medium-body-medium-regular-font-weight)] text-black text-[length:var(--body-medium-body-medium-regular-font-size)] tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-[var(--body-medium-body-medium-regular-line-height)] [font-style:var(--body-medium-body-medium-regular-font-style)]"
+                className="self-stretch font-body-medium-body-medium-regular text-black text-sm sm:text-base lg:text-[length:var(--body-medium-body-medium-regular-font-size)] tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-medium-body-medium-regular-line-height)]"
               >
                 Monthly Payment Volume
               </label>
               <Select>
                 <SelectTrigger
                   id="paymentVolume"
-                  className="p-6 bg-white rounded-xl border border-solid border-[#ebebeb] font-body-large-body-large-regular text-text flex justify-between items-center"
+                  className="p-4 sm:p-5 lg:p-6 bg-white rounded-xl border border-solid border-[#ebebeb] font-body-large-body-large-regular text-text flex justify-between items-center text-sm sm:text-base touch-manipulation"
                 >
-                  <SelectValue placeholder="Home Loan" />
+                  <SelectValue placeholder="Select Volume Range" />
                 </SelectTrigger>
               </Select>
             </div>
           </div>
 
           {/* Submit Button */}
-          <Button className="flex items-center justify-center gap-3 px-10 py-8 bg-[#4a8b7b] rounded-[48px] w-[330px]">
-            <ArrowRightIcon className="w-6 h-6 text-white" />
-            <span className="font-h6-h6-semibold font-[number:var(--h6-h6-semibold-font-weight)] text-white text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] whitespace-nowrap [font-style:var(--h6-h6-semibold-font-style)]">
-              Request a Demo
-            </span>
-          </Button>
+          <div className="flex justify-center lg:justify-start w-full">
+            <Button className="flex items-center justify-center gap-3 px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 bg-[#4a8b7b] rounded-[48px] w-full max-w-[330px] touch-manipulation">
+              <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+              <span className="font-h6-h6-semibold text-white text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] whitespace-nowrap">
+                Request a Demo
+              </span>
+            </Button>
+          </div>
         </CardContent>
       </Card>
     </section>

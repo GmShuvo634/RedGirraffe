@@ -106,169 +106,158 @@ const solutionsData = [
 
 export const LayoutSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col items-center gap-[60px] px-20 py-[120px] w-full bg-[#e0eae8]">
-      <div className="flex flex-col max-w-[800px] items-start gap-5">
-        <h2 className="w-full font-h3-h3-semibold text-[#1a3c34] text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-[var(--h3-h3-semibold-line-height)]">
+    <section className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] px-4 sm:px-6 lg:px-8 xl:px-20 py-12 sm:py-16 lg:py-20 xl:py-[120px] w-full bg-[#e0eae8]">
+      <div className="flex flex-col max-w-4xl items-start gap-4 sm:gap-5">
+        <h2 className="w-full font-h3-h3-semibold text-[#1a3c34] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]">
           Traditional B2B Payouts Fail—And What We Fix
         </h2>
       </div>
 
-      <div className="flex flex-col items-start gap-[120px] w-full">
+      <div className="flex flex-col items-start gap-16 sm:gap-20 lg:gap-24 xl:gap-[120px] w-full max-w-7xl">
         {/* Problem Section */}
-        <div className="flex flex-col items-center gap-10 w-full rounded-[20px]">
-          <div className="flex flex-col items-start justify-center gap-20 w-full">
-            <div className="flex items-start justify-center gap-20 w-full">
-              {/* Left Column - Problem Title and Visual */}
-              <div className="flex flex-col gap-[60px] items-center">
-                <div className="w-[400px] flex flex-col items-center gap-5">
-                  <div className="flex items-start gap-3 w-full">
-                    <h3 className="w-full font-h4-h4-semibold text-[#c42027] text-[length:var(--h4-h4-semibold-font-size)] text-center leading-[var(--h4-h4-semibold-line-height)]">
-                      The Problem
-                    </h3>
-                  </div>
-                  <Separator className="w-[400px] bg-[#1a3c34]" />
+        <div className="flex flex-col items-center gap-8 sm:gap-10 lg:gap-12 w-full rounded-[20px]">
+          <div className="flex flex-col lg:flex-row items-start justify-center gap-8 sm:gap-12 lg:gap-16 xl:gap-20 w-full">
+            {/* Left Column - Problem Title and Visual */}
+            <div className="flex flex-col gap-8 sm:gap-12 lg:gap-[60px] items-center w-full lg:w-auto">
+              <div className="w-full max-w-[400px] flex flex-col items-center gap-4 sm:gap-5">
+                <div className="flex items-start gap-3 w-full">
+                  <h3 className="w-full font-h4-h4-semibold text-[#c42027] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[length:var(--h4-h4-semibold-font-size)] text-center leading-tight xl:leading-[var(--h4-h4-semibold-line-height)]">
+                    The Problem
+                  </h3>
                 </div>
+                <Separator className="w-full max-w-[400px] bg-[#1a3c34]" />
+              </div>
 
-                <div className="flex w-[400px] items-center justify-center relative">
-                  <div className="flex flex-1 items-center relative">
-                    {/* <div className="flex flex-col items-center justify-center gap-[8.51px] flex-1 self-stretch">
-                      <span className="font-body-medium-body-medium-regular text-neutral-50 text-[length:var(--body-medium-body-medium-regular-font-size)] text-center tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-[var(--body-medium-body-medium-regular-line-height)]">
-                        Legacy Issues
-                      </span>
-                      <span className="font-body-medium-body-medium-bold text-neutral-100 text-[length:var(--body-medium-body-medium-bold-font-size)] text-center tracking-[var(--body-medium-body-medium-bold-letter-spacing)] leading-[var(--body-medium-body-medium-bold-line-height)]">
-                        Blocking Growth
-                      </span>
-                    </div> */}
-
-                    <div className="absolute w-[404px] h-[404px] -top-0.5 -left-0.5">
-                      <img
-                        className=""
-                        alt="Ellipse"
-                        src="/src/public/chart-container.png"
-                      />
-                    </div>
+              <div className="flex w-full max-w-[400px] items-center justify-center relative">
+                <div className="flex flex-1 items-center relative">
+                  <div className="w-full max-w-[404px] aspect-square">
+                    <img
+                      className="w-full h-full object-contain"
+                      alt="Problem visualization"
+                      src="/src/public/chart-container.png"
+                    />
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* Right Column - Problem Cards */}
-              <div className="flex flex-col items-start gap-5 flex-1">
-                <div className="flex items-start gap-5 w-full">
-                  {problemCards.slice(0, 2).map((card, index) => (
-                    <Card
-                      key={`top-card-${index}`}
-                      className={`flex-1 ${card.bgColor} rounded-[10px] border-[#ebebeb] overflow-hidden`}
-                    >
-                      <CardContent className="flex flex-col gap-2.5 p-0 pl-5 pr-10 py-5">
-                        <h4
-                          className={`self-stretch mt-[-1.00px] font-h6-h6-semibold ${card.titleColor} text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]`}
-                        >
-                          {card.title}
-                        </h4>
-                        <p
-                          className={`self-stretch font-h6-h6-regular ${card.descriptionColor} text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)]`}
-                        >
-                          {card.description}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
+            {/* Right Column - Problem Cards */}
+            <div className="flex flex-col items-start gap-3 sm:gap-4 lg:gap-5 flex-1 w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 w-full">
+                {problemCards.slice(0, 2).map((card, index) => (
+                  <Card
+                    key={`top-card-${index}`}
+                    className={`${card.bgColor} rounded-[10px] border-[#ebebeb] overflow-hidden touch-manipulation`}
+                  >
+                    <CardContent className="flex flex-col gap-2.5 p-4 sm:p-5">
+                      <h4
+                        className={`font-h6-h6-semibold ${card.titleColor} text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]`}
+                      >
+                        {card.title}
+                      </h4>
+                      <p
+                        className={`font-h6-h6-regular ${card.descriptionColor} text-xs sm:text-sm lg:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)]`}
+                      >
+                        {card.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
 
-                <Card
-                  className={`w-full h-32 ${problemCards[2].bgColor} rounded-[10px] border-[#ebebeb] overflow-hidden`}
-                >
-                  <CardContent className="flex flex-col gap-2.5 p-0 pl-5 pr-10 py-5">
-                    <h4
-                      className={`self-stretch font-h6-h6-semibold ${problemCards[2].titleColor} text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]`}
-                    >
-                      {problemCards[2].title}
-                    </h4>
-                    <p
-                      className={`self-stretch font-h6-h6-regular ${problemCards[2].descriptionColor} text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)]`}
-                    >
-                      {problemCards[2].description}
-                    </p>
-                  </CardContent>
-                </Card>
+              <Card
+                className={`w-full ${problemCards[2].bgColor} rounded-[10px] border-[#ebebeb] overflow-hidden`}
+              >
+                <CardContent className="flex flex-col gap-2.5 p-4 sm:p-5">
+                  <h4
+                    className={`font-h6-h6-semibold ${problemCards[2].titleColor} text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]`}
+                  >
+                    {problemCards[2].title}
+                  </h4>
+                  <p
+                    className={`font-h6-h6-regular ${problemCards[2].descriptionColor} text-xs sm:text-sm lg:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)]`}
+                  >
+                    {problemCards[2].description}
+                  </p>
+                </CardContent>
+              </Card>
 
-                <div className="flex items-start gap-5 w-full">
-                  {problemCards.slice(3, 5).map((card, index) => (
-                    <Card
-                      key={`middle-card-${index}`}
-                      className={`flex-1 ${card.bgColor} rounded-[10px] border-[#ebebeb] overflow-hidden`}
-                    >
-                      <CardContent className="flex flex-col gap-2.5 p-0 pl-5 pr-10 py-5">
-                        <h4
-                          className={`self-stretch mt-[-1.00px] font-h6-h6-semibold ${card.titleColor} text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]`}
-                        >
-                          {card.title}
-                        </h4>
-                        <p
-                          className={`self-stretch font-h6-h6-regular ${card.descriptionColor} text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)]`}
-                        >
-                          {card.description}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 w-full">
+                {problemCards.slice(3, 5).map((card, index) => (
+                  <Card
+                    key={`middle-card-${index}`}
+                    className={`${card.bgColor} rounded-[10px] border-[#ebebeb] overflow-hidden touch-manipulation`}
+                  >
+                    <CardContent className="flex flex-col gap-2.5 p-4 sm:p-5">
+                      <h4
+                        className={`font-h6-h6-semibold ${card.titleColor} text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]`}
+                      >
+                        {card.title}
+                      </h4>
+                      <p
+                        className={`font-h6-h6-regular ${card.descriptionColor} text-xs sm:text-sm lg:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)]`}
+                      >
+                        {card.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
 
-                <div className="flex items-start gap-5 w-full">
-                  {problemCards.slice(5, 7).map((card, index) => (
-                    <Card
-                      key={`bottom-card-${index}`}
-                      className={`flex-1 ${card.bgColor} rounded-[10px] border-[#ebebeb] overflow-hidden`}
-                    >
-                      <CardContent className="flex flex-col gap-2.5 p-0 pl-5 pr-10 py-5">
-                        <h4
-                          className={`self-stretch mt-[-1.00px] font-h6-h6-semibold ${card.titleColor} text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]`}
-                        >
-                          {card.title}
-                        </h4>
-                        <p
-                          className={`self-stretch font-h6-h6-regular ${card.descriptionColor} text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)]`}
-                        >
-                          {card.description}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 w-full">
+                {problemCards.slice(5, 7).map((card, index) => (
+                  <Card
+                    key={`bottom-card-${index}`}
+                    className={`${card.bgColor} rounded-[10px] border-[#ebebeb] overflow-hidden touch-manipulation`}
+                  >
+                    <CardContent className="flex flex-col gap-2.5 p-4 sm:p-5">
+                      <h4
+                        className={`font-h6-h6-semibold ${card.titleColor} text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]`}
+                      >
+                        {card.title}
+                      </h4>
+                      <p
+                        className={`font-h6-h6-regular ${card.descriptionColor} text-xs sm:text-sm lg:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)]`}
+                      >
+                        {card.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             </div>
           </div>
         </div>
 
         {/* Solutions Section */}
-        <div className="flex flex-col items-center gap-[60px] w-full rounded-[20px]">
-          <div className="max-w-[800px] flex flex-col items-center gap-5">
-            <div className="flex w-[440px] items-center gap-3">
-              <h3 className="w-full font-h4-h4-semibold text-[#4a8b7b] text-[length:var(--h4-h4-semibold-font-size)] text-center leading-[var(--h4-h4-semibold-line-height)]">
+        <div className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] w-full rounded-[20px]">
+          <div className="max-w-4xl flex flex-col items-center gap-4 sm:gap-5">
+            <div className="flex w-full max-w-[440px] items-center gap-3">
+              <h3 className="w-full font-h4-h4-semibold text-[#4a8b7b] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[length:var(--h4-h4-semibold-font-size)] text-center leading-tight xl:leading-[var(--h4-h4-semibold-line-height)]">
                 Our Solutions
               </h3>
             </div>
-            <Separator className="w-[540px] bg-[#4a8b7b]" />
+            <Separator className="w-full max-w-[540px] bg-[#4a8b7b]" />
           </div>
 
-          <div className="flex items-start gap-5 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-5 w-full">
             {solutionsData.map((solution, index) => (
               <Card
                 key={`solution-${index}`}
-                className={`flex-1 h-[733px] ${solution.bgColor} rounded-[20px] ${solution.hasBorder ? "border border-solid border-[#4a8b7b]" : ""}`}
+                className={`flex flex-col h-auto lg:h-[733px] ${solution.bgColor} rounded-[20px] ${solution.hasBorder ? "border border-solid border-[#4a8b7b]" : ""} touch-manipulation`}
               >
-                <CardContent className="flex flex-col items-start gap-10 p-10">
-                  <h4 className="w-full font-h5-h5-semibold text-black text-[length:var(--h5-h5-semibold-font-size)] tracking-[var(--h5-h5-semibold-letter-spacing)] leading-[var(--h5-h5-semibold-line-height)]">
+                <CardContent className="flex flex-col items-start gap-6 sm:gap-8 lg:gap-10 p-6 sm:p-8 lg:p-10 h-full">
+                  <h4 className="w-full font-h5-h5-semibold text-black text-base sm:text-lg lg:text-xl xl:text-[length:var(--h5-h5-semibold-font-size)] tracking-[var(--h5-h5-semibold-letter-spacing)] leading-[var(--h5-h5-semibold-line-height)]">
                     {solution.title}
                   </h4>
-                  <div className="flex flex-col items-start gap-5 w-full">
+                  <div className="flex flex-col items-start gap-4 sm:gap-5 w-full flex-1">
                     {solution.items.map((item, itemIndex) => (
                       <div
                         key={`solution-item-${index}-${itemIndex}`}
                         className="flex items-start gap-2.5 w-full"
                       >
-                        <img className="w-6 h-6" alt="Label" src="/src/public/thin-arrow.svg" />
-                        <p className="flex-1 mt-[-1.00px] font-h6-h6-regular text-text text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)]">
+                        <img className="w-5 h-5 sm:w-6 sm:h-6 mt-0.5 flex-shrink-0" alt="Label" src="/src/public/thin-arrow.svg" />
+                        <p className="flex-1 font-h6-h6-regular text-text text-xs sm:text-sm lg:text-base xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
                           {item}
                         </p>
                       </div>
@@ -280,9 +269,9 @@ export const LayoutSection = (): JSX.Element => {
           </div>
 
           <div className="flex flex-col items-center gap-2.5 w-full">
-            <Button className="flex items-center justify-center gap-3 px-10 py-8 bg-[#4a8b7b] rounded-[48px] text-white">
-              <ArrowRightIcon className="w-6 h-6" />
-              <span className="font-h6-h6-semibold text-white text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] whitespace-nowrap">
+            <Button className="flex items-center justify-center gap-3 px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 bg-[#4a8b7b] rounded-[48px] text-white w-full max-w-[330px] touch-manipulation">
+              <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6" />
+              <span className="font-h6-h6-semibold text-white text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] whitespace-nowrap">
                 Request a Demo
               </span>
             </Button>
