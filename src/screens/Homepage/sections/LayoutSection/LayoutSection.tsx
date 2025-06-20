@@ -129,7 +129,7 @@ export const LayoutSection = (): JSX.Element => {
               </div>
 
               <div className="flex w-full max-w-[400px] items-center justify-center relative">
-                <div className="flex flex-1 items-center relative">
+                <div className="flex flex-1 items-center justify-center relative">
                   <div className="w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[404px] aspect-square">
                     <img
                       className="w-full h-full object-contain"

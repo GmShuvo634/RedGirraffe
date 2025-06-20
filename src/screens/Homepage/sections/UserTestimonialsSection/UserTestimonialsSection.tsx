@@ -40,11 +40,11 @@ export const UserTestimonialsSection = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-5 max-w-7xl w-full justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-4 lg:gap-4 max-w-7xl w-full justify-center">
         {testimonialData.map((item, index) => (
           <React.Fragment key={index}>
             {index > 0 && (
-              <Separator orientation="vertical" className="hidden md:block h-[184px] bg-[#00d959] w-[1px] justify-self-center" />
+              <Separator orientation="vertical" className="hidden md:block lg:hidden h-[184px] bg-[#00d959] w-[1px] justify-self-center" />
             )}
             <Card className="flex flex-col w-full items-start p-6 sm:p-8 lg:p-10 bg-white rounded-[10px] border-none touch-manipulation">
               <CardContent className="flex flex-col items-start gap-4 sm:gap-5 p-0 w-full">
@@ -71,6 +71,9 @@ export const UserTestimonialsSection = (): JSX.Element => {
                 </div>
               </CardContent>
             </Card>
+            {index < testimonialData.length - 1 && (
+              <Separator orientation="horizontal" className="block sm:hidden h-[1px] bg-[#00d959] w-[100%] justify-self-center lg:hidden" />
+            )}
           </React.Fragment>
         ))}
       </div>

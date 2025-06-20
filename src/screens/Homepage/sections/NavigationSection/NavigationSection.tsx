@@ -72,7 +72,7 @@ export const NavigationSection = (): JSX.Element => {
     <section className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] py-12 sm:py-16 lg:py-20 xl:py-[120px] px-4 sm:px-6 lg:px-8 xl:px-20 w-full">
       <div className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] max-w-7xl">
         <header className="flex flex-col items-center gap-4 sm:gap-5 max-w-4xl">
-          <h2 className="w-full font-h3-h3-semibold text-[#1a3c34] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]">
+          <h2 className="w-full font-h4-h4-semibold text-[#1a3c34] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h4-h4-semibold-font-size)] text-center tracking-[var(--h4-h4-semibold-letter-spacing)] leading-tight xl:leading-[var(--h4-h4-semibold-line-height)]">
             Industries We Serve
           </h2>
           <p className="font-h6-h6-regular text-[#4a8b7b] text-center px-4 sm:px-6 lg:px-10 text-sm sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
@@ -80,7 +80,7 @@ export const NavigationSection = (): JSX.Element => {
           </p>
         </header>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5 lg:gap-6 w-full">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5 lg:gap-6 w-full">
           {industries.map((industry, index) => (
             <Card
               key={`${industry.title}-${index}`}

@@ -38,7 +38,7 @@ export const HeroSection = (): JSX.Element => {
             </div>
 
             {/* Navigation Links - Hidden on mobile and tablet */}
-            <div className="hidden xl:flex items-center gap-6 2xl:gap-10">
+            <div className="hidden lg:flex items-center gap-6 xl:gap-10">
               {navItems.map((item, index) => (
                 <Button key={index} variant="ghost" className="p-0 h-auto hover:bg-transparent touch-manipulation">
                   <div className="font-body-large-body-large-semibold text-text text-sm lg:text-base xl:text-[length:var(--body-large-body-large-semibold-font-size)] text-center tracking-[var(--body-large-body-large-semibold-letter-spacing)] leading-[var(--body-large-body-large-semibold-line-height)] hover:text-app-primary transition-colors">
@@ -50,17 +50,17 @@ export const HeroSection = (): JSX.Element => {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-2 xl:gap-3">
             {/* Mobile Menu Button - Show only on mobile */}
             <Button
               variant="ghost"
-              className="xl:hidden w-10 h-10 p-2 touch-manipulation"
+              className="block lg:hidden w-10 h-10 p-2 touch-manipulation"
             >
               <MenuIcon className="w-6 h-6 text-black" />
             </Button>
             
             {/* Desktop Buttons - Hidden on mobile */}
-            <div className="hidden sm:flex items-center gap-2 sm:gap-3">
+            <div className="hidden lg:flex items-center gap-2 xl:gap-3">
               <Button
                 variant="outline"
                 className="w-20 sm:w-20 lg:w-24 xl:w-[110px] h-10 sm:h-10 lg:h-10 px-3 sm:px-3 lg:px-6 py-2 lg:py-3 rounded-[64px] border border-solid border-[#ebebeb] text-sm touch-manipulation"

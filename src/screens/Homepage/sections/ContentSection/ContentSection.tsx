@@ -84,7 +84,7 @@ export const ContentSection = (): JSX.Element => {
             <TabsContent value="vendor" className="mt-6 sm:mt-8 lg:mt-[60px]">
               <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-10">
-                  {serviceCategories.slice(0, 6).map((category, index) => (
+                  {serviceCategories.slice(0, 7).map((category, index) => (
                     <Card
                       key={index}
                       className="bg-textwhite rounded-[10px] border-none hover:shadow-lg transition-shadow touch-manipulation"
@@ -106,26 +106,6 @@ export const ContentSection = (): JSX.Element => {
                       </CardContent>
                     </Card>
                   ))}
-                </div>
-
-                <div className="flex justify-center">
-                  <Card className="w-full max-w-[400px] bg-textwhite rounded-[10px] border-none touch-manipulation">
-                    <CardContent className="flex flex-col items-start gap-4 sm:gap-6 lg:gap-10 p-6 sm:p-6 lg:p-10">
-                      <img
-                        className="w-12 h-12 sm:w-14 sm:h-14 lg:w-18 lg:h-18"
-                        alt="Category icon"
-                        src={serviceCategories[6].icon}
-                      />
-                      <div className="flex flex-col items-start gap-2.5 w-full">
-                        <h3 className="font-h5-h5-semibold text-[#1b1b1b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h5-h5-semibold-font-size)] tracking-[var(--h5-h5-semibold-letter-spacing)] leading-tight xl:leading-[var(--h5-h5-semibold-line-height)]">
-                          {serviceCategories[6].title}
-                        </h3>
-                        <p className="font-body-large-body-large-regular text-text text-sm sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)]">
-                          {serviceCategories[6].description}
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
                 </div>
               </div>
             </TabsContent>
