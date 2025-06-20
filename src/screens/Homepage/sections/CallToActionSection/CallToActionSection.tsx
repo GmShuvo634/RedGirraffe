@@ -15,7 +15,7 @@ const pricingCards = [
   {
     title: "Bank Partnership",
     description:
-      "Work directly with your existing commercial bank for seamless integration and competitive rates",
+      "Reach out to RedGirraffe to engage in the B2B high-value global product partnership",
     features: [
       "Existing banking relationship",
       "Negotiated commercial rates",
@@ -29,8 +29,8 @@ const pricingCards = [
     description:
       "High-value recurring payment capability across all major global payment networks",
     features: [
-      "Visa Global Network",
-      "MasterCard Worldwide",
+      "Partnered with leading global payment rails",
+      "Compliance managed by world-class PSPs",
       "Alternative Payment Methods",
       "97+ Country Coverage",
     ],
@@ -40,9 +40,9 @@ const pricingCards = [
   {
     title: "Authorised PSPs",
     description:
-      "Connect through RedGirraffe's network of certified Payment Service Providers globally",
+      "Partner with RedGirraffe to unlock large-scale high-value recurring product across geographies where you operate",
     features: [
-      "Tier-I PSP network",
+      "Tier 1 PSPs only",
       "Competitive interchange",
       "Local market expertise",
     ],

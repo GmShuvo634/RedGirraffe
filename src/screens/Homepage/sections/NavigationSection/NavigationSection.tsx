@@ -10,8 +10,8 @@ const industries = [
     description: "Optimize infrastructure payments.",
   },
   {
-    title: "Insurance",
-    description: "Optimize infrastructure payments.",
+    title: "Logistics",
+    description: "Fund shipping and contractor payments.",
   },
   {
     title: "Manufacturing",
@@ -30,8 +30,8 @@ const industries = [
     description: "Automate subscription payments.",
   },
   {
-    title: "Logistics",
-    description: "Fund shipping and contractor payments.",
+    title: "Insurance",
+    description: "Optimize infrastructure payments.",
   },
   {
     title: "Healthcare",

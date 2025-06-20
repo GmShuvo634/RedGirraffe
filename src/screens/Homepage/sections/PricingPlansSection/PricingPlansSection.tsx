@@ -21,7 +21,7 @@ const processSteps = [
   {
     title: "Execute & Monitor",
     description:
-      "Authorized makers release payouts. API triggers and card executes. Instant payout. Global FX support. Fully auditable.",
+      "Authorized checkers release payouts. API triggers and card executes. Instant payout. Global FX support. Fully auditable.",
     tags: ["Full Audit Trail", "Global FX", "Instant Execution"],
   },
 ];

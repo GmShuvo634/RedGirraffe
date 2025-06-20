@@ -2,16 +2,13 @@ import {
   ArrowRightIcon,
   MailIcon,
   PhoneIcon,
+  MessageCircleIcon,
 } from "lucide-react";
 import React from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Input } from "../../../../components/ui/input";
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-} from "../../../../components/ui/select";
+
 import { Separator } from "../../../../components/ui/separator";
 
 export const SubscriptionFormSection = (): JSX.Element => {
@@ -19,8 +16,13 @@ export const SubscriptionFormSection = (): JSX.Element => {
   const contactInfo = [
     {
       icon: <PhoneIcon className="w-5 h-5 sm:w-6 sm:h-6" />,
-      title: "+91 80 1019 1019",
+      title: "+44 330 113 1707",
       description: "The Best Way to get Faster Answer",
+    },
+    {
+      icon: <MessageCircleIcon className="w-5 h-5 sm:w-6 sm:h-6" />,
+      title: "+91 80 1019 1019",
+      description: "WhatsApp Support Available",
     },
     {
       icon: <MailIcon className="w-5 h-5 sm:w-6 sm:h-6" />,
@@ -64,7 +66,7 @@ export const SubscriptionFormSection = (): JSX.Element => {
       </div>
 
       {/* Contact Information */}
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-5 w-full max-w-4xl">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-5 w-full max-w-6xl">
         {contactInfo.map((info, index) => (
           <React.Fragment key={index}>
             <div className="flex flex-col items-center gap-2.5 bg-white text-center sm:text-left">
@@ -80,8 +82,8 @@ export const SubscriptionFormSection = (): JSX.Element => {
                 {info.description}
               </p>
             </div>
-            {index === 0 && (
-              <Separator orientation="vertical" className="hidden sm:block h-[66px]" />
+            {index < contactInfo.length - 1 && (
+              <Separator orientation="vertical" className="hidden lg:block h-[66px]" />
             )}
           </React.Fragment>
         ))}
@@ -135,23 +137,7 @@ export const SubscriptionFormSection = (): JSX.Element => {
               ))}
             </div>
 
-            {/* Monthly Payment Volume dropdown */}
-            <div className="flex flex-col w-full lg:w-[580px] items-start gap-2.5">
-              <label
-                htmlFor="paymentVolume"
-                className="self-stretch font-body-medium-body-medium-regular text-black text-sm sm:text-base lg:text-[length:var(--body-medium-body-medium-regular-font-size)] tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-medium-body-medium-regular-line-height)]"
-              >
-                Monthly Payment Volume
-              </label>
-              <Select>
-                <SelectTrigger
-                  id="paymentVolume"
-                  className="p-4 sm:p-5 lg:p-6 bg-white rounded-xl border border-solid border-[#ebebeb] font-body-large-body-large-regular text-text flex justify-between items-center text-sm sm:text-base touch-manipulation"
-                >
-                  <SelectValue placeholder="Select Volume Range" />
-                </SelectTrigger>
-              </Select>
-            </div>
+
           </div>
 
           {/* Submit Button */}

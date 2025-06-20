@@ -233,7 +233,7 @@ export const LayoutSection = (): JSX.Element => {
         <div className="flex flex-col items-center gap-8 sm:gap-12 lg:gap-[60px] w-full rounded-[20px]">
           <div className="max-w-4xl flex flex-col items-center gap-4 sm:gap-5">
             <div className="flex w-full max-w-[440px] items-center gap-3">
-              <h3 className="w-full font-h4-h4-semibold text-[#4a8b7b] text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-[length:var(--h4-h4-semibold-font-size)] text-center leading-tight xl:leading-[var(--h4-h4-semibold-line-height)]">
+              <h3 className="w-full font-h3-h3-semibold text-[#4a8b7b] text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]">
                 Our Solutions
               </h3>
             </div>

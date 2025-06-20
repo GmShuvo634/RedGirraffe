@@ -61,7 +61,7 @@ const featureRows = [
         "Adheres to the highest standards for secure card transactions.",
     },
     {
-      title: "AI-Powered Smart AI",
+      title: "AI-Powered Smarts",
       description: "Smart fraud detection and spend optimization.",
     },
     {

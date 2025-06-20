@@ -10,13 +10,86 @@ import {
 import { ArrowRightIcon } from "lucide-react";
 
 export const ContentSection = (): JSX.Element => {
-  // Service category data
-  const serviceCategories = [
+  // Service category data for Vendor & Payments tab
+  const vendorCategories = [
+    {
+      icon: "/src/public/equalizer.svg",
+      title: "Vendor Payments",
+      description: "Pay vendors on time and avail cash discounts on bills",
+    },
+    {
+      icon: "/src/public/equalizer.svg",
+      title: "Cleaning, Security & Facility Services",
+      description: "Fund premises upkeep",
+    },
+    {
+      icon: "/src/public/equalizer.svg",
+      title: "Event & Sponsorship Payments",
+      description: "Support events, sponsorships, and promotional activities",
+    },
+    {
+      icon: "/src/public/equalizer.svg",
+      title: "Marketing & Advertising",
+      description: "Settle bills for campaigns and creative services",
+    },
+    {
+      icon: "/src/public/equalizer.svg",
+      title: "Logistics & Shipping",
+      description: "Fund freight and transportation services",
+    },
+    {
+      icon: "/src/public/equalizer.svg",
+      title: "Professional Services",
+      description: "Pay consultants, auditors, and advisors efficiently",
+    },
+    {
+      icon: "/src/public/equalizer.svg",
+      title: "Contractor Payouts",
+      description: "Pay freelancers and service partners",
+    },
+  ];
+
+  // Service category data for Business Operations tab
+  const businessCategories = [
     {
       icon: "/src/public/equalizer.svg",
       title: "Data Centres & SaaS Tools",
       description: "Streamline hosting and software costs",
     },
+    {
+      icon: "/src/public/equalizer.svg",
+      title: "Cleaning, Security & Facility Services",
+      description: "Fund premises upkeep",
+    },
+    {
+      icon: "/src/public/equalizer.svg",
+      title: "Event & Sponsorship Payments",
+      description: "Support events, sponsorships, and promotional activities",
+    },
+    {
+      icon: "/src/public/equalizer.svg",
+      title: "Marketing & Advertising",
+      description: "Settle bills for campaigns and creative services",
+    },
+    {
+      icon: "/src/public/equalizer.svg",
+      title: "Logistics & Shipping",
+      description: "Fund freight and transportation services",
+    },
+    {
+      icon: "/src/public/equalizer.svg",
+      title: "Professional Services",
+      description: "Pay consultants, auditors, and advisors efficiently",
+    },
+    {
+      icon: "/src/public/equalizer.svg",
+      title: "Vendor/Contractor Payouts",
+      description: "Pay freelancers and service partners",
+    },
+  ];
+
+  // Service category data for Global tab (same as original)
+  const globalCategories = [
     {
       icon: "/src/public/equalizer.svg",
       title: "Cleaning, Security & Facility Services",
@@ -84,7 +157,7 @@ export const ContentSection = (): JSX.Element => {
             <TabsContent value="vendor" className="mt-6 sm:mt-8 lg:mt-[60px]">
               <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-10">
-                  {serviceCategories.slice(0, 7).map((category, index) => (
+                  {vendorCategories.slice(0, 7).map((category, index) => (
                     <Card
                       key={index}
                       className="bg-textwhite rounded-[10px] border-none hover:shadow-lg transition-shadow touch-manipulation"
@@ -113,7 +186,7 @@ export const ContentSection = (): JSX.Element => {
             <TabsContent value="business" className="mt-6 sm:mt-8 lg:mt-[60px]">
               <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-10">
-                  {serviceCategories.slice(0, 6).map((category, index) => (
+                  {businessCategories.slice(0, 6).map((category, index) => (
                     <Card
                       key={index}
                       className="bg-textwhite rounded-[10px] border-none hover:shadow-lg transition-shadow touch-manipulation"
@@ -143,14 +216,14 @@ export const ContentSection = (): JSX.Element => {
                       <img
                         className="w-12 h-12 sm:w-14 sm:h-14 lg:w-18 lg:h-18"
                         alt="Category icon"
-                        src={serviceCategories[6].icon}
+                        src={businessCategories[6].icon}
                       />
                       <div className="flex flex-col items-start gap-2.5 w-full">
                         <h3 className="font-h6-h6-semibold text-[#1b1b1b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-tight xl:leading-[var(--h6-h6-semibold-line-height)]">
-                          {serviceCategories[6].title}
+                          {businessCategories[6].title}
                         </h3>
                         <p className="font-body-large-body-large-regular text-text text-sm sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)]">
-                          {serviceCategories[6].description}
+                          {businessCategories[6].description}
                         </p>
                       </div>
                     </CardContent>
@@ -162,7 +235,7 @@ export const ContentSection = (): JSX.Element => {
             <TabsContent value="global" className="mt-6 sm:mt-8 lg:mt-[60px]">
               <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-10">
-                  {serviceCategories.slice(0, 6).map((category, index) => (
+                  {globalCategories.slice(0, 6).map((category, index) => (
                     <Card
                       key={index}
                       className="bg-textwhite rounded-[10px] border-none touch-manipulation"
@@ -192,14 +265,14 @@ export const ContentSection = (): JSX.Element => {
                       <img
                         className="w-12 h-12 sm:w-14 sm:h-14 lg:w-18 lg:h-18"
                         alt="Category icon"
-                        src={serviceCategories[6].icon}
+                        src={globalCategories[5].icon}
                       />
                       <div className="flex flex-col items-start gap-2.5 w-full">
                         <h3 className="font-h6-h6-semibold text-[#1b1b1b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-tight xl:leading-[var(--h6-h6-semibold-line-height)]">
-                          {serviceCategories[6].title}
+                          {globalCategories[5].title}
                         </h3>
                         <p className="font-body-large-body-large-regular text-text text-sm sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)]">
-                          {serviceCategories[6].description}
+                          {globalCategories[5].description}
                         </p>
                       </div>
                     </CardContent>

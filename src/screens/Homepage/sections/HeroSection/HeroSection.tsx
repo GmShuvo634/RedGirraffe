@@ -140,7 +140,7 @@ export const HeroSection = (): JSX.Element => {
               >
                 <ArrowRightIcon className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
                 <span className="font-h6-h6-semibold text-white tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
-                  Contact Us
+                  Contact Sales
                 </span>
               </Button>
             </div>

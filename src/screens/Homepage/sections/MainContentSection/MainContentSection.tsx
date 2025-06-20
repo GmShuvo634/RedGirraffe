@@ -31,8 +31,8 @@ const bankFeatures = [
     description: "Reduce fees",
   },
   {
-    title: "Cash Flow Boost",
-    description: "Bill discounting benefits",
+    title: "Customer Loyalty",
+    description: "Build stickiness",
   },
 ];
 
@@ -63,8 +63,8 @@ const enterpriseFeatures = [
     description: "Embedded tax data",
   },
   {
-    title: "Customer Loyalty",
-    description: "Build stickiness",
+    title: "Cash Flow Boost",
+    description: "Bill discounting benefits",
   },
 ];
 
