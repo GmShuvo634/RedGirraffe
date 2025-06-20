@@ -96,7 +96,7 @@ export const ContentSection = (): JSX.Element => {
                           src={category.icon}
                         />
                         <div className="flex flex-col items-start gap-2.5 w-full">
-                          <h3 className="font-h5-h5-semibold text-[#1b1b1b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h5-h5-semibold-font-size)] tracking-[var(--h5-h5-semibold-letter-spacing)] leading-tight xl:leading-[var(--h5-h5-semibold-line-height)]">
+                          <h3 className="font-h6-h6-semibold text-[#1b1b1b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-tight xl:leading-[var(--h6-h6-semibold-line-height)]">
                             {category.title}
                           </h3>
                           <p className="font-body-large-body-large-regular text-text text-sm sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)]">
@@ -125,7 +125,7 @@ export const ContentSection = (): JSX.Element => {
                           src={category.icon}
                         />
                         <div className="flex flex-col items-start gap-2.5 w-full">
-                          <h3 className="font-h5-h5-semibold text-[#1b1b1b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h5-h5-semibold-font-size)] tracking-[var(--h5-h5-semibold-letter-spacing)] leading-tight xl:leading-[var(--h5-h5-semibold-line-height)]">
+                          <h3 className="font-h6-h6-semibold text-[#1b1b1b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-tight xl:leading-[var(--h6-h6-semibold-line-height)]">
                             {category.title}
                           </h3>
                           <p className="font-body-large-body-large-regular text-text text-sm sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)]">
@@ -146,7 +146,7 @@ export const ContentSection = (): JSX.Element => {
                         src={serviceCategories[6].icon}
                       />
                       <div className="flex flex-col items-start gap-2.5 w-full">
-                        <h3 className="font-h5-h5-semibold text-[#1b1b1b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h5-h5-semibold-font-size)] tracking-[var(--h5-h5-semibold-letter-spacing)] leading-tight xl:leading-[var(--h5-h5-semibold-line-height)]">
+                        <h3 className="font-h6-h6-semibold text-[#1b1b1b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-tight xl:leading-[var(--h6-h6-semibold-line-height)]">
                           {serviceCategories[6].title}
                         </h3>
                         <p className="font-body-large-body-large-regular text-text text-sm sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)]">
@@ -174,7 +174,7 @@ export const ContentSection = (): JSX.Element => {
                           src={category.icon}
                         />
                         <div className="flex flex-col items-start gap-2.5 w-full">
-                          <h3 className="font-h5-h5-semibold text-[#1b1b1b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h5-h5-semibold-font-size)] tracking-[var(--h5-h5-semibold-letter-spacing)] leading-tight xl:leading-[var(--h5-h5-semibold-line-height)]">
+                          <h3 className="font-h6-h6-semibold text-[#1b1b1b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-tight xl:leading-[var(--h6-h6-semibold-line-height)]">
                             {category.title}
                           </h3>
                           <p className="font-body-large-body-large-regular text-text text-sm sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)]">
@@ -195,7 +195,7 @@ export const ContentSection = (): JSX.Element => {
                         src={serviceCategories[6].icon}
                       />
                       <div className="flex flex-col items-start gap-2.5 w-full">
-                        <h3 className="font-h5-h5-semibold text-[#1b1b1b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h5-h5-semibold-font-size)] tracking-[var(--h5-h5-semibold-letter-spacing)] leading-tight xl:leading-[var(--h5-h5-semibold-line-height)]">
+                        <h3 className="font-h6-h6-semibold text-[#1b1b1b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-tight xl:leading-[var(--h6-h6-semibold-line-height)]">
                           {serviceCategories[6].title}
                         </h3>
                         <p className="font-body-large-body-large-regular text-text text-sm sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)]">

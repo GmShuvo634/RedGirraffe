@@ -118,7 +118,7 @@ export const LayoutSection = (): JSX.Element => {
         <div className="flex flex-col items-center gap-6 sm:gap-8 lg:gap-12 w-full rounded-[20px]">
           <div className="flex flex-col lg:flex-row items-start justify-center gap-6 sm:gap-8 lg:gap-12 xl:gap-20 w-full">
             {/* Left Column - Problem Title and Visual */}
-            <div className="flex flex-col gap-6 sm:gap-8 lg:gap-[60px] items-center w-full lg:w-auto order-2 lg:order-1">
+            <div className="flex flex-col gap-6 sm:gap-8 lg:gap-[60px] items-center w-full lg:w-auto order-1 lg:order-1">
               <div className="w-full max-w-[400px] flex flex-col items-center gap-4 sm:gap-5">
                 <div className="flex items-start gap-3 w-full">
                   <h3 className="w-full font-h4-h4-semibold text-[#c42027] text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-[length:var(--h4-h4-semibold-font-size)] text-center leading-tight xl:leading-[var(--h4-h4-semibold-line-height)]">
@@ -142,7 +142,7 @@ export const LayoutSection = (): JSX.Element => {
             </div>
 
             {/* Right Column - Problem Cards */}
-            <div className="flex flex-col items-start gap-3 sm:gap-4 lg:gap-5 flex-1 w-full order-1 lg:order-2">
+            <div className="flex flex-col items-start gap-3 sm:gap-4 lg:gap-5 flex-1 w-full order-2 lg:order-2">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 w-full">
                 {problemCards.slice(0, 2).map((card, index) => (
                   <Card

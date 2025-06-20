@@ -179,5 +179,159 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    /* Improve text rendering on mobile */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Mobile-first responsive typography */
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    font-weight: 600;
+  }
+
+  /* Ensure images are responsive by default */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Better touch targets for mobile */
+  button, [role="button"], input[type="submit"], input[type="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Improve form inputs on mobile */
+  input, textarea, select {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  /* Better focus states for accessibility */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Mobile-optimized typography classes */
+  .responsive-h1 {
+    @apply text-h1-mobile sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
+    @apply font-bold leading-tight;
+  }
+
+  .responsive-h2 {
+    @apply text-h2-mobile sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl;
+    @apply font-semibold leading-tight;
+  }
+
+  .responsive-h3 {
+    @apply text-h3-mobile sm:text-lg md:text-xl lg:text-2xl xl:text-3xl;
+    @apply font-semibold leading-tight;
+  }
+
+  .responsive-h4 {
+    @apply text-h4-mobile sm:text-base md:text-lg lg:text-xl xl:text-2xl;
+    @apply font-medium leading-tight;
+  }
+
+  .responsive-h5 {
+    @apply text-h5-mobile sm:text-sm md:text-base lg:text-lg xl:text-xl;
+    @apply font-medium leading-tight;
+  }
+
+  .responsive-h6 {
+    @apply text-h6-mobile sm:text-xs md:text-sm lg:text-base xl:text-lg;
+    @apply font-medium leading-tight;
+  }
+
+  .responsive-body {
+    @apply text-sm sm:text-base lg:text-lg;
+    @apply leading-relaxed;
+  }
+
+  .responsive-small {
+    @apply text-xs sm:text-sm lg:text-base;
+    @apply leading-normal;
+  }
+
+  /* Mobile-optimized card layouts */
+  .card-mobile {
+    @apply p-4 sm:p-6 lg:p-8;
+    @apply rounded-lg sm:rounded-xl lg:rounded-2xl;
+    @apply shadow-sm hover:shadow-md transition-shadow;
+  }
+
+  /* Touch-friendly buttons */
+  .btn-mobile {
+    @apply btn-touch;
+    @apply rounded-lg sm:rounded-xl;
+    @apply font-medium;
+    @apply transition-all duration-200;
+    @apply active:scale-95;
+  }
+
+  .btn-mobile-lg {
+    @apply btn-touch-lg;
+    @apply rounded-xl sm:rounded-2xl;
+    @apply font-semibold;
+    @apply transition-all duration-200;
+    @apply active:scale-95;
+  }
+
+  /* Responsive form inputs */
+  .input-responsive {
+    @apply input-mobile;
+    @apply rounded-lg sm:rounded-xl;
+    @apply border border-input;
+    @apply bg-background;
+    @apply transition-colors;
+    @apply focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  /* Mobile-optimized grid layouts */
+  .grid-mobile-1 {
+    @apply grid grid-cols-1;
+  }
+
+  .grid-mobile-2 {
+    @apply grid grid-cols-1 sm:grid-cols-2;
+  }
+
+  .grid-mobile-3 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .grid-mobile-4 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+
+  /* Responsive spacing utilities */
+  .spacing-mobile {
+    @apply gap-4 sm:gap-6 lg:gap-8;
+  }
+
+  .spacing-mobile-lg {
+    @apply gap-6 sm:gap-8 lg:gap-12;
+  }
+
+  .padding-mobile {
+    @apply p-4 sm:p-6 lg:p-8;
+  }
+
+  .padding-mobile-lg {
+    @apply p-6 sm:p-8 lg:p-12;
+  }
+
+  .margin-mobile {
+    @apply m-4 sm:m-6 lg:m-8;
+  }
+
+  /* Mobile-first section spacing */
+  .section-mobile {
+    @apply py-8 sm:py-12 lg:py-16 xl:py-20;
+    @apply px-4 sm:px-6 lg:px-8 xl:px-20;
   }
 }

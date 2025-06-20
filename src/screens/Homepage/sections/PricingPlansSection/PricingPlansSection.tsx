@@ -79,7 +79,7 @@ export const PricingPlansSection = (): JSX.Element => {
               >
                 <CardContent className="flex flex-col items-start gap-6 sm:gap-8 lg:gap-10 p-6 sm:p-8 lg:p-10 h-full">
                   <div className="flex flex-col items-start gap-4 sm:gap-5 w-full">
-                    <h3 className="w-fit font-h4-h4-semibold text-black text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[length:var(--h4-h4-semibold-font-size)] tracking-[var(--h4-h4-semibold-letter-spacing)] leading-tight xl:leading-[var(--h4-h4-semibold-line-height)] whitespace-nowrap">
+                    <h3 className="w-fit font-h5-h5-semibold text-black text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[length:var(--h5-h5-semibold-font-size)] tracking-[var(--h5-h5-semibold-letter-spacing)] leading-tight xl:leading-[var(--h5-h5-semibold-line-height)] whitespace-nowrap">
                       {step.title}
                     </h3>
                     <p className="self-stretch font-h6-h6-regular text-text text-xs sm:text-sm lg:text-base xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
@@ -92,14 +92,14 @@ export const PricingPlansSection = (): JSX.Element => {
                       {step.tags.slice(0, 2).map((tag, tagIndex) => (
                         <Badge
                           key={tagIndex}
-                          className="px-3 sm:px-4 lg:px-5 py-1.5 sm:py-2 bg-[#f5f5f5] text-[#1a3c34] rounded-[40px] font-body-large-body-large-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)] touch-manipulation"
+                          className="px-3 sm:px-4 lg:px-5 py-1.5 sm:py-2 bg-[#f5f5f5] text-[#1a3c34] rounded-[40px] hover:text-[#f5f5f5] font-body-large-body-large-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)] touch-manipulation"
                         >
                           {tag}
                         </Badge>
                       ))}
                     </div>
                     {step.tags[2] && (
-                      <Badge className="px-3 sm:px-4 lg:px-5 py-1.5 sm:py-2 bg-[#f5f5f5] text-[#1a3c34] rounded-[40px] font-body-large-body-large-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)] touch-manipulation">
+                      <Badge className="px-3 sm:px-4 lg:px-5 py-1.5 sm:py-2 bg-[#f5f5f5] text-[#1a3c34] hover:text-[#f5f5f5] rounded-[40px] font-body-large-body-large-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)] touch-manipulation">
                         {step.tags[2]}
                       </Badge>
                     )}

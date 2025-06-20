@@ -58,7 +58,7 @@ export const HeroSection = (): JSX.Element => {
             >
               <MenuIcon className="w-6 h-6 text-black" />
             </Button>
-            
+
             {/* Desktop Buttons - Hidden on mobile */}
             <div className="hidden lg:flex items-center gap-2 xl:gap-3">
               <Button
@@ -110,12 +110,12 @@ export const HeroSection = (): JSX.Element => {
             </ToggleGroup>
 
             {/* Heading - Mobile optimized */}
-            <h1 className="font-h1-h1-semibold text-app-primary text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[length:var(--h1-h1-semibold-font-size)] tracking-[var(--h1-h1-semibold-letter-spacing)] leading-tight xl:leading-[var(--h1-h1-semibold-line-height)]">
+            <h1 className="responsive-h1 font-h1-h1-semibold text-app-primary tracking-[var(--h1-h1-semibold-letter-spacing)]">
               RedGirraffe Global Commercial Card
             </h1>
 
             {/* Subheading - Mobile optimized */}
-            <p className="font-body-large-body-large-semibold text-app-secondary text-base sm:text-base lg:text-lg xl:text-[length:var(--body-large-body-large-semibold-font-size)] tracking-[var(--body-large-body-large-semibold-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-semibold-line-height)]">
+            <p className="responsive-body font-body-large-body-large-semibold text-app-secondary tracking-[var(--body-large-body-large-semibold-letter-spacing)]">
               Simplify payments, reduce costs, and unlock smarter cash flow with
               seamless recurring payouts in 97+ countries.
             </p>
@@ -124,16 +124,22 @@ export const HeroSection = (): JSX.Element => {
           {/* CTA Section */}
           <div className="flex flex-col items-center justify-center gap-4 lg:gap-5 w-full">
             {/* CTA Buttons - Mobile stacked */}
-            <div className="flex flex-col sm:flex-col lg:flex-row items-stretch gap-3 sm:gap-4 lg:gap-5 w-full">
-              <Button className="w-full lg:w-[200px] xl:w-[270px] h-14 sm:h-14 lg:h-14 px-6 sm:px-6 lg:px-10 py-4 lg:py-4 bg-app-primary rounded-[48px] flex items-center justify-center gap-3 lg:gap-3 touch-manipulation">
+            <div className="flex flex-col sm:flex-col lg:flex-row items-stretch spacing-mobile w-full">
+              <Button
+                size="mobile-lg"
+                className="w-full lg:w-[200px] xl:w-[270px] bg-app-primary rounded-[48px] flex items-center justify-center gap-3"
+              >
                 <ArrowRightIcon className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
-                <span className="font-h6-h6-semibold text-white text-base lg:text-base xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
+                <span className="font-h6-h6-semibold text-white tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
                   Request a Demo
                 </span>
               </Button>
-              <Button className="w-full lg:w-[200px] xl:w-[270px] h-14 sm:h-14 lg:h-14 px-6 sm:px-6 lg:px-10 py-4 lg:py-4 bg-[#4a8b7b] rounded-[48px] flex items-center justify-center gap-3 lg:gap-3 touch-manipulation">
+              <Button
+                size="mobile-lg"
+                className="w-full lg:w-[200px] xl:w-[270px] bg-[#4a8b7b] rounded-[48px] flex items-center justify-center gap-3"
+              >
                 <ArrowRightIcon className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
-                <span className="font-h6-h6-semibold text-white text-base lg:text-base xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
+                <span className="font-h6-h6-semibold text-white tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
                   Contact Us
                 </span>
               </Button>

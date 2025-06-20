@@ -107,7 +107,7 @@ export const SubscriptionFormSection = (): JSX.Element => {
                   <Input
                     id={field.id}
                     placeholder={field.placeholder}
-                    className="p-4 sm:p-5 lg:p-6 bg-white rounded-xl border border-solid border-[#ebebeb] font-body-large-body-large-regular text-text text-sm sm:text-base touch-manipulation"
+                    className="input-responsive p-4 sm:p-5 lg:p-6 bg-white rounded-xl border border-solid border-[#ebebeb] font-body-large-body-large-regular text-text"
                   />
                 </div>
               ))}
@@ -129,7 +129,7 @@ export const SubscriptionFormSection = (): JSX.Element => {
                   <Input
                     id={field.id}
                     placeholder={field.placeholder}
-                    className="p-4 sm:p-5 lg:p-6 bg-white rounded-xl border border-solid border-[#ebebeb] font-body-large-body-large-regular text-text text-sm sm:text-base touch-manipulation"
+                    className="input-responsive p-4 sm:p-5 lg:p-6 bg-white rounded-xl border border-solid border-[#ebebeb] font-body-large-body-large-regular text-text"
                   />
                 </div>
               ))}
@@ -156,9 +156,12 @@ export const SubscriptionFormSection = (): JSX.Element => {
 
           {/* Submit Button */}
           <div className="flex justify-center lg:justify-start w-full">
-            <Button className="flex items-center justify-center gap-3 px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 bg-[#4a8b7b] rounded-[48px] w-full max-w-[330px] touch-manipulation">
+            <Button
+              size="mobile-lg"
+              className="btn-mobile-lg flex items-center justify-center gap-3 bg-[#4a8b7b] rounded-[48px] w-full max-w-[330px]"
+            >
               <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-              <span className="font-h6-h6-semibold text-white text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] whitespace-nowrap">
+              <span className="font-h6-h6-semibold text-white tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] whitespace-nowrap">
                 Request a Demo
               </span>
             </Button>

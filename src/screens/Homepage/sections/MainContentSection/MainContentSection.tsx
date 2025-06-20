@@ -40,7 +40,7 @@ const bankFeatures = [
 const enterpriseFeatures = [
   {
     title: "Bill Discounting",
-    description: "Offer early payments with MDR fully absorbed—zero-cost",
+    description: "Offer early payments",
   },
   {
     title: "Enhanced Control",
@@ -87,7 +87,7 @@ export const MainContentSection = (): JSX.Element => {
         {/* For Banks Column */}
         <div className="flex flex-col items-center gap-6 sm:gap-8 lg:gap-10 flex-1">
           <div className="flex flex-col items-center gap-4 sm:gap-5 w-full">
-            <h3 className="w-full font-h5-h5-semibold text-[#1a3c34] text-xl sm:text-xl lg:text-2xl xl:text-[length:var(--h5-h5-semibold-font-size)] text-center tracking-[var(--h5-h5-semibold-letter-spacing)] leading-[var(--h5-h5-semibold-line-height)]">
+            <h3 className="w-full font-h6-h6-semibold text-[#1a3c34] text-xl sm:text-xl lg:text-2xl xl:text-[length:var(--h6-h6-semibold-font-size)] text-center tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
               For Banks
             </h3>
             <Separator className="w-full max-w-[540px] h-px bg-[#4a8b7b]" />
@@ -100,7 +100,7 @@ export const MainContentSection = (): JSX.Element => {
                 className="bg-abu-bg border-[#ebebeb] rounded-[10px] touch-manipulation"
               >
                 <CardContent className="flex flex-col gap-2.5 p-6 sm:p-6 lg:p-10">
-                  <h4 className="font-h5-h5-semibold text-black text-base sm:text-base lg:text-lg xl:text-[length:var(--h5-h5-semibold-font-size)] tracking-[var(--h5-h5-semibold-letter-spacing)] leading-[var(--h5-h5-semibold-line-height)]">
+                  <h4 className="font-h6-h6-semibold text-black text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
                     {feature.title}
                   </h4>
                   <p className="font-h6-h6-regular text-text text-sm sm:text-sm lg:text-base xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
@@ -114,7 +114,7 @@ export const MainContentSection = (): JSX.Element => {
           <div className="flex justify-center w-full">
             <Card className="bg-abu-bg border-[#ebebeb] rounded-[10px] w-full sm:w-[290px] touch-manipulation">
               <CardContent className="flex flex-col gap-2.5 p-6 sm:p-6 lg:p-10">
-                <h4 className="font-h5-h5-semibold text-black text-base sm:text-base lg:text-lg xl:text-[length:var(--h5-h5-semibold-font-size)] tracking-[var(--h5-h5-semibold-letter-spacing)] leading-[var(--h5-h5-semibold-line-height)]">
+                <h4 className="font-h6-h6-semibold text-black text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
                   {bankFeatures[6].title}
                 </h4>
                 <p className="font-h6-h6-regular text-text text-sm sm:text-sm lg:text-base xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
@@ -131,7 +131,7 @@ export const MainContentSection = (): JSX.Element => {
         {/* For Cardholding Enterprises Column */}
         <div className="flex flex-col items-center gap-6 sm:gap-8 lg:gap-10 flex-1">
           <div className="flex flex-col items-center gap-4 sm:gap-5 w-full">
-            <h3 className="w-full font-h5-h5-semibold text-[#1a3c34] text-xl sm:text-xl lg:text-2xl xl:text-[length:var(--h5-h5-semibold-font-size)] text-center tracking-[var(--h5-h5-semibold-letter-spacing)] leading-[var(--h5-h5-semibold-line-height)]">
+            <h3 className="w-full font-h6-h6-semibold text-[#1a3c34] text-xl sm:text-xl lg:text-2xl xl:text-[length:var(--h6-h6-semibold-font-size)] text-center tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
               For Cardholding Enterprises
             </h3>
             <Separator className="w-full max-w-[540px] h-px bg-[#4a8b7b]" />
@@ -144,7 +144,7 @@ export const MainContentSection = (): JSX.Element => {
                 className="bg-abu-bg border-[#ebebeb] rounded-[10px] touch-manipulation"
               >
                 <CardContent className="flex flex-col gap-2.5 p-6 sm:p-6 lg:p-10">
-                  <h4 className="font-h5-h5-semibold text-black text-base sm:text-base lg:text-lg xl:text-[length:var(--h5-h5-semibold-font-size)] tracking-[var(--h5-h5-semibold-letter-spacing)] leading-[var(--h5-h5-semibold-line-height)]">
+                  <h4 className="font-h6-h6-semibold text-black text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
                     {feature.title}
                   </h4>
                   <p className="font-h6-h6-regular text-text text-sm sm:text-sm lg:text-base xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
@@ -158,7 +158,7 @@ export const MainContentSection = (): JSX.Element => {
           <div className="flex justify-center w-full">
             <Card className="bg-abu-bg border-[#ebebeb] rounded-[10px] w-full sm:w-[290px] touch-manipulation">
               <CardContent className="flex flex-col gap-2.5 p-6 sm:p-6 lg:p-10">
-                <h4 className="font-h5-h5-semibold text-black text-base sm:text-base lg:text-lg xl:text-[length:var(--h5-h5-semibold-font-size)] tracking-[var(--h5-h5-semibold-letter-spacing)] leading-[var(--h5-h5-semibold-line-height)]">
+                <h4 className="font-h6-h6-semibold text-black text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
                   {enterpriseFeatures[6].title}
                 </h4>
                 <p className="font-h6-h6-regular text-text text-sm sm:text-sm lg:text-base xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">

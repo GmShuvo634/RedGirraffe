@@ -13,7 +13,7 @@ import { UserTestimonialsSection } from "./sections/UserTestimonialsSection/User
 
 export const Homepage = (): JSX.Element => {
   return (
-    <div className="bg-white flex flex-col items-center w-full">
+    <div className="bg-white flex flex-col items-center w-full min-h-screen">
       <div className="w-full max-w-[1440px]">
         <HeroSection />
         <LayoutSection />
