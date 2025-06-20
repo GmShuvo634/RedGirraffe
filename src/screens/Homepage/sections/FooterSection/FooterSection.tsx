@@ -4,64 +4,67 @@ import { Button } from "../../../../components/ui/button";
 import { Input } from "../../../../components/ui/input";
 import { Separator } from "../../../../components/ui/separator";
 
-// Data for company links
-const companyLinks = [
+// Data for important links
+const importantLinks = [
   "The Journey",
+  "Board of Advisors", 
   "Founding Team",
-  "Board of Advisors",
-  "Our Values",
+  "INDIA - S A & I Team",
+  "Media Relations",
   "Higher Purpose",
-  "Media & Press",
-  "Blog",
-  "Reviews",
+  "Our Values",
+  "RentPay™",
   "About Us",
+  "Reviews",
+  "FAQs",
+  "Blog",
+  "Press Releases"
 ];
 
-// Data for offerings links
-const offeringsLinks = [
-  "RentPay™",
-  "Corporate Rental ERP",
-  "SME Loans",
-  "List Your Property",
-  "Register as Agent",
-  "Post Your Requirement",
+// Data for policies & compliance
+const policiesLinks = [
   "Fixed Deposit",
   "Refer & Earn",
+  "Privacy Policy",
+  "Refund/Cancellation Policy",
+  "Terms & Conditions",
+  "Anti corruption & Bribery Policy",
+  "Code of Business Conduct & Ethics",
+  "Anti-Fraud Policy Investigation",
+  "Anti-Money Laundering Policy",
+  "Sanctions Compliance Statement",
+  "Grievance Redressal Policy"
 ];
 
-// Data for support links
-const supportLinks = [
-  "FAQs",
-  "Privacy Policy",
-  "Terms & Conditions",
-  "Refund/Cancellation Policy",
-  "Anti corruption & Brbery Policy",
-  "Anti-Fraud & AML Policy",
-  "INDIA - S A & I Team",
-  "Code of Conduct",
-  "Grievance Redressal",
+// Data for business services
+const businessServices = [
+  "List Your Property",
+  "Register as Agent",
+  "Corporate Rental ERP",
+  "SME Loans",
+  "Post Your Requirement"
 ];
 
 // Data for office locations
 const officeLocations = [
   {
-    country: "Singapore",
-    company: "RedGirraffe Holdings",
-    address: ["3 Temasek Avenue, Centennial Tower, #17-01, Singapore 039190."],
-  },
-  {
     country: "United Kingdom",
     company: "RedGirraffe Inc.",
-    address: ["Harben House, Harben Parade, Finchley Road, London, NW3 6LH."],
+    address: "Harben House, Harben Parade, Finchley Road, London, NW3 6LH."
+  },
+  {
+    country: "Singapore", 
+    company: "RedGirraffe Holdings",
+    address: "3 Temasek Avenue, Centennial Tower, #17-01, Singapore 039190."
   },
   {
     country: "India",
     company: "RedGirraffe.com",
     addresses: [
       "904, Galleria Towers, DLF Phase IV, Gurgaon, Haryana - 122002.",
-      "507, Tulsiani Chambers, Nariman Point, Mumbai - 400021.",
-    ],
-  },
+      "507, Tulsiani Chambers, Nariman Point, Mumbai - 400021."
+    ]
+  }
 ];
 
 // Data for social media links
@@ -75,233 +78,157 @@ const socialMediaLinks = [
 
 export const FooterSection = (): JSX.Element => {
   return (
-    <footer className="w-full pt-20 lg:pt-[120px] pb-6 lg:pb-10 px-4 sm:px-8 lg:px-20 bg-[#1a3c34] flex flex-col">
-      <div className="flex flex-col w-full items-start gap-10 lg:gap-[60px] max-w-7xl mx-auto">
-        {/* Top section with company info and navigation */}
-        <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-[120px] w-full">
-          {/* Company info, subscription and payment methods */}
-          <div className="flex flex-col items-start gap-8 lg:gap-10 w-full lg:w-auto">
-            <div className="flex flex-col items-start gap-4 lg:gap-5">
-              <div className="flex flex-col items-start gap-4 lg:gap-5">
-                {/* Logo and company name */}
-                <div className="flex items-center gap-3">
-                  <div className="relative w-6 h-6 lg:w-8 lg:h-8 bg-[#00d959] rounded overflow-hidden">
-                    <img src="/src/public/logo.png" alt="" />
-                  </div>
-                  <div className="font-h5-h5-bold text-white text-lg lg:text-xl whitespace-nowrap">
-                    RedGirraffe
-                  </div>
-                </div>
-
-                {/* Service categories */}
-                <div className="flex flex-wrap items-center gap-2.5">
-                  <div className="font-h6-h6-semibold text-[#ffffff] text-sm lg:text-base whitespace-nowrap">
-                    Payments
-                  </div>
-                  <div className="w-px h-4 lg:h-5 bg-white/30"></div>
-                  <div className="font-h6-h6-semibold text-[#ffffff] text-sm lg:text-base whitespace-nowrap">
-                    B2B SaaS
-                  </div>
-                  <div className="w-px h-4 lg:h-5 bg-white/30"></div>
-                  <div className="font-h6-h6-semibold text-[#ffffff] text-sm lg:text-base whitespace-nowrap">
-                    Real Estate
-                  </div>
-                </div>
-              </div>
-
-              {/* Company description */}
-              <p className="max-w-[350px] font-h6-h6-regular text-texthighlight text-sm lg:text-base leading-relaxed">
-                See your whole financial picture in one place, alongside a
-                smarter approach to investing and real human.
-              </p>
+    <footer className="w-full pt-16 lg:pt-20 pb-6 lg:pb-8 px-4 sm:px-8 lg:px-20 bg-[#1a3c34] flex flex-col">
+      <div className="flex flex-col w-full max-w-7xl mx-auto">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12 lg:mb-16">
+          
+          {/* Important Links */}
+          <div className="lg:col-span-1">
+            <h3 className="text-white font-semibold text-lg mb-2">Important Links</h3>
+            <p className="text-[#b8860b] text-sm mb-6">Quick access to essential pages</p>
+            <div className="space-y-3">
+              {importantLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  className="block text-[#9cacae] hover:text-white transition-colors text-sm"
+                >
+                  {link}
+                </a>
+              ))}
             </div>
+          </div>
 
-            {/* Email subscription */}
-            <div className="flex flex-col items-start gap-2.5 w-full max-w-[350px]">
-              <div className="flex w-full items-center justify-between pl-4 lg:pl-6 pr-1 py-1 bg-white rounded-[64px]">
+          {/* Policies & Compliance */}
+          <div className="lg:col-span-1">
+            <h3 className="text-white font-semibold text-lg mb-2">Policies & Compliance</h3>
+            <p className="text-[#b8860b] text-sm mb-6">Key policies for security and compliance</p>
+            <div className="space-y-3">
+              {policiesLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  className="block text-[#9cacae] hover:text-white transition-colors text-sm"
+                >
+                  {link}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Business Services */}
+          <div className="lg:col-span-1">
+            <h3 className="text-white font-semibold text-lg mb-2">Business Services</h3>
+            <p className="text-[#b8860b] text-sm mb-6">Solutions for businesses & partners</p>
+            <div className="space-y-3">
+              {businessServices.map((link, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  className="block text-[#9cacae] hover:text-white transition-colors text-sm"
+                >
+                  {link}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Our Offices */}
+          <div className="lg:col-span-1">
+            <h3 className="text-white font-semibold text-lg mb-2">Our Offices</h3>
+            <p className="text-[#b8860b] text-sm mb-6">Global presence, local impact</p>
+            <div className="space-y-6">
+              {officeLocations.map((office, index) => (
+                <div key={index} className="space-y-2">
+                  <h4 className="text-[#b8860b] font-medium text-sm">{office.country}</h4>
+                  <p className="text-white text-sm font-medium">{office.company}</p>
+                  {office.addresses ? (
+                    office.addresses.map((address, addrIndex) => (
+                      <p key={addrIndex} className="text-[#9cacae] text-xs leading-relaxed">
+                        {address}
+                      </p>
+                    ))
+                  ) : (
+                    <p className="text-[#9cacae] text-xs leading-relaxed">
+                      {office.address}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Stay Connected */}
+          <div className="lg:col-span-1">
+            <h3 className="text-white font-semibold text-lg mb-2">Stay Connected</h3>
+            <p className="text-[#b8860b] text-sm mb-6">Never miss an update</p>
+            
+            {/* Email Subscription */}
+            <div className="mb-8">
+              <div className="flex items-center bg-white rounded-full p-1 mb-3">
                 <Input
-                  className="border-0 bg-transparent text-[#9f9f9f] font-body-large-body-large-regular placeholder:text-[#9f9f9f] text-sm lg:text-base"
-                  placeholder="Enter Email Address"
+                  className="flex-1 border-0 bg-transparent text-gray-600 placeholder:text-gray-400 text-sm px-4"
+                  placeholder="Enter your email"
                 />
-                <Button className="bg-[#00d959] rounded-[48px] p-1.5 h-auto hover:bg-[#00d959]/90">
-                  <SendIcon className="w-4 h-4 lg:w-6 lg:h-6" />
+                <Button className="bg-[#b8860b] hover:bg-[#a0750a] rounded-full px-6 py-2 text-sm font-medium">
+                  Subscribe
                 </Button>
               </div>
-              <p className="max-w-[350px] font-h6-h6-regular text-textwhite text-xs lg:text-sm">
-                Stay connected — no spam, just updates.
-              </p>
             </div>
 
-            {/* Payment methods */}
-            <div className="flex items-center gap-3 lg:gap-[13.33px]">
-              {[1, 2, 3, 4].map((_, index) => (
-                <div key={index} className="flex items-center justify-center rounded">
-                  <div className="w-8 h-6 lg:w-10 lg:h-[26.67px] rounded flex items-center justify-center">
-                    <img src={`/src/public/falg_${index+1}.png`} alt="" />
-                  </div>
+            {/* Company Info */}
+            <div className="mb-8">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 bg-[#00d959] rounded flex items-center justify-center">
+                  <img src="/src/public/logo.png" alt="RedGirraffe" className="w-6 h-6" />
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Navigation links */}
-          <div className="flex flex-col sm:flex-row flex-wrap items-start gap-8 lg:gap-20 w-full lg:w-auto">
-            <div className="flex flex-col sm:flex-row flex-wrap items-start gap-8 lg:gap-[60px]">
-              {/* Company links */}
-              <div className="flex flex-col w-full sm:w-[230px] items-start gap-4 lg:gap-5">
-                <div className="flex flex-col items-start gap-2.5 w-full">
-                  <div className="flex flex-col items-start gap-2.5">
-                    <h3 className="font-h5-h5-semibold text-[#ffffff] text-base lg:text-lg whitespace-nowrap">
-                      Company
-                    </h3>
-                    <p className="font-h6-h6-regular text-texthighlight text-sm whitespace-nowrap">
-                      Learn who we are
-                    </p>
-                  </div>
-                  <Separator className="bg-transparent h-px w-full bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-                </div>
-                <div className="flex flex-col items-start gap-3 lg:gap-5 w-full">
-                  {companyLinks.map((link, index) => (
-                    <a
-                      key={index}
-                      href="#"
-                      className="font-h6-h6-regular text-highlight-c1 text-sm whitespace-nowrap hover:text-texthighlight transition-colors"
-                    >
-                      {link}
-                    </a>
-                  ))}
-                </div>
+                <h4 className="text-white font-bold text-xl">RedGirraffe</h4>
               </div>
-
-              {/* Offerings links */}
-              <div className="flex flex-col w-full sm:w-[230px] items-start gap-4 lg:gap-5">
-                <div className="flex flex-col items-start gap-2.5 w-full">
-                  <div className="flex flex-col items-start gap-2.5">
-                    <h3 className="font-h5-h5-semibold text-[#ffffff] text-base lg:text-lg whitespace-nowrap">
-                      Offerings
-                    </h3>
-                    <p className="font-h6-h6-regular text-texthighlight text-sm whitespace-nowrap">
-                      Explore our services
-                    </p>
-                  </div>
-                  <Separator className="bg-transparent h-px w-full bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-                </div>
-                <div className="flex flex-col items-start gap-3 lg:gap-5">
-                  {offeringsLinks.map((link, index) => (
-                    <a
-                      key={index}
-                      href="#"
-                      className="font-h6-h6-regular text-highlight-c1 text-sm whitespace-nowrap hover:text-texthighlight transition-colors"
-                    >
-                      {link}
-                    </a>
-                  ))}
-                </div>
+              
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-white text-sm">🇺🇸</span>
+                <span className="text-white text-sm">🇪🇺</span>
+                <span className="text-white text-sm">🇬🇧</span>
               </div>
-
-              {/* Support & Legal links */}
-              <div className="flex flex-col w-full sm:w-[230px] items-start gap-4 lg:gap-5">
-                <div className="flex flex-col items-start gap-2.5 w-full">
-                  <div className="flex flex-col items-start gap-2.5">
-                    <h3 className="font-h5-h5-semibold text-[#ffffff] text-base lg:text-lg whitespace-nowrap">
-                      Support & Legal
-                    </h3>
-                    <p className="font-h6-h6-regular text-texthighlight text-sm whitespace-nowrap">
-                      Help, policy & protection
-                    </p>
-                  </div>
-                  <Separator className="bg-transparent h-px w-full bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-                </div>
-                <div className="flex flex-col items-start gap-3 lg:gap-5">
-                  {supportLinks.map((link, index) => (
-                    <a
-                      key={index}
-                      href="#"
-                      className="font-h6-h6-regular text-highlight-c1 text-sm whitespace-nowrap hover:text-texthighlight transition-colors"
-                    >
-                      {link}
-                    </a>
-                  ))}
-                </div>
+              
+              <div className="flex flex-wrap items-center gap-2 text-[#b8860b] text-sm mb-4">
+                <span>Payments</span>
+                <span>|</span>
+                <span>B2B SaaS</span>
+                <span>|</span>
+                <span>Real Estate</span>
+              </div>
+              
+              <div className="mb-6">
+                <p className="text-[#b8860b] text-sm mb-2">Write to us at:</p>
+                <a href="mailto:connect@redgirraffe.com" className="text-white font-medium text-sm hover:text-[#00d959] transition-colors">
+                  connect@redgirraffe.com
+                </a>
               </div>
             </div>
-          </div>
-        </div>
 
-        {/* Office locations section */}
-        <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-[60px] w-full">
-          <div className="flex-1 flex flex-col gap-2.5">
-            <div className="flex flex-col items-start gap-2 w-full">
-              <h3 className="font-h5-h5-semibold text-[#ffffff] text-base lg:text-lg">
-                Our Offices
-              </h3>
-              <p className="font-h6-h6-regular text-highlight-c1 text-sm">
-                Global presence, local impact
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-8 lg:gap-[60px] w-full lg:w-auto">
-            {/* Singapore office */}
-            <div className="flex flex-col w-full sm:w-[230px] items-start gap-2.5">
-              <h4 className="w-full font-h5-h5-semibold text-texthighlight text-base">
-                {officeLocations[0].country}
-              </h4>
-              <p className="w-full font-h6-h6-regular text-highlight-c1 text-sm">
-                {officeLocations[0].company}
-              </p>
-              <p className="w-full font-body-medium-body-medium-regular text-tag-green text-xs leading-relaxed">
-                {officeLocations[0].address}
-              </p>
-            </div>
-
-            {/* UK office */}
-            <div className="flex flex-col w-full sm:w-[230px] items-start gap-2.5">
-              <h4 className="w-full font-h5-h5-semibold text-texthighlight text-base">
-                {officeLocations[1].country}
-              </h4>
-              <p className="w-full font-h6-h6-regular text-highlight-c1 text-sm">
-                {officeLocations[1].company}
-              </p>
-              <p className="w-full font-body-medium-body-medium-regular text-tag-green text-xs leading-relaxed">
-                {officeLocations[1].address}
-              </p>
-            </div>
-
-            {/* India office */}
-            <div className="flex flex-col w-full sm:w-[230px] items-start gap-2.5">
-              <h4 className="w-full font-h5-h5-semibold text-texthighlight text-base">
-                {officeLocations[2].country}
-              </h4>
-              <p className="w-full font-h6-h6-regular text-highlight-c1 text-sm">
-                {officeLocations[2].company}
-              </p>
-              {officeLocations[2].addresses?.map((address, index) => (
-                <p
+            {/* Social Media */}
+            <div className="flex items-center gap-3">
+              {socialMediaLinks.map((social, index) => (
+                <a
                   key={index}
-                  className="w-full font-body-medium-body-medium-regular text-tag-green text-xs leading-relaxed"
+                  href="#"
+                  className="w-8 h-8 flex items-center justify-center hover:opacity-80 transition-opacity"
                 >
-                  {address}
-                </p>
+                  <img src={social.icon} alt={social.name} className="w-6 h-6" />
+                </a>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Footer bottom section */}
-        <div className="flex flex-col items-start gap-4 lg:gap-6 w-full">
-          <Separator className="w-full h-px bg-[#366f65] border border-solid border-[#9cacae]" />
-          <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-4">
-            <p className="font-body-large-body-large-regular text-highlight-c1 text-sm whitespace-nowrap">
-              © {new Date().getFullYear()} RedGirraffe. All rights reserved.
+        {/* Footer Bottom */}
+        <div className="pt-6 border-t border-[#366f65]">
+          <div className="bg-[#b8860b] text-center py-3 rounded">
+            <p className="text-black text-sm font-medium">
+              Copyright © 2025-2026 | RedGirraffe - All rights reserved
             </p>
-            <div className="flex items-center gap-3 lg:gap-5">
-              <div className="flex items-start gap-3 lg:gap-[15px]">
-                {socialMediaLinks.map((social, index) => (
-                  <img src={social.icon} alt="" key={index} className="w-6 h-6 lg:w-10 lg:h-10" />
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>
