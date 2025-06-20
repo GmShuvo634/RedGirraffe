@@ -25,8 +25,8 @@ export const Homepage = (): JSX.Element => {
         <PricingPlansSection />
         <CallToActionSection />
         <SubscriptionFormSection />
-        <FooterSection />
       </div>
+      <FooterSection />
     </div>
   );
 };
