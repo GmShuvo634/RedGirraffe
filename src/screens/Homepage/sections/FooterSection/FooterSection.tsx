@@ -1,48 +1,45 @@
-import { SendIcon } from "lucide-react";
-import React from "react";
 import { Button } from "../../../../components/ui/button";
 import { Input } from "../../../../components/ui/input";
-import { Separator } from "../../../../components/ui/separator";
 
 // Data for important links
 const importantLinks = [
-  "The Journey",
-  "Board of Advisors", 
-  "Founding Team",
-  "INDIA - S A & I Team",
-  "Media Relations",
-  "Higher Purpose",
-  "Our Values",
-  "RentPay™",
-  "About Us",
-  "Reviews",
-  "FAQs",
-  "Blog",
-  "Press Releases"
+  { label: "The Journey", href: "https://redgirraffe.com/in/app/thejourney" },
+  { label: "Board of Advisors", href: "https://redgirraffe.com/in/app/boardofadvisors" },
+  { label: "Founding Team", href: "https://redgirraffe.com/in/app/foundingteam" },
+  { label: "INDIA - S A & I Team", href: "https://redgirraffe.com/in/app/strategyadvisoryteam" },
+  { label: "Media Relations", href: "https://redgirraffe.com/in/app/mediarelations" },
+  { label: "Higher Purpose", href: "https://redgirraffe.com/in/app/purpose" },
+  { label: "Our Values", href: "https://redgirraffe.com/in/app/values" },
+  { label: "RentPay™", href: "https://redgirraffe.com/in/app/rentpay-details" },
+  { label: "About Us", href: "https://redgirraffe.com/in/app/aboutus" },
+  { label: "Reviews", href: "#" }, // Placeholder
+  { label: "FAQs", href: "https://redgirraffe.com/in/app/faqs" },
+  { label: "Blog", href: "https://redgirraffe.com/blog/" },
+  { label: "Press Releases", href: "https://redgirraffe.com/blog/media-corner/" },
 ];
 
 // Data for policies & compliance
 const policiesLinks = [
-  "Fixed Deposit",
-  "Refer & Earn",
-  "Privacy Policy",
-  "Refund/Cancellation Policy",
-  "Terms & Conditions",
-  "Anti corruption & Bribery Policy",
-  "Code of Business Conduct & Ethics",
-  "Anti-Fraud Policy Investigation",
-  "Anti-Money Laundering Policy",
-  "Sanctions Compliance Statement",
-  "Grievance Redressal Policy"
+  { label: "Fixed Deposit", href: "https://redgirraffe.com/in/app/fixed-deposit" },
+  { label: "Refer & Earn", href: "https://redgirraffe.com/in/app/referrals" },
+  { label: "Privacy Policy", href: "https://redgirraffe.com/in/app/privacypolicy" },
+  { label: "Refund/Cancellation Policy", href: "https://redgirraffe.com/in/app/refund" },
+  { label: "Terms & Conditions", href: "https://redgirraffe.com/in/app/terms-and-conditions" },
+  { label: "Anti corruption & Bribery Policy", href: "https://redgirraffe.com/in/app/anti-corruption-bribery" },
+  { label: "Code of Business Conduct & Ethics", href: "https://redgirraffe.com/in/app/code-business-conduct-ethics" },
+  { label: "Anti-Fraud Policy Investigation", href: "https://redgirraffe.com/in/app/anti-fraud-policy-investigation" },
+  { label: "Anti-Money Laundering Policy", href: "https://redgirraffe.com/in/app/anti-money-laundering-policy" },
+  { label: "Sanctions Compliance Statement", href: "https://redgirraffe.com/in/app/sanctions-compliance-statement" },
+  { label: "Grievance Redressal Policy", href: "https://redgirraffe.com/in/app/grievance-redressal-policy" },
 ];
 
 // Data for business services
 const businessServices = [
-  "List Your Property",
-  "Register as Agent",
-  "Corporate Rental ERP",
-  "SME Loans",
-  "Post Your Requirement"
+  { label: "List Your Property", href: "https://redgirraffe.com/in/app/list-property" },
+  { label: "Register as Agent", href: "https://redgirraffe.com/in/app/register-as-agent" },
+  { label: "Corporate Rental ERP", href: "https://redgirraffe.com/in/app/rentpay-erp" },
+  { label: "SME Loans", href: "https://redgirraffe.com/in/app/sme-loans" },
+  { label: "Post Your Requirement", href: "https://redgirraffe.com/in/app/post-requirement" },
 ];
 
 // Data for office locations
@@ -53,7 +50,7 @@ const officeLocations = [
     address: "Harben House, Harben Parade, Finchley Road, London, NW3 6LH."
   },
   {
-    country: "Singapore", 
+    country: "Singapore",
     company: "RedGirraffe Holdings",
     address: "3 Temasek Avenue, Centennial Tower, #17-01, Singapore 039190."
   },
@@ -67,75 +64,80 @@ const officeLocations = [
   }
 ];
 
-// Data for social media links
+// Data for social media links (can be updated with real hrefs)
 const socialMediaLinks = [
-  { name: "YouTube", icon: "/src/public/youtube.png" },
-  { name: "TikTok", icon: "/src/public/tiktok.png" },
-  { name: "LinkedIn", icon: "/src/public/linkedin.png" },
-  { name: "Instagram", icon: "/src/public/instagram.png" },
-  { name: "Facebook", icon: "/src/public/facebook.png" },
+  { name: "YouTube", icon: "/src/public/youtube.png", href: "#" },
+  { name: "TikTok", icon: "/src/public/tiktok.png", href: "#" },
+  { name: "LinkedIn", icon: "/src/public/linkedin.png", href: "#" },
+  { name: "Instagram", icon: "/src/public/instagram.png", href: "#" },
+  { name: "Facebook", icon: "/src/public/facebook.png", href: "#" },
 ];
 
 export const FooterSection = (): JSX.Element => {
   return (
     <footer className="w-full pt-16 lg:pt-20 pb-6 lg:pb-8 px-4 sm:px-8 lg:px-20 bg-[#1a3c34] flex flex-col">
       <div className="flex flex-col w-full max-w-7xl mx-auto">
-        {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12 lg:mb-16">
           
           {/* Important Links */}
-          <div className="lg:col-span-1">
+          <div>
             <h3 className="text-white font-semibold text-lg mb-2">Important Links</h3>
             <p className="text-[#b8860b] text-sm mb-6">Quick access to essential pages</p>
             <div className="space-y-3">
-              {importantLinks.map((link, index) => (
+              {importantLinks.map(({ label, href }, index) => (
                 <a
                   key={index}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-[#9cacae] hover:text-white transition-colors text-sm"
                 >
-                  {link}
+                  {label}
                 </a>
               ))}
             </div>
           </div>
 
           {/* Policies & Compliance */}
-          <div className="lg:col-span-1">
+          <div>
             <h3 className="text-white font-semibold text-lg mb-2">Policies & Compliance</h3>
             <p className="text-[#b8860b] text-sm mb-6">Key policies for security and compliance</p>
             <div className="space-y-3">
-              {policiesLinks.map((link, index) => (
+              {policiesLinks.map(({ label, href }, index) => (
                 <a
                   key={index}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-[#9cacae] hover:text-white transition-colors text-sm"
                 >
-                  {link}
+                  {label}
                 </a>
               ))}
             </div>
           </div>
 
           {/* Business Services */}
-          <div className="lg:col-span-1">
+          <div>
             <h3 className="text-white font-semibold text-lg mb-2">Business Services</h3>
             <p className="text-[#b8860b] text-sm mb-6">Solutions for businesses & partners</p>
             <div className="space-y-3">
-              {businessServices.map((link, index) => (
+              {businessServices.map(({ label, href }, index) => (
                 <a
                   key={index}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-[#9cacae] hover:text-white transition-colors text-sm"
                 >
-                  {link}
+                  {label}
                 </a>
               ))}
             </div>
           </div>
 
           {/* Our Offices */}
-          <div className="lg:col-span-1">
+          <div>
             <h3 className="text-white font-semibold text-lg mb-2">Our Offices</h3>
             <p className="text-[#b8860b] text-sm mb-6">Global presence, local impact</p>
             <div className="space-y-6">
@@ -145,12 +147,12 @@ export const FooterSection = (): JSX.Element => {
                   <p className="text-white text-sm font-medium">{office.company}</p>
                   {office.addresses ? (
                     office.addresses.map((address, addrIndex) => (
-                      <p key={addrIndex} className="text-[#9cacae] text-xs leading-relaxed">
+                      <p key={addrIndex} className="text-[#9cacae] text-sm leading-relaxed">
                         {address}
                       </p>
                     ))
                   ) : (
-                    <p className="text-[#9cacae] text-xs leading-relaxed">
+                    <p className="text-[#9cacae] text-sm leading-relaxed">
                       {office.address}
                     </p>
                   )}
@@ -160,11 +162,11 @@ export const FooterSection = (): JSX.Element => {
           </div>
 
           {/* Stay Connected */}
-          <div className="lg:col-span-1">
+          <div>
             <h3 className="text-white font-semibold text-lg mb-2">Stay Connected</h3>
             <p className="text-[#b8860b] text-sm mb-6">Never miss an update</p>
-            
-            {/* Email Subscription */}
+
+            {/* Email Input */}
             <div className="mb-8">
               <div className="flex items-center bg-white rounded-full p-1 mb-3">
                 <Input
@@ -185,13 +187,11 @@ export const FooterSection = (): JSX.Element => {
                 </div>
                 <h4 className="text-white font-bold text-xl">RedGirraffe</h4>
               </div>
-              
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-white text-sm">🇺🇸</span>
-                <span className="text-white text-sm">🇪🇺</span>
-                <span className="text-white text-sm">🇬🇧</span>
+               { [1, 2, 3, 4].map((country, index) => (
+                  <img src={`/src/public/falg_${index + 1}.png`} key={index} alt="flag" className="w-8 h-6" />
+                ))}
               </div>
-              
               <div className="flex flex-wrap items-center gap-2 text-[#b8860b] text-sm mb-4">
                 <span>Payments</span>
                 <span>|</span>
@@ -199,7 +199,6 @@ export const FooterSection = (): JSX.Element => {
                 <span>|</span>
                 <span>Real Estate</span>
               </div>
-              
               <div className="mb-6">
                 <p className="text-[#b8860b] text-sm mb-2">Write to us at:</p>
                 <a href="mailto:connect@redgirraffe.com" className="text-white font-medium text-sm hover:text-[#00d959] transition-colors">
@@ -208,15 +207,17 @@ export const FooterSection = (): JSX.Element => {
               </div>
             </div>
 
-            {/* Social Media */}
+            {/* Social Icons */}
             <div className="flex items-center gap-3">
-              {socialMediaLinks.map((social, index) => (
+              {socialMediaLinks.map(({ name, icon, href }, index) => (
                 <a
                   key={index}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-8 h-8 flex items-center justify-center hover:opacity-80 transition-opacity"
                 >
-                  <img src={social.icon} alt={social.name} className="w-6 h-6" />
+                  <img src={icon} alt={name} className="w-6 h-6" />
                 </a>
               ))}
             </div>
@@ -225,8 +226,8 @@ export const FooterSection = (): JSX.Element => {
 
         {/* Footer Bottom */}
         <div className="pt-6 border-t border-[#366f65]">
-          <div className="bg-[#b8860b] text-center py-3 rounded">
-            <p className="text-black text-sm font-medium">
+          <div className="text-center py-3 rounded">
+            <p className="text-white text-sm font-medium">
               Copyright © 2025-2026 | RedGirraffe - All rights reserved
             </p>
           </div>
