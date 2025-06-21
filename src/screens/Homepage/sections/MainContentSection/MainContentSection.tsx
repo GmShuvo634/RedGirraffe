@@ -17,6 +17,7 @@ import {
   easings,
 } from "../../../../utils/animations";
 import { useScrollAnimation } from "../../../../hooks/useScrollAnimation";
+import { useResponsiveCardSlice } from "../../../../hooks/useResponsiveCardSlice";
 
 // Data for the "For Banks" section
 const bankFeatures = [
@@ -87,6 +88,9 @@ export const MainContentSection = (): JSX.Element => {
     threshold: 0.2,
   });
 
+  // Use mobile responsive hook
+  const isMobile = useResponsiveCardSlice();
+
   return (
     <section className="flex flex-col items-center gap-8 sm:gap-12 lg:gap-[60px] px-4 sm:px-6 lg:px-8 xl:px-20 py-8 sm:py-12 lg:py-16 xl:py-[120px] w-full">
       <div className="flex flex-col items-center gap-8 sm:gap-12 lg:gap-[60px] max-w-7xl">
@@ -148,7 +152,7 @@ export const MainContentSection = (): JSX.Element => {
             speed="normal"
             threshold={0.1}
           >
-            {bankFeatures.slice(0, 6).map((feature, index) => (
+            {bankFeatures.slice(0, isMobile ? 7 : 6).map((feature, index) => (
               <motion.div
                 key={index}
                 whileHover={{
@@ -194,7 +198,7 @@ export const MainContentSection = (): JSX.Element => {
               }}
               whileTap={{ scale: 0.98 }}
             >
-              <Card className="bg-abu-bg border-[#ebebeb] rounded-[10px] w-full sm:w-[290px] touch-manipulation group hover:bg-[#1a3c34] hover:border-[#1a3c34]  hover:cursor-pointer transition-all duration-300 ease-in-out">
+              <Card className={`${isMobile ? "hidden" : "w-[250px]"} bg-abu-bg border-[#ebebeb] rounded-[10px] touch-manipulation group hover:bg-[#1a3c34] hover:border-[#1a3c34]  hover:cursor-pointer transition-all duration-300 ease-in-out ${isMobile ? "w-full" : "w-[550px]"}`}>
                 <CardContent className="flex flex-col gap-2.5 p-6 sm:p-6 lg:p-10">
                   <h4 className="font-h6-h6-semibold text-black text-base sm:text-base group-hover:text-white lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
                     {bankFeatures[6].title}
@@ -251,7 +255,7 @@ export const MainContentSection = (): JSX.Element => {
             threshold={0.1}
             delay={0.1}
           >
-            {enterpriseFeatures.slice(0, 6).map((feature, index) => (
+            {enterpriseFeatures.slice(0, isMobile ? 7 : 6).map((feature, index) => (
               <motion.div
                 key={index}
                 whileHover={{
@@ -297,7 +301,7 @@ export const MainContentSection = (): JSX.Element => {
               }}
               whileTap={{ scale: 0.98 }}
             >
-              <Card className="bg-abu-bg border-[#ebebeb] rounded-[10px] w-full sm:w-[290px] touch-manipulation group hover:bg-[#1a3c34] hover:border-[#1a3c34]  hover:cursor-pointer transition-all duration-300 ease-in-out">
+              <Card className={`${isMobile ? "hidden" : "w-[550px] sm:w-[290px]"} bg-abu-bg border-[#ebebeb] rounded-[10px] touch-manipulation group hover:bg-[#1a3c34] hover:border-[#1a3c34]  hover:cursor-pointer transition-all duration-300 ease-in-out`}>
                 <CardContent className="flex flex-col gap-2.5 p-6 sm:p-6 lg:p-10">
                   <h4 className="font-h6-h6-semibold text-black text-base sm:text-base group-hover:text-white lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
                     {enterpriseFeatures[6].title}

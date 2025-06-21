@@ -1,5 +1,6 @@
 import { ArrowRightIcon, CheckIcon } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../../../../components/ui/button";
 import {
   Card,
@@ -9,6 +10,7 @@ import {
   CardTitle,
 } from "../../../../components/ui/card";
 import { Separator } from "../../../../components/ui/separator";
+import { useResponsiveCardSlice } from "../../../../hooks/useResponsiveCardSlice";
 
 // Data for the cards
 const pricingCards = [
@@ -52,6 +54,22 @@ const pricingCards = [
 ];
 
 export const CallToActionSection = (): JSX.Element => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const isMobile = useResponsiveCardSlice();
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % pricingCards.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(
+      (prev) => (prev - 1 + pricingCards.length) % pricingCards.length
+    );
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
   return (
     <section className="py-12 sm:py-16 lg:py-20 xl:py-[120px] px-4 sm:px-6 lg:px-8 xl:px-20 bg-[#e0eae8] w-full">
       <div className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] w-full max-w-7xl mx-auto">
@@ -97,79 +115,220 @@ export const CallToActionSection = (): JSX.Element => {
           </Button>
         </div>
 
-        {/* Pricing cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-5 w-full">
-          {pricingCards.map((card, index) => (
-            <Card
-              key={index}
-              className={`flex flex-col gap-6 sm:gap-8 lg:gap-10 p-6 sm:p-8 lg:p-10 rounded-xl border ${
-                card.variant === "white"
-                  ? "bg-white border-[#ebebeb]"
-                  : "[background:url(..//frame-1455.png)_50%_50%_/_cover,linear-gradient(30deg,rgba(8,43,36,1)_0%,rgba(16,84,71,0.7)_100%)]"
-              } shadow-[8px_12px_20px_#00000014] touch-manipulation`}
-            >
-              <CardHeader className="p-0">
-                <CardTitle
-                  className={`font-h4-h4-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[length:var(--h4-h4-semibold-font-size)] tracking-[var(--h4-h4-semibold-letter-spacing)] leading-tight xl:leading-[var(--h4-h4-semibold-line-height)] ${
-                    card.variant === "white" ? "text-black" : "text-white"
-                  }`}
-                >
-                  {card.title}
-                </CardTitle>
-                <p
-                  className={`mt-4 sm:mt-5 font-body-large-body-large-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)] ${
-                    card.variant === "white" ? "text-text" : "text-[#dbf0e4]"
-                  }`}
-                >
-                  {card.description}
-                </p>
-              </CardHeader>
+        {/* Pricing cards - Mobile Slider / Desktop Grid */}
+        {isMobile ? (
+          <div className="w-full">
+            {/* Mobile Slider */}
+            <div className="relative w-full overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0, x: 300 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -300 }}
+                  transition={{
+                    duration: 0.5,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
+                  className="w-full"
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.2}
+                  onDragEnd={(_: any, { offset, velocity }: any) => {
+                    const swipe = Math.abs(offset.x) * velocity.x;
 
-              <Separator className="h-px w-full" />
-
-              <CardContent className="p-0 flex flex-col gap-3">
-                {card.features.map((feature, idx) => (
-                  <div key={idx} className="inline-flex items-center gap-3">
-                    <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center flex-shrink-0 ${
-                          card.variant === "white"
-                            ? "bg-[#4a8b7b]"
-                            : "bg-white"
-                        }`}>
-                      <CheckIcon
-                        className={`w-3 h-3 sm:w-4 sm:h-4 ${
-                          card.variant === "white"
-                            ? "text-white"
-                            : "text-[#4a8b7b]"
+                    if (swipe < -10000) {
+                      nextSlide();
+                    } else if (swipe > 10000) {
+                      prevSlide();
+                    }
+                  }}
+                >
+                  <Card
+                    className={`flex flex-col gap-6 sm:gap-8 lg:gap-10 p-6 sm:p-8 lg:p-10 rounded-xl border ${
+                      pricingCards[currentSlide].variant === "white"
+                        ? "bg-white border-[#ebebeb]"
+                        : "[background:url(..//frame-1455.png)_50%_50%_/_cover,linear-gradient(30deg,rgba(8,43,36,1)_0%,rgba(16,84,71,0.7)_100%)]"
+                    } shadow-[8px_12px_20px_#00000014] touch-manipulation`}
+                  >
+                    <CardHeader className="p-0">
+                      <CardTitle
+                        className={`font-h4-h4-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[length:var(--h4-h4-semibold-font-size)] tracking-[var(--h4-h4-semibold-letter-spacing)] leading-tight xl:leading-[var(--h4-h4-semibold-line-height)] ${
+                          pricingCards[currentSlide].variant === "white"
+                            ? "text-black"
+                            : "text-white"
                         }`}
-                      />
+                      >
+                        {pricingCards[currentSlide].title}
+                      </CardTitle>
+                      <p
+                        className={`mt-4 sm:mt-5 font-body-large-body-large-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)] ${
+                          pricingCards[currentSlide].variant === "white"
+                            ? "text-text"
+                            : "text-[#dbf0e4]"
+                        }`}
+                      >
+                        {pricingCards[currentSlide].description}
+                      </p>
+                    </CardHeader>
+
+                    <Separator className="h-px w-full" />
+
+                    <CardContent className="p-0 flex flex-col gap-3">
+                      {pricingCards[currentSlide].features.map(
+                        (feature, idx) => (
+                          <div
+                            key={idx}
+                            className="inline-flex items-center gap-3"
+                          >
+                            <div
+                              className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center flex-shrink-0 ${
+                                pricingCards[currentSlide].variant === "white"
+                                  ? "bg-[#4a8b7b]"
+                                  : "bg-white"
+                              }`}
+                            >
+                              <CheckIcon
+                                className={`w-3 h-3 sm:w-4 sm:h-4 ${
+                                  pricingCards[currentSlide].variant === "white"
+                                    ? "text-white"
+                                    : "text-[#4a8b7b]"
+                                }`}
+                              />
+                            </div>
+                            <span
+                              className={`font-body-medium-body-medium-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-medium-body-medium-regular-font-size)] tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-medium-body-medium-regular-line-height)] ${
+                                pricingCards[currentSlide].variant === "white"
+                                  ? "text-black"
+                                  : "text-white"
+                              }`}
+                            >
+                              {feature}
+                            </span>
+                          </div>
+                        )
+                      )}
+                    </CardContent>
+
+                    <CardFooter className="p-0">
+                      <Button
+                        className={`w-full px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 rounded-[48px] touch-manipulation ${
+                          pricingCards[currentSlide].variant === "white"
+                            ? "bg-[#4a8b7b] text-white"
+                            : "bg-white text-[#4a8b7b]"
+                        }`}
+                      >
+                        <span
+                          className={`font-h6-h6-semibold text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] ${
+                            pricingCards[currentSlide].variant === "white"
+                              ? "hover:text-white"
+                              : "hover:text-[#4a8b7b]"
+                          }`}
+                        >
+                          {pricingCards[currentSlide].buttonText}
+                        </span>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Dot Indicators - Smaller Size */}
+            <div className="flex justify-center gap-1.5 mt-4">
+              {pricingCards.map((_, index) => (
+                <span
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-3 h-2 rounded-full transition-colors ${
+                    index === currentSlide ? "bg-[#1a3c34]" : "bg-[#1a3c34]/30"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        ) : (
+          /* Desktop Grid */
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-5 w-full">
+            {pricingCards.map((card, index) => (
+              <Card
+                key={index}
+                className={`flex flex-col gap-6 sm:gap-8 lg:gap-10 p-6 sm:p-8 lg:p-10 rounded-xl border ${
+                  card.variant === "white"
+                    ? "bg-white border-[#ebebeb]"
+                    : "[background:url(..//frame-1455.png)_50%_50%_/_cover,linear-gradient(30deg,rgba(8,43,36,1)_0%,rgba(16,84,71,0.7)_100%)]"
+                } shadow-[8px_12px_20px_#00000014] touch-manipulation`}
+              >
+                <CardHeader className="p-0">
+                  <CardTitle
+                    className={`font-h4-h4-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[length:var(--h4-h4-semibold-font-size)] tracking-[var(--h4-h4-semibold-letter-spacing)] leading-tight xl:leading-[var(--h4-h4-semibold-line-height)] ${
+                      card.variant === "white" ? "text-black" : "text-white"
+                    }`}
+                  >
+                    {card.title}
+                  </CardTitle>
+                  <p
+                    className={`mt-4 sm:mt-5 font-body-large-body-large-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)] ${
+                      card.variant === "white" ? "text-text" : "text-[#dbf0e4]"
+                    }`}
+                  >
+                    {card.description}
+                  </p>
+                </CardHeader>
+
+                <Separator className="h-px w-full" />
+
+                <CardContent className="p-0 flex flex-col gap-3">
+                  {card.features.map((feature, idx) => (
+                    <div key={idx} className="inline-flex items-center gap-3">
+                      <div
+                        className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center flex-shrink-0 ${
+                          card.variant === "white" ? "bg-[#4a8b7b]" : "bg-white"
+                        }`}
+                      >
+                        <CheckIcon
+                          className={`w-3 h-3 sm:w-4 sm:h-4 ${
+                            card.variant === "white"
+                              ? "text-white"
+                              : "text-[#4a8b7b]"
+                          }`}
+                        />
+                      </div>
+                      <span
+                        className={`font-body-medium-body-medium-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-medium-body-medium-regular-font-size)] tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-medium-body-medium-regular-line-height)] ${
+                          card.variant === "white" ? "text-black" : "text-white"
+                        }`}
+                      >
+                        {feature}
+                      </span>
                     </div>
+                  ))}
+                </CardContent>
+
+                <CardFooter className="p-0">
+                  <Button
+                    className={`w-full px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 rounded-[48px] touch-manipulation ${
+                      card.variant === "white"
+                        ? "bg-[#4a8b7b] text-white"
+                        : "bg-white text-[#4a8b7b]"
+                    }`}
+                  >
                     <span
-                      className={`font-body-medium-body-medium-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-medium-body-medium-regular-font-size)] tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-medium-body-medium-regular-line-height)] ${
-                        card.variant === "white" ? "text-black" : "text-white"
+                      className={`font-h6-h6-semibold text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] ${
+                        card.variant === "white"
+                          ? "hover:text-white"
+                          : "hover:text-[#4a8b7b]"
                       }`}
                     >
-                      {feature}
+                      {card.buttonText}
                     </span>
-                  </div>
-                ))}
-              </CardContent>
-
-              <CardFooter className="p-0">
-                <Button
-                  className={`w-full px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 rounded-[48px] touch-manipulation ${
-                    card.variant === "white"
-                      ? "bg-[#4a8b7b] text-white"
-                      : "bg-textwhite text-[#4a8b7b]"
-                  }`}
-                >
-                  <span className={`font-h6-h6-semibold text-sm sm:text-base  lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] ${card.variant === "white" ? "hover:text-white" : "hover:text-app-primary"}`}>
-                    {card.buttonText}
-                  </span>
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
