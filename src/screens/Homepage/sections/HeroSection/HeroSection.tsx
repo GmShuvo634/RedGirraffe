@@ -1,11 +1,22 @@
 import { ArrowRightIcon, MenuIcon } from "lucide-react";
 import React from "react";
+import { motion } from "framer-motion";
 import { Button } from "../../../../components/ui/button";
 import { Card } from "../../../../components/ui/card";
 import {
   ToggleGroup,
   ToggleGroupItem,
 } from "../../../../components/ui/toggle-group";
+import { AnimatedSection, AnimatedText, AnimatedButton } from "../../../../components/animations";
+import {
+  fadeInUpVariants,
+  slideInLeftVariants,
+  slideInRightVariants,
+  staggerContainerVariants,
+  buttonVariants,
+  durations,
+  easings
+} from "../../../../utils/animations";
 
 export const HeroSection = (): JSX.Element => {
   // Navigation menu items
@@ -84,72 +95,131 @@ export const HeroSection = (): JSX.Element => {
         {/* Left Content */}
         <div className="flex flex-col w-full xl:w-[560px] items-center gap-6 sm:gap-8 lg:gap-10 xl:gap-[60px] relative bg-white">
           {/* Hero Text Content */}
-          <div className="flex flex-col place-items-center xl:place-items-start gap-4 lg:gap-5 w-full">
+          <motion.div
+            className="flex flex-col place-items-center xl:place-items-start gap-4 lg:gap-5 w-full"
+            variants={staggerContainerVariants}
+            initial="hidden"
+            animate="visible"
+          >
             {/* Toggle Group */}
-            <ToggleGroup
-              type="single"
-              defaultValue="commercial"
-              className="bg-[#e5e9ec] rounded-[40px] p-1 w-fit"
+            <motion.div variants={fadeInUpVariants}>
+              <ToggleGroup
+                type="single"
+                defaultValue="commercial"
+                className="bg-[#e5e9ec] rounded-[40px] p-1 w-fit"
+              >
+                <ToggleGroupItem
+                  value="commercial"
+                  className="bg-abu-bg rounded-[32px] px-4 sm:px-4 lg:px-[15px] py-2 data-[state=on]:bg-abu-bg data-[state=off]:bg-transparent text-sm lg:text-base touch-manipulation"
+                >
+                  <span className="font-h6-h6-semibold text-[#1a3c34] text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
+                    Commercial
+                  </span>
+                </ToggleGroupItem>
+                <ToggleGroupItem
+                  value="platforms"
+                  className="px-4 sm:px-4 lg:px-[15px] py-2 data-[state=on]:bg-abu-bg data-[state=off]:bg-transparent text-sm lg:text-base touch-manipulation"
+                >
+                  <span className="font-h6-h6-semibold text-[#1a3c34] text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
+                    Platforms
+                  </span>
+                </ToggleGroupItem>
+              </ToggleGroup>
+            </motion.div>
+
+            {/* Heading - Mobile optimized with animation */}
+            <motion.h1
+              className="responsive-h1 font-h1-h1-semibold text-app-primary tracking-[var(--h1-h1-semibold-letter-spacing)] xl:text-left text-center w-full"
+              variants={fadeInUpVariants}
             >
-              <ToggleGroupItem
-                value="commercial"
-                className="bg-abu-bg rounded-[32px] px-4 sm:px-4 lg:px-[15px] py-2 data-[state=on]:bg-abu-bg data-[state=off]:bg-transparent text-sm lg:text-base touch-manipulation"
+              <motion.span
+                className="inline-block"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: durations.slow, ease: easings.smooth, delay: 0.3 }}
               >
-                <span className="font-h6-h6-semibold text-[#1a3c34] text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
-                  Commercial
-                </span>
-              </ToggleGroupItem>
-              <ToggleGroupItem
-                value="platforms"
-                className="px-4 sm:px-4 lg:px-[15px] py-2 data-[state=on]:bg-abu-bg data-[state=off]:bg-transparent text-sm lg:text-base touch-manipulation"
+                RedGirraffe
+              </motion.span>{" "}
+              <motion.span
+                className="inline-block"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: durations.slow, ease: easings.smooth, delay: 0.5 }}
               >
-                <span className="font-h6-h6-semibold text-[#1a3c34] text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
-                  Platforms
-                </span>
-              </ToggleGroupItem>
-            </ToggleGroup>
+                Global Commercial Card
+              </motion.span>
+            </motion.h1>
 
-            {/* Heading - Mobile optimized */}
-            <h1 className="responsive-h1 font-h1-h1-semibold text-app-primary tracking-[var(--h1-h1-semibold-letter-spacing)] xl:text-left text-center w-full">
-              RedGirraffe Global Commercial Card
-            </h1>
-
-            {/* Subheading - Mobile optimized */}
-            <p className="responsive-body font-body-large-body-large-semibold text-app-secondary tracking-[var(--body-large-body-large-semibold-letter-spacing)] xl:text-left text-center w-full">
+            {/* Subheading - Mobile optimized with animation */}
+            <motion.p
+              className="responsive-body font-body-large-body-large-semibold text-app-secondary tracking-[var(--body-large-body-large-semibold-letter-spacing)] xl:text-left text-center w-full"
+              variants={fadeInUpVariants}
+            >
               Simplify payments, reduce costs, and unlock smarter cash flow with
               seamless recurring payouts in 97+ countries.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           {/* CTA Section */}
-          <div className="flex flex-col items-center justify-center gap-4 lg:gap-5 w-full">
-            {/* CTA Buttons - Mobile stacked */}
-            <div className="flex flex-col sm:flex-col lg:flex-row items-stretch spacing-mobile w-full">
-              <Button
-                size="mobile-lg"
-                className="w-full lg:w-[200px] xl:w-[270px] bg-app-primary rounded-[48px] flex items-center justify-center gap-3"
+          <motion.div
+            className="flex flex-col items-center justify-center gap-4 lg:gap-5 w-full"
+            variants={staggerContainerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {/* CTA Buttons - Mobile stacked with animations */}
+            <motion.div
+              className="flex flex-col sm:flex-col lg:flex-row items-stretch spacing-mobile w-full"
+              variants={fadeInUpVariants}
+            >
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <ArrowRightIcon className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
-                <span className="font-h6-h6-semibold text-white tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
-                  Request a Demo
-                </span>
-              </Button>
-              <Button
-                size="mobile-lg"
-                className="w-full lg:w-[200px] xl:w-[270px] bg-[#4a8b7b] rounded-[48px] flex items-center justify-center gap-3"
+                <Button
+                  size="mobile-lg"
+                  className="w-full lg:w-[200px] xl:w-[270px] bg-app-primary rounded-[48px] flex items-center justify-center gap-3"
+                >
+                  <ArrowRightIcon className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
+                  <span className="font-h6-h6-semibold text-white tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
+                    Request a Demo
+                  </span>
+                </Button>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <ArrowRightIcon className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
-                <span className="font-h6-h6-semibold text-white tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
-                  Contact Sales
-                </span>
-              </Button>
-            </div>
+                <Button
+                  size="mobile-lg"
+                  className="w-full lg:w-[200px] xl:w-[270px] bg-[#4a8b7b] rounded-[48px] flex items-center justify-center gap-3"
+                >
+                  <ArrowRightIcon className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
+                  <span className="font-h6-h6-semibold text-white tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
+                    Contact Sales
+                  </span>
+                </Button>
+              </motion.div>
+            </motion.div>
 
-            {/* Stats */}
-            <p className="w-full text-center font-h6-h6-regular text-text text-base lg:text-base xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)]">
-              $20B+ processed annually
-            </p>
-          </div>
+            {/* Stats with animation */}
+            <motion.p
+              className="w-full text-center font-h6-h6-regular text-text text-base lg:text-base xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)]"
+              variants={fadeInUpVariants}
+            >
+              <motion.span
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: durations.normal, ease: easings.gentle, delay: 0.8 }}
+                className="font-bold text-app-primary"
+              >
+                $20B+
+              </motion.span>{" "}
+              processed annually
+            </motion.p>
+          </motion.div>
 
           {/* Tooltip - Hidden on mobile */}
           <div className="block absolute md:w-[163px] w-[120px] md:h-[45px] h-[30px] md:top-[-45px] top-[-45px] md:left-[260px] left-[230px]">
@@ -168,16 +238,35 @@ export const HeroSection = (): JSX.Element => {
           </div>
         </div>
 
-        {/* Hero Image - Mobile optimized */}
-        <div className="w-full xl:w-auto flex justify-center mt-4 sm:mt-6 lg:mt-0">
-          <video
-            className="w-full max-w-[640px] h-auto aspect-video object-cover rounded-[10px]"
+        {/* Hero Image - Mobile optimized with animation */}
+        <motion.div
+          className="w-full xl:w-auto flex justify-center mt-4 sm:mt-6 lg:mt-0"
+          initial={{ opacity: 0, x: 60, scale: 0.9 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{
+            duration: durations.slower,
+            ease: easings.gentle,
+            delay: 0.6
+          }}
+          whileHover={{
+            scale: 1.02,
+            transition: { duration: durations.fast, ease: easings.smooth }
+          }}
+        >
+          <motion.video
+            className="w-full max-w-[640px] h-auto aspect-video object-cover rounded-[10px] shadow-2xl"
             autoPlay
             loop
             muted
             src="/src/public/hero-section.mp4"
+            initial={{ borderRadius: "10px" }}
+            whileHover={{
+              borderRadius: "20px",
+              boxShadow: "0 25px 50px rgba(0, 0, 0, 0.25)",
+              transition: { duration: durations.fast, ease: easings.smooth }
+            }}
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

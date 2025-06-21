@@ -159,10 +159,10 @@ export const CallToActionSection = (): JSX.Element => {
                   className={`w-full px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 rounded-[48px] touch-manipulation ${
                     card.variant === "white"
                       ? "bg-[#4a8b7b] text-white"
-                      : "bg-textwhite text-app-primary"
+                      : "bg-textwhite text-[#4a8b7b]"
                   }`}
                 >
-                  <span className="font-h6-h6-semibold text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
+                  <span className={`font-h6-h6-semibold text-sm sm:text-base  lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] ${card.variant === "white" ? "hover:text-white" : "hover:text-app-primary"}`}>
                     {card.buttonText}
                   </span>
                 </Button>

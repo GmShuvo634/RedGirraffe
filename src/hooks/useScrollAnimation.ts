@@ -1,79 +1,67 @@
-import { useEffect, useRef, useState } from 'react';
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 interface UseScrollAnimationOptions {
   threshold?: number;
-  rootMargin?: string;
   triggerOnce?: boolean;
+  margin?: string;
 }
 
 export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
   const {
     threshold = 0.1,
-    rootMargin = '0px 0px -50px 0px',
-    triggerOnce = true
+    triggerOnce = true,
+    margin = "0px 0px -100px 0px",
   } = options;
 
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: triggerOnce,
+    amount: threshold,
+    margin,
+  });
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          if (triggerOnce && ref.current) {
-            observer.unobserve(ref.current);
-          }
-        } else if (!triggerOnce) {
-          setIsVisible(false);
-        }
-      },
-      {
-        threshold,
-        rootMargin,
-      }
-    );
-
-    const currentRef = ref.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, [threshold, rootMargin, triggerOnce]);
-
-  return { ref, isVisible };
+  return { ref, isInView };
 };
 
-export const useStaggeredAnimation = (itemCount: number, delay: number = 100) => {
-  const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(itemCount).fill(false));
-  const { ref, isVisible } = useScrollAnimation();
+export const useStaggeredScrollAnimation = (
+  itemCount: number,
+  options: UseScrollAnimationOptions = {}
+) => {
+  const { ref, isInView } = useScrollAnimation(options);
 
-  useEffect(() => {
-    if (isVisible) {
-      const timeouts: NodeJS.Timeout[] = [];
-      
-      for (let i = 0; i < itemCount; i++) {
-        const timeout = setTimeout(() => {
-          setVisibleItems(prev => {
-            const newState = [...prev];
-            newState[i] = true;
-            return newState;
-          });
-        }, i * delay);
-        
-        timeouts.push(timeout);
-      }
+  const getItemDelay = (index: number, baseDelay: number = 0.1) => {
+    return isInView ? index * baseDelay : 0;
+  };
 
-      return () => {
-        timeouts.forEach(timeout => clearTimeout(timeout));
-      };
-    }
-  }, [isVisible, itemCount, delay]);
-
-  return { ref, visibleItems, isVisible };
+  return { ref, isInView, getItemDelay };
 };
+
+// Hook for parallax scroll effects
+export const useParallaxScroll = (speed: number = 0.5) => {
+  const ref = useRef(null);
+
+  return {
+    ref,
+    style: {
+      transform: `translateY(${speed * 100}%)`,
+    },
+  };
+};
+
+// Hook for scroll-triggered animations with custom delays
+export const useDelayedScrollAnimation = (
+  delay: number = 0,
+  options: UseScrollAnimationOptions = {}
+) => {
+  const { ref, isInView } = useScrollAnimation(options);
+
+  return {
+    ref,
+    isInView,
+    animationDelay: isInView ? delay : 0,
+  };
+};
+
+// Legacy compatibility
+export const useStaggeredAnimation = useStaggeredScrollAnimation;

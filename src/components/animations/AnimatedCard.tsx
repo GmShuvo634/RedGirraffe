@@ -1,0 +1,63 @@
+import { motion } from "framer-motion";
+import React from "react";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import {
+  cardVariants,
+  hoverLiftVariants,
+  hoverGlowVariants,
+} from "../../utils/animations";
+
+interface AnimatedCardProps {
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+  hoverEffect?: "lift" | "scale" | "glow" | "none";
+  threshold?: number;
+  index?: number;
+}
+
+export const AnimatedCard: React.FC<AnimatedCardProps> = ({
+  children,
+  className = "",
+  delay = 0,
+  hoverEffect = "lift",
+  threshold = 0.1,
+  index = 0,
+}) => {
+  const { ref, isInView } = useScrollAnimation({ threshold });
+
+  const getHoverVariants = () => {
+    switch (hoverEffect) {
+      case "lift":
+        return hoverLiftVariants;
+      case "glow":
+        return hoverGlowVariants;
+      case "scale":
+        return {
+          rest: { scale: 1 },
+          hover: { scale: 1.05 },
+        };
+      default:
+        return {};
+    }
+  };
+
+  const animationDelay = delay + index * 0.1;
+
+  return (
+    <motion.div
+      ref={ref}
+      className={className}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={cardVariants}
+      transition={{ delay: animationDelay }}
+      whileHover={hoverEffect !== "none" ? "hover" : undefined}
+      {...(hoverEffect !== "none" && { variants: getHoverVariants() })}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+export default AnimatedCard;
