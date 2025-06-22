@@ -1,4 +1,10 @@
-import { ArrowRightIcon, MenuIcon, Volume2, VolumeX, Maximize } from "lucide-react";
+import {
+  ArrowRightIcon,
+  MenuIcon,
+  Volume2,
+  VolumeX,
+  Maximize,
+} from "lucide-react";
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Button } from "../../../../components/ui/button";
@@ -7,15 +13,11 @@ import {
   ToggleGroup,
   ToggleGroupItem,
 } from "../../../../components/ui/toggle-group";
-import { AnimatedSection, AnimatedText, AnimatedButton } from "../../../../components/animations";
 import {
   fadeInUpVariants,
-  slideInLeftVariants,
-  slideInRightVariants,
   staggerContainerVariants,
-  buttonVariants,
   durations,
-  easings
+  easings,
 } from "../../../../utils/animations";
 
 export const HeroSection = (): JSX.Element => {
@@ -34,11 +36,12 @@ export const HeroSection = (): JSX.Element => {
     if (element) {
       const headerOffset = 80; // Account for fixed header
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
   };
@@ -230,7 +233,11 @@ export const HeroSection = (): JSX.Element => {
                 className="inline-block"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: durations.slow, ease: easings.smooth, delay: 0.3 }}
+                transition={{
+                  duration: durations.slow,
+                  ease: easings.smooth,
+                  delay: 0.3,
+                }}
               >
                 RedGirraffe
               </motion.span>{" "}
@@ -238,7 +245,11 @@ export const HeroSection = (): JSX.Element => {
                 className="inline-block"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: durations.slow, ease: easings.smooth, delay: 0.5 }}
+                transition={{
+                  duration: durations.slow,
+                  ease: easings.smooth,
+                  delay: 0.5,
+                }}
               >
                 Global Commercial Card
               </motion.span>
@@ -308,7 +319,11 @@ export const HeroSection = (): JSX.Element => {
               <motion.span
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: durations.normal, ease: easings.gentle, delay: 0.8 }}
+                transition={{
+                  duration: durations.normal,
+                  ease: easings.gentle,
+                  delay: 0.8,
+                }}
                 className="font-bold text-app-primary"
               >
                 $20B+
@@ -342,11 +357,11 @@ export const HeroSection = (): JSX.Element => {
           transition={{
             duration: durations.slower,
             ease: easings.gentle,
-            delay: 0.6
+            delay: 0.6,
           }}
           whileHover={{
             scale: 1.02,
-            transition: { duration: durations.fast, ease: easings.smooth }
+            transition: { duration: durations.fast, ease: easings.smooth },
           }}
         >
           <div
