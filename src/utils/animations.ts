@@ -9,20 +9,34 @@ export const easings = {
   gentle: [0.25, 0.46, 0.45, 0.94],
 } as const;
 
-// Animation durations for consistency
+// Animation durations for consistency - Faster timing
 export const durations = {
-  fast: 0.3,
-  normal: 0.5,
-  slow: 0.8,
-  slower: 1.2,
+  fast: 0.2,
+  normal: 0.35,
+  slow: 0.5,
+  slower: 0.7,
 } as const;
 
-// Stagger delays for synchronized animations
+// Stagger delays for synchronized animations - Faster staggering
 export const staggerDelays = {
-  fast: 0.1,
-  normal: 0.15,
-  slow: 0.2,
-  slower: 0.3,
+  fast: 0.05,
+  normal: 0.08,
+  slow: 0.12,
+  slower: 0.15,
+} as const;
+
+// Global section timing for synchronized animations
+export const sectionTimings = {
+  hero: 0,
+  layout: 0.1,
+  mainContent: 0.2,
+  content: 0.3,
+  industries: 0.4,
+  features: 0.5,
+  testimonials: 0.6,
+  pricing: 0.7,
+  contact: 0.8,
+  footer: 0.9,
 } as const;
 
 // Fade in animations
@@ -44,14 +58,14 @@ export const fadeInVariants: Variants = {
 export const fadeInUpVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 60,
+    y: 40,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: durations.slow,
-      ease: easings.gentle,
+      duration: durations.normal,
+      ease: easings.smooth,
     },
   },
 };
@@ -133,7 +147,7 @@ export const scaleUpVariants: Variants = {
   },
 };
 
-// Stagger container variants
+// Stagger container variants - Faster synchronized timing
 export const staggerContainerVariants: Variants = {
   hidden: {
     opacity: 0,
@@ -141,8 +155,8 @@ export const staggerContainerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: staggerDelays.normal,
-      delayChildren: 0.1,
+      staggerChildren: staggerDelays.fast,
+      delayChildren: 0.05,
     },
   },
 };
@@ -155,7 +169,7 @@ export const staggerFastContainerVariants: Variants = {
     opacity: 1,
     transition: {
       staggerChildren: staggerDelays.fast,
-      delayChildren: 0.05,
+      delayChildren: 0.02,
     },
   },
 };
@@ -340,3 +354,43 @@ export const createStaggerDelay = (index: number, baseDelay: number = staggerDel
 export const createViewportAnimation = (threshold: number = 0.1, once: boolean = true) => ({
   viewport: { once, amount: threshold },
 });
+
+// Synchronized section animation variants
+export const createSectionVariants = (sectionKey: keyof typeof sectionTimings): Variants => ({
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: durations.normal,
+      ease: easings.smooth,
+      delay: sectionTimings[sectionKey],
+    },
+  },
+});
+
+// Fast synchronized stagger container for sections
+export const createSectionStaggerVariants = (sectionKey: keyof typeof sectionTimings): Variants => ({
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: staggerDelays.fast,
+      delayChildren: sectionTimings[sectionKey] + 0.1,
+    },
+  },
+});
+
+// Utility to create synchronized delays for elements within sections
+export const createSynchronizedDelay = (
+  sectionKey: keyof typeof sectionTimings,
+  elementIndex: number = 0,
+  baseDelay: number = 0
+) => {
+  return sectionTimings[sectionKey] + baseDelay + (elementIndex * staggerDelays.fast);
+};

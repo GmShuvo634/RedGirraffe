@@ -15,9 +15,11 @@ import {
   cardVariants,
   durations,
   easings,
+  createSynchronizedDelay,
 } from "../../../../utils/animations";
 import { useScrollAnimation } from "../../../../hooks/useScrollAnimation";
 import { useResponsiveCardSlice } from "../../../../hooks/useResponsiveCardSlice";
+import { useGlobalAnimationOrchestrator } from "../../../../hooks/useGlobalAnimationOrchestrator";
 
 // Data for the "For Banks" section
 const bankFeatures = [
@@ -88,6 +90,12 @@ export const MainContentSection = (): JSX.Element => {
     threshold: 0.2,
   });
 
+  // Synchronized animation orchestrator for main content section
+  const { createElementDelay } = useGlobalAnimationOrchestrator({
+    sectionKey: "mainContent",
+    threshold: 0.1,
+  });
+
   // Use mobile responsive hook
   const isMobile = useResponsiveCardSlice();
 
@@ -123,7 +131,11 @@ export const MainContentSection = (): JSX.Element => {
           className="flex flex-col items-center gap-6 sm:gap-8 lg:gap-10 flex-1"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: durations.slow, ease: easings.smooth }}
+          transition={{
+            duration: durations.normal,
+            ease: easings.smooth,
+            delay: createElementDelay(0, 0.1)
+          }}
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.div
@@ -184,9 +196,9 @@ export const MainContentSection = (): JSX.Element => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
-              duration: durations.normal,
+              duration: durations.fast,
               ease: easings.smooth,
-              delay: 0.3,
+              delay: createElementDelay(0, 0.25),
             }}
             viewport={{ once: true, amount: 0.3 }}
           >
@@ -224,9 +236,9 @@ export const MainContentSection = (): JSX.Element => {
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{
-            duration: durations.slow,
+            duration: durations.normal,
             ease: easings.smooth,
-            delay: 0.2,
+            delay: createElementDelay(1, 0.1),
           }}
           viewport={{ once: true, amount: 0.2 }}
         >
@@ -287,9 +299,9 @@ export const MainContentSection = (): JSX.Element => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
-              duration: durations.normal,
+              duration: durations.fast,
               ease: easings.smooth,
-              delay: 0.4,
+              delay: createElementDelay(1, 0.25),
             }}
             viewport={{ once: true, amount: 0.3 }}
           >
@@ -321,9 +333,9 @@ export const MainContentSection = (): JSX.Element => {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
-          duration: durations.slow,
+          duration: durations.normal,
           ease: easings.smooth,
-          delay: 0.3,
+          delay: createElementDelay(2, 0.2),
         }}
         viewport={{ once: true, amount: 0.5 }}
       >
