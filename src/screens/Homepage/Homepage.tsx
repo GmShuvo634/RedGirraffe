@@ -1,30 +1,42 @@
-import React from "react";
-import { CallToActionSection } from "./sections/CallToActionSection";
-import { ContentSection } from "./sections/ContentSection";
-import { FeatureHighlightSection } from "./sections/FeatureHighlightSection";
-import { FooterSection } from "./sections/FooterSection";
+
 import { HeroSection } from "./sections/HeroSection";
-import { LayoutSection } from "./sections/LayoutSection";
+import { FeatureHighlightSection } from "./sections/FeatureHighlightSection";
 import { MainContentSection } from "./sections/MainContentSection";
-import { NavigationSection } from "./sections/NavigationSection";
-import { PricingPlansSection } from "./sections/PricingPlansSection";
-import { SubscriptionFormSection } from "./sections/SubscriptionFormSection";
+import { ContentSection } from "./sections/ContentSection";
+import {  LayoutSection } from "./sections/LayoutSection/LayoutSection";
+import { FooterSection } from "./sections/FooterSection";
 import { UserTestimonialsSection } from "./sections/UserTestimonialsSection/UserTestimonialsSection";
+import { SubscriptionFormSection } from "./sections/SubscriptionFormSection";
+import { CallToActionSection } from "./sections/CallToActionSection";
+import { IndustriesSection } from "./sections/NavigationSection/NavigationSection";
+import { HowItWorksSection } from "./sections/PricingPlansSection/PricingPlansSection";
 
 export const Homepage = (): JSX.Element => {
   return (
     <div className="bg-white flex flex-col items-center w-full min-h-screen">
       <div className="w-full max-w-[1440px]">
         <HeroSection />
-        <LayoutSection />
+        <section id="industries">
+          <LayoutSection />
+        </section>  
         <MainContentSection />
         <ContentSection />
-        <NavigationSection />
-        <FeatureHighlightSection />
+        <section id="industries">
+          <IndustriesSection />
+        </section>
+        <section id="features">
+          <FeatureHighlightSection />
+        </section>
         <UserTestimonialsSection />
-        <PricingPlansSection />
-        <CallToActionSection />
+        <section id="how-it-works">
+          <HowItWorksSection />
+        </section>
+        <section id="pricing">
+          <CallToActionSection />
+        </section>
+        <section id="contact">
         <SubscriptionFormSection />
+        </section>
       </div>
       <FooterSection />
     </div>

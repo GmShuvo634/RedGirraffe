@@ -35,7 +35,7 @@ const processSteps = [
   },
 ];
 
-export const PricingPlansSection = (): JSX.Element => {
+export const HowItWorksSection = (): JSX.Element => {
   return (
     <section className="flex flex-col items-start gap-2.5 px-4 sm:px-6 lg:px-8 xl:px-20 py-12 sm:py-16 lg:py-20 xl:py-[120px] w-full bg-white">
       <div className="flex items-center gap-8 sm:gap-12 lg:gap-16 xl:gap-[120px] w-full max-w-7xl mx-auto">

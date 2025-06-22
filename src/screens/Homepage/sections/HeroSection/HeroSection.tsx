@@ -19,18 +19,34 @@ import {
 } from "../../../../utils/animations";
 
 export const HeroSection = (): JSX.Element => {
-  // Navigation menu items
+  // Navigation menu items with their corresponding section IDs
   const navItems = [
-    "Features",
-    "Industries",
-    "How It Works",
-    "Pricing",
-    "Contact",
+    { label: "Features", sectionId: "features" },
+    { label: "Industries", sectionId: "industries" },
+    { label: "How It Works", sectionId: "how-it-works" },
+    { label: "Pricing", sectionId: "pricing" },
+    { label: "Contact", sectionId: "contact" },
   ];
+
+  // Smooth scroll to section function
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 80; // Account for fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   // Video player state
   const [isMuted, setIsMuted] = useState(true);
   const [showControls, setShowControls] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // Toggle mute/unmute
@@ -54,8 +70,8 @@ export const HeroSection = (): JSX.Element => {
 
   return (
     <div className="flex flex-col items-center gap-8 sm:gap-12 lg:gap-16 xl:gap-40 pb-8 sm:pb-12 lg:pb-16 xl:pb-[120px]">
-      {/* Navigation Bar */}
-      <div className="flex items-center justify-center w-full px-4 sm:px-6 lg:px-8 xl:px-20 bg-white">
+      {/* Navigation Bar - Sticky */}
+      <div className="sticky top-0 z-50 flex items-center justify-center w-full px-4 sm:px-6 lg:px-8 xl:px-20 bg-white/95 backdrop-blur-sm border-b border-[#ebebeb]/50">
         <div className="flex h-16 sm:h-16 lg:h-20 items-center justify-between w-full max-w-7xl py-4 sm:py-4 lg:py-6 border-b border-[#ebebeb]">
           <div className="flex items-center gap-4 lg:gap-12 xl:gap-20">
             {/* Logo */}
@@ -75,9 +91,14 @@ export const HeroSection = (): JSX.Element => {
             {/* Navigation Links - Hidden on mobile and tablet */}
             <div className="hidden lg:flex items-center gap-6 xl:gap-10">
               {navItems.map((item, index) => (
-                <Button key={index} variant="ghost" className="p-0 h-auto hover:bg-transparent touch-manipulation">
-                  <div className="font-body-large-body-large-semibold text-text text-sm lg:text-base xl:text-[length:var(--body-large-body-large-semibold-font-size)] text-center tracking-[var(--body-large-body-large-semibold-letter-spacing)] leading-[var(--body-large-body-large-semibold-line-height)] hover:text-app-primary transition-colors">
-                    {item}
+                <Button
+                  key={index}
+                  variant="ghost"
+                  className="p-0 h-auto hover:bg-transparent touch-manipulation"
+                  onClick={() => scrollToSection(item.sectionId)}
+                >
+                  <div className="font-body-large-body-large-semibold text-text text-sm lg:text-base xl:text-[length:var(--body-large-body-large-semibold-font-size)] text-center tracking-[var(--body-large-body-large-semibold-letter-spacing)] leading-[var(--body-large-body-large-semibold-line-height)] hover:text-app-primary transition-colors cursor-pointer">
+                    {item.label}
                   </div>
                 </Button>
               ))}
@@ -90,6 +111,7 @@ export const HeroSection = (): JSX.Element => {
             <Button
               variant="ghost"
               className="block lg:hidden w-10 h-10 p-2 touch-manipulation"
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
             >
               <MenuIcon className="w-6 h-6 text-black" />
             </Button>
@@ -113,6 +135,54 @@ export const HeroSection = (): JSX.Element => {
           </div>
         </div>
       </div>
+
+      {/* Mobile Navigation Menu */}
+      {showMobileMenu && (
+        <motion.div
+          className="lg:hidden w-full bg-white border-b border-[#ebebeb] px-4 py-4"
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className="flex flex-col gap-4">
+            {navItems.map((item, index) => (
+              <motion.button
+                key={index}
+                onClick={() => {
+                  scrollToSection(item.sectionId);
+                  setShowMobileMenu(false);
+                }}
+                className="text-left py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors touch-manipulation"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <span className="font-body-large-body-large-semibold text-text text-base hover:text-app-primary transition-colors">
+                  {item.label}
+                </span>
+              </motion.button>
+            ))}
+
+            {/* Mobile Action Buttons */}
+            <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-[#ebebeb]">
+              <Button
+                variant="outline"
+                className="w-full h-12 rounded-[64px] border border-solid border-[#ebebeb] touch-manipulation"
+              >
+                <span className="font-body-medium-body-medium-regular text-black">
+                  Get Demo
+                </span>
+              </Button>
+              <Button className="w-full h-12 bg-[#1a3c34] rounded-[64px] touch-manipulation">
+                <span className="font-body-medium-body-medium-regular text-white">
+                  Login
+                </span>
+              </Button>
+            </div>
+          </div>
+        </motion.div>
+      )}
 
       {/* Hero Content */}
       <div className="flex flex-col xl:flex-row mt-16 md:mt-0 items-center gap-6 sm:gap-8 lg:gap-10 xl:gap-20 px-4 sm:px-6 lg:px-8 xl:px-0 w-full max-w-7xl mx-auto">
@@ -204,6 +274,7 @@ export const HeroSection = (): JSX.Element => {
                 <Button
                   size="mobile-lg"
                   className="w-full lg:w-[200px] xl:w-[270px] bg-app-primary rounded-[48px] flex items-center justify-center gap-3"
+                  onClick={() => scrollToSection("contact")}
                 >
                   <ArrowRightIcon className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
                   <span className="font-h6-h6-semibold text-white tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
@@ -219,6 +290,7 @@ export const HeroSection = (): JSX.Element => {
                 <Button
                   size="mobile-lg"
                   className="w-full lg:w-[200px] xl:w-[270px] bg-[#4a8b7b] rounded-[48px] flex items-center justify-center gap-3"
+                  onClick={() => scrollToSection("contact")}
                 >
                   <ArrowRightIcon className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
                   <span className="font-h6-h6-semibold text-white tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">

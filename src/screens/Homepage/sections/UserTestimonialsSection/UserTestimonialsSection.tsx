@@ -101,7 +101,7 @@ export const UserTestimonialsSection = (): JSX.Element => {
 
         {/* Cards Grid */}
         <StaggeredGrid
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 sm:gap-4 lg:gap-4 w-full"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 sm:gap-4 lg:gap-6 w-full"
           speed="normal"
           threshold={0.2}
           delay={0.6}
