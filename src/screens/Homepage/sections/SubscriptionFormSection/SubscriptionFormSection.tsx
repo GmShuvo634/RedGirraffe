@@ -158,6 +158,9 @@ export const SubscriptionFormSection = (): JSX.Element => {
                       ease: easings.bouncy,
                       delay: 0.6 + index * 0.1,
                     }}
+                    whileHover={{
+                      scale: 1,  
+                    }}
                     viewport={{ once: true, amount: 0.3 }}
                   >
                     {info.icon}
