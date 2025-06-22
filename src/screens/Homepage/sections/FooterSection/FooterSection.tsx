@@ -1,5 +1,10 @@
+import { motion } from "framer-motion";
 import { Button } from "../../../../components/ui/button";
 import { Input } from "../../../../components/ui/input";
+import {
+  durations,
+  easings,
+} from "../../../../utils/animations";
 
 // Data for important links
 const importantLinks = [
@@ -80,158 +85,546 @@ export const FooterSection = (): JSX.Element => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12 lg:mb-16">
 
           {/* Important Links */}
-          <div>
-            <h3 className="text-white font-semibold text-lg mb-2">Important Links</h3>
-            <p className="text-[#b8860b] text-sm mb-6">Quick access to essential pages</p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: durations.normal,
+              ease: easings.smooth,
+              delay: 0.1,
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.h3
+              className="text-white font-semibold text-lg mb-2"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: durations.fast,
+                ease: easings.smooth,
+                delay: 0.2,
+              }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              Important Links
+            </motion.h3>
+            <motion.p
+              className="text-[#b8860b] text-sm mb-6"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: durations.fast,
+                ease: easings.smooth,
+                delay: 0.3,
+              }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              Quick access to essential pages
+            </motion.p>
             <div className="space-y-3">
               {importantLinks.map(({ label, href }, index) => (
-                <a
+                <motion.a
                   key={index}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-[#9cacae] hover:text-white transition-colors text-sm"
+                  className="block text-[#9cacae] hover:text-white transition-all duration-300 text-sm hover:translate-x-1"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{
+                    duration: durations.fast,
+                    ease: easings.smooth,
+                    delay: 0.4 + index * 0.03,
+                  }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  whileHover={{
+                    x: 4,
+                    transition: { duration: 0.2 }
+                  }}
                 >
                   {label}
-                </a>
+                </motion.a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Policies & Compliance */}
-          <div>
-            <h3 className="text-white font-semibold text-lg mb-2">Policies & Compliance</h3>
-            <p className="text-[#b8860b] text-sm mb-6">Key policies for security and compliance</p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: durations.normal,
+              ease: easings.smooth,
+              delay: 0.2,
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.h3
+              className="text-white font-semibold text-lg mb-2"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: durations.fast,
+                ease: easings.smooth,
+                delay: 0.3,
+              }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              Policies & Compliance
+            </motion.h3>
+            <motion.p
+              className="text-[#b8860b] text-sm mb-6"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: durations.fast,
+                ease: easings.smooth,
+                delay: 0.4,
+              }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              Key policies for security and compliance
+            </motion.p>
             <div className="space-y-3">
               {policiesLinks.map(({ label, href }, index) => (
-                <a
+                <motion.a
                   key={index}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-[#9cacae] hover:text-white transition-colors text-sm"
+                  className="block text-[#9cacae] hover:text-white transition-all duration-300 text-sm"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{
+                    duration: durations.fast,
+                    ease: easings.smooth,
+                    delay: 0.5 + index * 0.03,
+                  }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  whileHover={{
+                    x: 4,
+                    transition: { duration: 0.2 }
+                  }}
                 >
                   {label}
-                </a>
+                </motion.a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Business Services */}
-          <div>
-            <h3 className="text-white font-semibold text-lg mb-2">Business Services</h3>
-            <p className="text-[#b8860b] text-sm mb-6">Solutions for businesses & partners</p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: durations.normal,
+              ease: easings.smooth,
+              delay: 0.3,
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.h3
+              className="text-white font-semibold text-lg mb-2"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: durations.fast,
+                ease: easings.smooth,
+                delay: 0.4,
+              }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              Business Services
+            </motion.h3>
+            <motion.p
+              className="text-[#b8860b] text-sm mb-6"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: durations.fast,
+                ease: easings.smooth,
+                delay: 0.5,
+              }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              Solutions for businesses & partners
+            </motion.p>
             <div className="space-y-3">
               {businessServices.map(({ label, href }, index) => (
-                <a
+                <motion.a
                   key={index}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-[#9cacae] hover:text-white transition-colors text-sm"
+                  className="block text-[#9cacae] hover:text-white transition-all duration-300 text-sm"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{
+                    duration: durations.fast,
+                    ease: easings.smooth,
+                    delay: 0.6 + index * 0.05,
+                  }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  whileHover={{
+                    x: 4,
+                    transition: { duration: 0.2 }
+                  }}
                 >
                   {label}
-                </a>
+                </motion.a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Our Offices */}
-          <div>
-            <h3 className="text-white font-semibold text-lg mb-2">Our Offices</h3>
-            <p className="text-[#b8860b] text-sm mb-6">Global presence, local impact</p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: durations.normal,
+              ease: easings.smooth,
+              delay: 0.4,
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.h3
+              className="text-white font-semibold text-lg mb-2"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: durations.fast,
+                ease: easings.smooth,
+                delay: 0.5,
+              }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              Our Offices
+            </motion.h3>
+            <motion.p
+              className="text-[#b8860b] text-sm mb-6"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: durations.fast,
+                ease: easings.smooth,
+                delay: 0.6,
+              }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              Global presence, local impact
+            </motion.p>
             <div className="space-y-6">
               {officeLocations.map((office, index) => (
-                <div key={index} className="space-y-2">
-                  <h4 className="text-[#b8860b] font-medium text-sm">{office.country}</h4>
-                  <p className="text-white text-sm font-medium">{office.company}</p>
+                <motion.div
+                  key={index}
+                  className="space-y-2"
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: durations.fast,
+                    ease: easings.smooth,
+                    delay: 0.7 + index * 0.1,
+                  }}
+                  viewport={{ once: true, amount: 0.3 }}
+                >
+                  <motion.h4
+                    className="text-[#b8860b] font-medium text-sm"
+                    initial={{ opacity: 0, x: -5 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      duration: durations.fast,
+                      ease: easings.smooth,
+                      delay: 0.75 + index * 0.1,
+                    }}
+                    viewport={{ once: true, amount: 0.3 }}
+                  >
+                    {office.country}
+                  </motion.h4>
+                  <motion.p
+                    className="text-white text-sm font-medium"
+                    initial={{ opacity: 0, x: -5 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      duration: durations.fast,
+                      ease: easings.smooth,
+                      delay: 0.8 + index * 0.1,
+                    }}
+                    viewport={{ once: true, amount: 0.3 }}
+                  >
+                    {office.company}
+                  </motion.p>
                   {office.addresses ? (
                     office.addresses.map((address, addrIndex) => (
-                      <p key={addrIndex} className="text-[#9cacae] text-sm leading-relaxed">
+                      <motion.p
+                        key={addrIndex}
+                        className="text-[#9cacae] text-sm leading-relaxed"
+                        initial={{ opacity: 0, x: -5 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{
+                          duration: durations.fast,
+                          ease: easings.smooth,
+                          delay: 0.85 + index * 0.1 + addrIndex * 0.05,
+                        }}
+                        viewport={{ once: true, amount: 0.3 }}
+                      >
                         {address}
-                      </p>
+                      </motion.p>
                     ))
                   ) : (
-                    <p className="text-[#9cacae] text-sm leading-relaxed">
+                    <motion.p
+                      className="text-[#9cacae] text-sm leading-relaxed"
+                      initial={{ opacity: 0, x: -5 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        duration: durations.fast,
+                        ease: easings.smooth,
+                        delay: 0.85 + index * 0.1,
+                      }}
+                      viewport={{ once: true, amount: 0.3 }}
+                    >
                       {office.address}
-                    </p>
+                    </motion.p>
                   )}
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Stay Connected */}
-          <div>
-            <h3 className="text-white font-semibold text-lg mb-2">Stay Connected</h3>
-            <p className="text-[#b8860b] text-sm mb-6">Never miss an update</p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: durations.normal,
+              ease: easings.smooth,
+              delay: 0.5,
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.h3
+              className="text-white font-semibold text-lg mb-2"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: durations.fast,
+                ease: easings.smooth,
+                delay: 0.6,
+              }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              Stay Connected
+            </motion.h3>
+            <motion.p
+              className="text-[#b8860b] text-sm mb-6"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: durations.fast,
+                ease: easings.smooth,
+                delay: 0.7,
+              }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              Never miss an update
+            </motion.p>
 
             {/* Email Input */}
-            <div className="mb-8">
-              <div className="flex items-center bg-white rounded-full p-1 mb-3">
+            <motion.div
+              className="mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: durations.fast,
+                ease: easings.smooth,
+                delay: 0.8,
+              }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <div className="flex items-center bg-white rounded-full p-1 mb-3 hover:shadow-md transition-shadow duration-300">
                 <Input
-                  className="flex-1 border-0 bg-transparent text-gray-600 placeholder:text-gray-400 text-sm px-4"
+                  className="flex-1 border-0 bg-transparent text-gray-600 placeholder:text-gray-400 text-sm px-4 focus:outline-none"
                   placeholder="Enter your email"
                 />
-                <Button className="bg-[#b8860b] hover:bg-[#a0750a] rounded-full px-6 py-2 text-sm font-medium">
-                  Subscribe
-                </Button>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Button className="bg-[#b8860b] hover:bg-[#a0750a] rounded-full px-6 py-2 text-sm font-medium transition-all duration-300">
+                    Subscribe
+                  </Button>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Company Info */}
-            <div className="mb-8">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 bg-[#00d959] rounded flex items-center justify-center">
+            <motion.div
+              className="mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: durations.fast,
+                ease: easings.smooth,
+                delay: 0.9,
+              }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <motion.div
+                className="flex items-center gap-3 mb-4"
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: durations.fast,
+                  ease: easings.smooth,
+                  delay: 1.0,
+                }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <motion.div
+                  className="w-8 h-8 bg-[#00d959] rounded flex items-center justify-center"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ duration: 0.2 }}
+                >
                   <img src="/logo.png" alt="RedGirraffe" className="w-6 h-6" />
-                </div>
+                </motion.div>
                 <h4 className="text-white font-bold text-xl">RedGirraffe</h4>
-              </div>
-              <div className="flex items-center gap-2 mb-4">
-               { [1, 2, 3, 4].map((country, index) => (
-                  <img src={`/falg_${index + 1}.png`} key={index} alt="flag" className="w-8 h-6" />
+              </motion.div>
+              <motion.div
+                className="flex items-center gap-2 mb-4"
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: durations.fast,
+                  ease: easings.smooth,
+                  delay: 1.1,
+                }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
+               { [1, 2, 3, 4].map((_, index) => (
+                  <motion.img
+                    src={`/falg_${index + 1}.png`}
+                    key={index}
+                    alt="flag"
+                    className="w-8 h-6"
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      duration: durations.fast,
+                      ease: easings.bouncy,
+                      delay: 1.2 + index * 0.05,
+                    }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    whileHover={{ scale: 1.1 }}
+                  />
                 ))}
-              </div>
-              <div className="flex flex-wrap items-center gap-2 text-[#b8860b] text-sm mb-4">
+              </motion.div>
+              <motion.div
+                className="flex flex-wrap items-center gap-2 text-[#b8860b] text-sm mb-4"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: durations.fast,
+                  ease: easings.smooth,
+                  delay: 1.3,
+                }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 <span>Payments</span>
                 <span>|</span>
                 <span>B2B SaaS</span>
                 <span>|</span>
                 <span>Real Estate</span>
-              </div>
-              <div className="mb-6">
+              </motion.div>
+              <motion.div
+                className="mb-6"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: durations.fast,
+                  ease: easings.smooth,
+                  delay: 1.4,
+                }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 <p className="text-[#b8860b] text-sm mb-2">Write to us at:</p>
-                <a href="mailto:connect@redgirraffe.com" className="text-white font-medium text-sm hover:text-[#00d959] transition-colors">
+                <motion.a
+                  href="mailto:connect@redgirraffe.com"
+                  className="text-white font-medium text-sm hover:text-[#00d959] transition-colors"
+                  whileHover={{ x: 2 }}
+                  transition={{ duration: 0.2 }}
+                >
                   connect@redgirraffe.com
-                </a>
-              </div>
-            </div>
+                </motion.a>
+              </motion.div>
+            </motion.div>
 
             {/* Social Icons */}
-            <div className="flex items-center gap-3">
+            <motion.div
+              className="flex items-center gap-3"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: durations.fast,
+                ease: easings.smooth,
+                delay: 1.5,
+              }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               {socialMediaLinks.map(({ name, icon, href }, index) => (
-                <a
+                <motion.a
                   key={index}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-8 h-8 flex items-center justify-center hover:opacity-80 transition-opacity"
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: durations.fast,
+                    ease: easings.bouncy,
+                    delay: 1.6 + index * 0.05,
+                  }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  whileHover={{
+                    scale: 1.2,
+                    rotate: 5,
+                    transition: { duration: 0.2 }
+                  }}
                 >
                   <img src={icon} alt={name} className="w-6 h-6" />
-                </a>
+                </motion.a>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
         {/* Footer Bottom */}
-        <div className="pt-6 border-t border-[#366f65]">
-          <div className="text-center py-3 rounded">
+        <motion.div
+          className="pt-6 border-t border-[#366f65]"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: durations.normal,
+            ease: easings.smooth,
+            delay: 1.8,
+          }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.div
+            className="text-center py-3 rounded"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: durations.fast,
+              ease: easings.smooth,
+              delay: 1.9,
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <p className="text-white text-sm font-medium">
               Copyright © 2025-2026 | RedGirraffe - All rights reserved
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </footer>
   );
