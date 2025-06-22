@@ -12,7 +12,7 @@ const importantLinks = [
   { label: "Our Values", href: "https://redgirraffe.com/in/app/values" },
   { label: "RentPay™", href: "https://redgirraffe.com/in/app/rentpay-details" },
   { label: "About Us", href: "https://redgirraffe.com/in/app/aboutus" },
-  { label: "Reviews", href: "#" }, // Placeholder
+  { label: "Reviews", href: "#" },
   { label: "FAQs", href: "https://redgirraffe.com/in/app/faqs" },
   { label: "Blog", href: "https://redgirraffe.com/blog/" },
   { label: "Press Releases", href: "https://redgirraffe.com/blog/media-corner/" },
@@ -66,11 +66,11 @@ const officeLocations = [
 
 // Data for social media links (can be updated with real hrefs)
 const socialMediaLinks = [
-  { name: "YouTube", icon: "/src/public/youtube.png", href: "#" },
-  { name: "TikTok", icon: "/src/public/tiktok.png", href: "#" },
-  { name: "LinkedIn", icon: "/src/public/linkedin.png", href: "#" },
-  { name: "Instagram", icon: "/src/public/instagram.png", href: "#" },
-  { name: "Facebook", icon: "/src/public/facebook.png", href: "#" },
+  { name: "YouTube", icon: "/youtube.png", href: "#" },
+  { name: "TikTok", icon: "/tiktok.png", href: "#" },
+  { name: "LinkedIn", icon: "/linkedin.png", href: "#" },
+  { name: "Instagram", icon: "/instagram.png", href: "#" },
+  { name: "Facebook", icon: "/facebook.png", href: "#" },
 ];
 
 export const FooterSection = (): JSX.Element => {
@@ -78,7 +78,7 @@ export const FooterSection = (): JSX.Element => {
     <footer className="w-full pt-16 lg:pt-20 pb-6 lg:pb-8 px-4 sm:px-8 lg:px-20 bg-[#1a3c34] flex flex-col">
       <div className="flex flex-col w-full max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12 lg:mb-16">
-          
+
           {/* Important Links */}
           <div>
             <h3 className="text-white font-semibold text-lg mb-2">Important Links</h3>
@@ -183,13 +183,13 @@ export const FooterSection = (): JSX.Element => {
             <div className="mb-8">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-8 bg-[#00d959] rounded flex items-center justify-center">
-                  <img src="/src/public/logo.png" alt="RedGirraffe" className="w-6 h-6" />
+                  <img src="/logo.png" alt="RedGirraffe" className="w-6 h-6" />
                 </div>
                 <h4 className="text-white font-bold text-xl">RedGirraffe</h4>
               </div>
               <div className="flex items-center gap-2 mb-4">
                { [1, 2, 3, 4].map((country, index) => (
-                  <img src={`/src/public/falg_${index + 1}.png`} key={index} alt="flag" className="w-8 h-6" />
+                  <img src={`/falg_${index + 1}.png`} key={index} alt="flag" className="w-8 h-6" />
                 ))}
               </div>
               <div className="flex flex-wrap items-center gap-2 text-[#b8860b] text-sm mb-4">

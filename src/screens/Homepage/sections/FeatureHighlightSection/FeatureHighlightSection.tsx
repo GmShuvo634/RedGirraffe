@@ -170,7 +170,7 @@ export const FeatureHighlightSection = (): JSX.Element => {
                         <motion.img
                           className="w-5 h-5 sm:w-6 sm:h-6 mt-0.5 flex-shrink-0"
                           alt="Label"
-                          src="/src/public/thin-arrow.svg"
+                          src="/thin-arrow.svg"
                           whileHover={{
                             rotate: 15,
                             transition: {

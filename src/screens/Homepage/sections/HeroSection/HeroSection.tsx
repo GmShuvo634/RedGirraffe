@@ -40,7 +40,7 @@ export const HeroSection = (): JSX.Element => {
                 <img
                   className="absolute w-full h-full top-0 left-0 object-cover"
                   alt="Logo"
-                  src="/src/public/logo.png"
+                  src="/logo.png"
                 />
               </div>
               <div className="font-h5-h5-bold text-black text-lg sm:text-lg lg:text-xl xl:text-[length:var(--h5-h5-bold-font-size)] leading-tight tracking-[var(--h5-h5-bold-letter-spacing)]">
@@ -232,7 +232,7 @@ export const HeroSection = (): JSX.Element => {
               <img
                 className="absolute w-8 h-8 top-[13px] left-0"
                 alt="Cursor"
-                src="/src/public/fluent_cursor-20-filled.svg"
+                src="/fluent_cursor-20-filled.svg"
               />
             </div>
           </div>
@@ -258,7 +258,7 @@ export const HeroSection = (): JSX.Element => {
             autoPlay
             loop
             muted
-            src="/src/public/hero-section.mp4"
+            src="/hero-section.mp4"
             initial={{ borderRadius: "10px" }}
             whileHover={{
               borderRadius: "20px",

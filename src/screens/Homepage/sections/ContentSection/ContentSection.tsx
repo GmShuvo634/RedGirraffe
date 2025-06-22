@@ -23,37 +23,37 @@ export const ContentSection = (): JSX.Element => {
   // Service category data for Vendor & Payments tab
   const vendorCategories = [
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Vendor Payments",
       description: "Pay vendors on time and avail cash discounts on bills",
     },
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Cleaning, Security & Facility Services",
       description: "Fund premises upkeep",
     },
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Event & Sponsorship Payments",
       description: "Support events, sponsorships, and promotional activities",
     },
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Marketing & Advertising",
       description: "Settle bills for campaigns and creative services",
     },
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Logistics & Shipping",
       description: "Fund freight and transportation services",
     },
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Professional Services",
       description: "Pay consultants, auditors, and advisors efficiently",
     },
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Contractor Payouts",
       description: "Pay freelancers and service partners",
     },
@@ -62,37 +62,37 @@ export const ContentSection = (): JSX.Element => {
   // Service category data for Business Operations tab
   const businessCategories = [
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Data Centres & SaaS Tools",
       description: "Streamline hosting and software costs",
     },
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Cleaning, Security & Facility Services",
       description: "Fund premises upkeep",
     },
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Event & Sponsorship Payments",
       description: "Support events, sponsorships, and promotional activities",
     },
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Marketing & Advertising",
       description: "Settle bills for campaigns and creative services",
     },
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Logistics & Shipping",
       description: "Fund freight and transportation services",
     },
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Professional Services",
       description: "Pay consultants, auditors, and advisors efficiently",
     },
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Vendor/Contractor Payouts",
       description: "Pay freelancers and service partners",
     },
@@ -101,32 +101,32 @@ export const ContentSection = (): JSX.Element => {
   // Service category data for Global tab (same as original)
   const globalCategories = [
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Cleaning, Security & Facility Services",
       description: "Fund premises upkeep",
     },
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Event & Sponsorship Payments",
       description: "Support events, sponsorships, and promotional activities",
     },
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Marketing & Advertising",
       description: "Settle bills for campaigns and creative services",
     },
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Logistics & Shipping",
       description: "Fund freight and transportation services",
     },
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Professional Services",
       description: "Pay consultants, auditors, and advisors efficiently",
     },
     {
-      icon: "/src/public/equalizer.svg",
+      icon: "/equalizer.svg",
       title: "Vendor/Contractor Payouts",
       description: "Pay freelancers and service partners",
     },

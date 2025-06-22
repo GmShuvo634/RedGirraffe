@@ -134,7 +134,7 @@ export const LayoutSection = (): JSX.Element => {
                     <img
                       className="w-full h-full object-contain"
                       alt="Problem visualization"
-                      src="/src/public/chart-container.png"
+                      src="/chart-container.png"
                     />
                   </div>
                 </div>
@@ -256,7 +256,7 @@ export const LayoutSection = (): JSX.Element => {
                         key={`solution-item-${index}-${itemIndex}`}
                         className="flex items-start gap-2.5 w-full"
                       >
-                        <img className="w-5 h-5 sm:w-6 sm:h-6 mt-0.5 flex-shrink-0" alt="Label" src="/src/public/thin-arrow.svg" />
+                        <img className="w-5 h-5 sm:w-6 sm:h-6 mt-0.5 flex-shrink-0" alt="Label" src="/thin-arrow.svg" />
                         <p className="flex-1 font-h6-h6-regular text-text text-sm sm:text-sm lg:text-base xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
                           {item}
                         </p>
