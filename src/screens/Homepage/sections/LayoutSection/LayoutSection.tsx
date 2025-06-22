@@ -12,6 +12,7 @@ import {
   durations,
   easings,
 } from "../../../../utils/animations";
+import { useGlobalAnimationOrchestrator } from "../../../../hooks/useGlobalAnimationOrchestrator";
 
 // Problem cards data
 const problemCards = [
@@ -114,6 +115,12 @@ const solutionsData = [
 ];
 
 export const LayoutSection = (): JSX.Element => {
+  // Synchronized animation orchestrator for layout section
+  const { createElementDelay } = useGlobalAnimationOrchestrator({
+    sectionKey: "layout",
+    threshold: 0.1,
+  });
+
   return (
     <section className="flex flex-col items-center gap-8 sm:gap-12 lg:gap-[60px] px-4 sm:px-6 lg:px-8 xl:px-20 py-8 sm:py-12 lg:py-16 xl:py-[120px] w-full bg-[#e0eae8]">
       <motion.div
@@ -123,7 +130,7 @@ export const LayoutSection = (): JSX.Element => {
         transition={{
           duration: durations.normal,
           ease: easings.smooth,
-          delay: 0.1,
+          delay: createElementDelay(0, 0.05),
         }}
         viewport={{ once: true, amount: 0.3 }}
       >
@@ -131,7 +138,7 @@ export const LayoutSection = (): JSX.Element => {
           as="h2"
           variant="fadeUp"
           className="w-full font-h3-h3-semibold text-[#1a3c34] text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]"
-          delay={0.2}
+          delay={createElementDelay(1, 0.05)}
           threshold={0.3}
         >
           Traditional B2B Payouts Fail—And What We Fix

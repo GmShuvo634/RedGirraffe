@@ -18,7 +18,9 @@ import {
   staggerContainerVariants,
   durations,
   easings,
+  createSynchronizedDelay,
 } from "../../../../utils/animations";
+import { useGlobalAnimationOrchestrator } from "../../../../hooks/useGlobalAnimationOrchestrator";
 
 export const HeroSection = (): JSX.Element => {
   // Navigation menu items with their corresponding section IDs
@@ -29,6 +31,12 @@ export const HeroSection = (): JSX.Element => {
     { label: "Pricing", sectionId: "pricing" },
     { label: "Contact", sectionId: "contact" },
   ];
+
+  // Synchronized animation orchestrator for hero section
+  const { createElementDelay } = useGlobalAnimationOrchestrator({
+    sectionKey: "hero",
+    threshold: 0.1,
+  });
 
   // Smooth scroll to section function
   const scrollToSection = (sectionId: string) => {
@@ -146,7 +154,7 @@ export const HeroSection = (): JSX.Element => {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: durations.fast }}
         >
           <div className="flex flex-col gap-4">
             {navItems.map((item, index) => (
@@ -159,7 +167,11 @@ export const HeroSection = (): JSX.Element => {
                 className="text-left py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors touch-manipulation"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
+                transition={{
+                  duration: durations.fast,
+                  ease: easings.smooth,
+                  delay: index * 0.05
+                }}
               >
                 <span className="font-body-large-body-large-semibold text-text text-base hover:text-app-primary transition-colors">
                   {item.label}
@@ -234,9 +246,9 @@ export const HeroSection = (): JSX.Element => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  duration: durations.slow,
+                  duration: durations.normal,
                   ease: easings.smooth,
-                  delay: 0.3,
+                  delay: createElementDelay(0, 0.1),
                 }}
               >
                 RedGirraffe
@@ -246,9 +258,9 @@ export const HeroSection = (): JSX.Element => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  duration: durations.slow,
+                  duration: durations.normal,
                   ease: easings.smooth,
-                  delay: 0.5,
+                  delay: createElementDelay(1, 0.1),
                 }}
               >
                 Global Commercial Card
@@ -320,9 +332,9 @@ export const HeroSection = (): JSX.Element => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{
-                  duration: durations.normal,
+                  duration: durations.fast,
                   ease: easings.gentle,
-                  delay: 0.8,
+                  delay: createElementDelay(3, 0.2),
                 }}
                 className="font-bold text-app-primary"
               >
@@ -355,9 +367,9 @@ export const HeroSection = (): JSX.Element => {
           initial={{ opacity: 0, x: 60, scale: 0.9 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{
-            duration: durations.slower,
+            duration: durations.normal,
             ease: easings.gentle,
-            delay: 0.6,
+            delay: createElementDelay(2, 0.15),
           }}
           whileHover={{
             scale: 1.02,
