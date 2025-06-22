@@ -148,7 +148,7 @@ export const CallToActionSection = (): JSX.Element => {
                     className={`flex flex-col gap-6 sm:gap-8 lg:gap-10 p-6 sm:p-8 lg:p-10 rounded-xl border ${
                       pricingCards[currentSlide].variant === "white"
                         ? "bg-white border-[#ebebeb]"
-                        : "[background:url(..//frame-1455.png)_50%_50%_/_cover,linear-gradient(30deg,rgba(8,43,36,1)_0%,rgba(16,84,71,0.7)_100%)]"
+                        : "[background:url(../frame-1455.png)_50%_50%_/_cover,linear-gradient(30deg,rgba(8,43,36,1)_0%,rgba(16,84,71,0.7)_100%)]"
                     } shadow-[8px_12px_20px_#00000014] touch-manipulation`}
                   >
                     <CardHeader className="p-0">
@@ -257,7 +257,7 @@ export const CallToActionSection = (): JSX.Element => {
                 className={`flex flex-col gap-6 sm:gap-8 lg:gap-10 p-6 sm:p-8 lg:p-10 rounded-xl border ${
                   card.variant === "white"
                     ? "bg-white border-[#ebebeb]"
-                    : "[background:url(..//frame-1455.png)_50%_50%_/_cover,linear-gradient(30deg,rgba(8,43,36,1)_0%,rgba(16,84,71,0.7)_100%)]"
+                    : "[background:url(../frame-1455.png)_50%_50%_/_cover,linear-gradient(30deg,rgba(8,43,36,1)_0%,rgba(16,84,71,0.7)_100%)]"
                 } shadow-[8px_12px_20px_#00000014] touch-manipulation`}
               >
                 <CardHeader className="p-0">

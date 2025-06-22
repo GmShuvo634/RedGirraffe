@@ -1,5 +1,5 @@
-import { ArrowRightIcon, MenuIcon } from "lucide-react";
-import React from "react";
+import { ArrowRightIcon, MenuIcon, Volume2, VolumeX, Maximize } from "lucide-react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Button } from "../../../../components/ui/button";
 import { Card } from "../../../../components/ui/card";
@@ -27,6 +27,30 @@ export const HeroSection = (): JSX.Element => {
     "Pricing",
     "Contact",
   ];
+
+  // Video player state
+  const [isMuted, setIsMuted] = useState(true);
+  const [showControls, setShowControls] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Toggle mute/unmute
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
+    }
+  };
+
+  // Toggle fullscreen
+  const toggleFullscreen = () => {
+    if (videoRef.current) {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        videoRef.current.requestFullscreen();
+      }
+    }
+  };
 
   return (
     <div className="flex flex-col items-center gap-8 sm:gap-12 lg:gap-16 xl:gap-40 pb-8 sm:pb-12 lg:pb-16 xl:pb-[120px]">
@@ -238,7 +262,7 @@ export const HeroSection = (): JSX.Element => {
           </div>
         </div>
 
-        {/* Hero Image - Mobile optimized with animation */}
+        {/* Hero Video Player - Mobile optimized with custom controls */}
         <motion.div
           className="w-full xl:w-auto flex justify-center mt-4 sm:mt-6 lg:mt-0"
           initial={{ opacity: 0, x: 60, scale: 0.9 }}
@@ -253,19 +277,57 @@ export const HeroSection = (): JSX.Element => {
             transition: { duration: durations.fast, ease: easings.smooth }
           }}
         >
-          <motion.video
-            className="w-full max-w-[640px] h-auto aspect-video object-cover rounded-[10px] shadow-2xl"
-            autoPlay
-            loop
-            muted
-            src="/hero-section.mp4"
-            initial={{ borderRadius: "10px" }}
-            whileHover={{
-              borderRadius: "20px",
-              boxShadow: "0 25px 50px rgba(0, 0, 0, 0.25)",
-              transition: { duration: durations.fast, ease: easings.smooth }
-            }}
-          />
+          <div
+            className="relative w-full max-w-[640px] group"
+            onMouseEnter={() => setShowControls(true)}
+            onMouseLeave={() => setShowControls(false)}
+            onTouchStart={() => setShowControls(true)}
+            onTouchEnd={() => setTimeout(() => setShowControls(false), 3000)}
+          >
+            <motion.video
+              ref={videoRef}
+              className="w-full h-auto aspect-video object-cover rounded-[10px] shadow-2xl"
+              autoPlay
+              loop
+              muted
+              playsInline
+              src="/hero-video.mp4"
+            />
+
+            {/* Custom Video Controls */}
+            <motion.div
+              className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 flex items-center gap-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: showControls ? 1 : 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              {/* Mute/Unmute Button */}
+              <motion.button
+                onClick={toggleMute}
+                className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-black/70 hover:bg-black/90 rounded-full backdrop-blur-sm transition-all duration-200 touch-manipulation"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label={isMuted ? "Unmute video" : "Mute video"}
+              >
+                {isMuted ? (
+                  <VolumeX className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                ) : (
+                  <Volume2 className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                )}
+              </motion.button>
+
+              {/* Fullscreen Button */}
+              <motion.button
+                onClick={toggleFullscreen}
+                className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-black/70 hover:bg-black/90 rounded-full backdrop-blur-sm transition-all duration-200 touch-manipulation"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Toggle fullscreen"
+              >
+                <Maximize className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+              </motion.button>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </div>
