@@ -10,8 +10,18 @@ import { CallToActionSection } from "./sections/CallToActionSection";
 import { IndustriesSection } from "./sections/NavigationSection/NavigationSection";
 import { HowItWorksSection } from "./sections/PricingPlansSection/PricingPlansSection";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronUp} from "lucide-react";
+import { ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
+import { NavigationBar, NavigationItem } from "../../components/NavigationBar";
+
+ // Navigation menu items with their corresponding section IDs
+  const navItems: NavigationItem[] = [
+    { label: "Features", sectionId: "features" },
+    { label: "Industries", sectionId: "industries" },
+    { label: "How It Works", sectionId: "how-it-works" },
+    { label: "Pricing", sectionId: "pricing" },
+    { label: "Contact", sectionId: "contact" },
+  ];
 
 
 export const Homepage = (): JSX.Element => {
@@ -33,9 +43,25 @@ export const Homepage = (): JSX.Element => {
     });
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 80; // Account for fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className="bg-white flex flex-col w-full min-h-screen">
       <div className="w-full">
+        <NavigationBar navItems={navItems} onNavigate={scrollToSection} />
         <HeroSection />
         <section id="industries" className="section-fullscreen">
           <div className="container-inner">

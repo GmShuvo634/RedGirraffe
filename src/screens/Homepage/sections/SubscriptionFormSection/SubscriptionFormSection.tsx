@@ -59,7 +59,7 @@ export const SubscriptionFormSection = (): JSX.Element => {
   ];
 
   return (
-    <div className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] bg-white w-full">
+    <section className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] bg-white w-full">
       {/* Heading Section */}
       <motion.div
         className="flex flex-col items-start gap-4 sm:gap-5 max-w-4xl w-full"
@@ -380,6 +380,6 @@ export const SubscriptionFormSection = (): JSX.Element => {
           </CardContent>
         </Card>
       </motion.div>
-    </div>
+    </section>
   );
 };

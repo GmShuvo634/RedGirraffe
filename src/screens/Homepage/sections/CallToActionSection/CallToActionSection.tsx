@@ -81,7 +81,7 @@ export const CallToActionSection = (): JSX.Element => {
     setCurrentSlide(index);
   };
   return (
-    <div className="bg-[#e0eae8] w-full pt-16 lg:pt-20 pb-16 lg:pb-20 px-6 sm:px-6 lg:px-[60px] rounded-md">
+    <section className="bg-[#e0eae8] w-full pt-16 lg:pt-20 pb-16 lg:pb-20 px-6 sm:px-6 lg:px-[60px] rounded-md">
       <div className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] w-full">
         {/* Heading and description */}
         <motion.div
@@ -539,6 +539,6 @@ export const CallToActionSection = (): JSX.Element => {
           </StaggeredGrid>
         )}
       </div>
-    </div>
+    </section>
   );
 };
