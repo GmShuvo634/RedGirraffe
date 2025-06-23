@@ -84,8 +84,8 @@ const featureRows = [
 
 export const FeatureHighlightSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] pt-8 sm:pt-12 lg:pt-15 pb-12 sm:pb-16 lg:pb-20 xl:pb-[120px] px-4 sm:px-6 lg:px-8 xl:px-20 w-full">
-      <div className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] w-full max-w-7xl">
+    <section className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] w-full">
+      <div className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] w-full">
         {/* Header Section */}
         <motion.div
           className="flex flex-col w-full max-w-4xl items-center gap-4 sm:gap-5"
@@ -216,7 +216,7 @@ export const FeatureHighlightSection = (): JSX.Element => {
                     }}
                     viewport={{ once: true, amount: 0.3 }}
                   >
-                    <AnimatedButton className={`flex items-center justify-center gap-3 px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8  ${card.buttonClass} rounded-[48px] text-white w-full max-w-[330px] touch-manipulation hover:scale-105 transition-transform duration-300`}>
+                    <AnimatedButton className={`flex items-center justify-center gap-3 px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8  ${card.buttonClass} rounded-[48px] text-white w-full max-w-[330px] touch-manipulation transition-all duration-300`}>
                       <motion.div
                         initial={{ x: -3, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
@@ -257,7 +257,7 @@ export const FeatureHighlightSection = (): JSX.Element => {
           ))}
         </StaggeredGrid>
 
-        {/* Feature Cards Grid */}
+        {/* Feature Cards Grid not scale in hover*/}
         <motion.div
           className="flex flex-col gap-6 sm:gap-8 lg:gap-10 w-full"
           initial={{ opacity: 0, y: 20 }}
@@ -268,6 +268,7 @@ export const FeatureHighlightSection = (): JSX.Element => {
             delay: 1.0,
           }}
           viewport={{ once: true, amount: 0.1 }}
+          whileTap={{ scale: 0.98 }}
         >
           {featureRows.map((row, rowIndex) => (
             <StaggeredGrid
@@ -285,7 +286,7 @@ export const FeatureHighlightSection = (): JSX.Element => {
                   threshold={0.1}
                   className="h-full"
                 >
-                  <Card className="bg-[#f5f5f5] rounded-[10px] border border-[#ebebeb] pb-4 touch-manipulation group hover:bg-[#1a3c34] hover:border-[#1a3c34] hover:cursor-pointer transition-all duration-300 ease-in-out h-full hover:scale-105">
+                  <Card className="bg-[#f5f5f5] rounded-[10px] border border-[#ebebeb] pb-4 touch-manipulation group hover:bg-[#1a3c34] hover:border-[#1a3c34] hover:cursor-pointer transition-all duration-300 ease-in-out h-full">
                     <CardContent className="flex flex-col gap-2.5 pt-6 sm:pt-8 lg:pt-10 pb-4 sm:pb-5 px-6 sm:px-8 lg:px-10 h-full">
                       <motion.div
                         initial={{ opacity: 0, y: 15 }}

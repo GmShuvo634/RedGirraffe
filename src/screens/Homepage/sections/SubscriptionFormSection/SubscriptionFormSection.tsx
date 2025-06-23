@@ -59,7 +59,7 @@ export const SubscriptionFormSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] px-4 sm:px-6 lg:px-8 xl:px-20 py-12 sm:py-16 lg:py-20 xl:py-[120px] bg-white w-full">
+    <div className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] bg-white w-full">
       {/* Heading Section */}
       <motion.div
         className="flex flex-col items-start gap-4 sm:gap-5 max-w-4xl w-full"
@@ -159,7 +159,7 @@ export const SubscriptionFormSection = (): JSX.Element => {
                       delay: 0.6 + index * 0.1,
                     }}
                     whileHover={{
-                      scale: 1,  
+                      scale: 1,
                     }}
                     viewport={{ once: true, amount: 0.3 }}
                   >
@@ -348,7 +348,7 @@ export const SubscriptionFormSection = (): JSX.Element => {
             >
               <AnimatedButton
                 variant="default"
-                className="btn-mobile-lg flex items-center justify-center gap-3 bg-[#4a8b7b] rounded-[48px] w-full max-w-[330px] hover:bg-[#3d7a6a] transition-all duration-300 hover:shadow-lg transform hover:scale-105"
+                className="btn-mobile-lg flex items-center justify-center gap-3 bg-[#4a8b7b] rounded-[48px] w-full max-w-[330px] hover:bg-[#3d7a6a] transition-all duration-300 hover:shadow-lg"
               >
                 <motion.div
                   initial={{ x: -5, opacity: 0 }}
@@ -380,6 +380,6 @@ export const SubscriptionFormSection = (): JSX.Element => {
           </CardContent>
         </Card>
       </motion.div>
-    </section>
+    </div>
   );
 };

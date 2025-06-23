@@ -80,8 +80,9 @@ const socialMediaLinks = [
 
 export const FooterSection = (): JSX.Element => {
   return (
-    <footer className="w-full pt-16 lg:pt-20 pb-6 lg:pb-8 px-4 sm:px-8 lg:px-20 bg-[#1a3c34] flex flex-col">
-      <div className="flex flex-col w-full max-w-7xl mx-auto">
+    <footer className="w-full pt-16 lg:pt-20 pb-6 lg:pb-8 bg-[#1a3c34] flex flex-col">
+      <div className="container-inner">
+        <div className="flex flex-col w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12 lg:mb-16">
 
           {/* Important Links */}
@@ -625,6 +626,7 @@ export const FooterSection = (): JSX.Element => {
             </p>
           </motion.div>
         </motion.div>
+        </div>
       </div>
     </footer>
   );

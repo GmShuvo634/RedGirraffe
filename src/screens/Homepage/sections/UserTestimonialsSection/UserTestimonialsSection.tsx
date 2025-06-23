@@ -33,7 +33,7 @@ const testimonialData = [
 
 export const UserTestimonialsSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] px-4 sm:px-6 lg:px-8 xl:px-20 py-12 sm:py-16 lg:py-20 xl:py-[120px] w-full bg-[#e0eae8]">
+    <div className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] w-full bg-[#e0eae8] pt-16 lg:pt-20 pb-16 lg:pb-20 px-6 sm:px-6 lg:px-[60px] rounded-md">
       <motion.div
         className="max-w-4xl flex flex-col items-start gap-4 sm:gap-5"
         initial={{ opacity: 0, y: 30 }}
@@ -45,7 +45,7 @@ export const UserTestimonialsSection = (): JSX.Element => {
         }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="flex items-center justify-center w-full">
+        <div className="flex items-center justify-center w-full ">
           <AnimatedText
             as="h2"
             variant="fadeUp"
@@ -191,6 +191,6 @@ export const UserTestimonialsSection = (): JSX.Element => {
           ))}
         </StaggeredGrid>
       </div>
-    </section>
+    </div>
   );
 };

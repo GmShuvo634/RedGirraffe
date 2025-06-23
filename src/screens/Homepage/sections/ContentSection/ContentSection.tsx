@@ -132,8 +132,8 @@ export const ContentSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col items-start gap-6 sm:gap-8 lg:gap-[60px] px-4 sm:px-6 lg:px-8 xl:px-20 py-8 sm:py-12 lg:py-16 xl:py-[120px] w-full bg-[#e0eae8]">
-      <div className="flex flex-col items-center gap-6 sm:gap-8 lg:gap-[60px] w-full max-w-7xl mx-auto">
+    <section className="flex flex-col items-start gap-6 sm:gap-8 lg:gap-[60px] w-full bg-[#e0eae8] pt-16 lg:pt-20 pb-16 lg:pb-20 px-6 sm:px-6 lg:px-[60px]">
+      <div className="flex flex-col items-center gap-6 sm:gap-8 lg:gap-[60px] w-full">
         <div className="flex flex-col max-w-4xl items-start gap-4 lg:gap-5">
           <AnimatedText
             as="h2"
@@ -146,7 +146,7 @@ export const ContentSection = (): JSX.Element => {
           </AnimatedText>
         </div>
 
-        <div className="flex flex-col items-start gap-6 sm:gap-8 lg:gap-[60px] w-full">
+        <div className="flex flex-col items-start gap-6 sm:gap-8 lg:gap-[60px] w-full px-6 sm:px-6 lg:px-[60px]">
           <Tabs defaultValue="vendor" className="w-full">
             <TabsList className="flex w-full h-auto bg-transparent p-0 gap-1 sm:gap-2 lg:gap-10 flex-col sm:flex-row">
               <TabsTrigger

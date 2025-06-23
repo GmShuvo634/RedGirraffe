@@ -81,8 +81,8 @@ export const CallToActionSection = (): JSX.Element => {
     setCurrentSlide(index);
   };
   return (
-    <section className="py-12 sm:py-16 lg:py-20 xl:py-[120px] px-4 sm:px-6 lg:px-8 xl:px-20 bg-[#e0eae8] w-full">
-      <div className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] w-full max-w-7xl mx-auto">
+    <div className="bg-[#e0eae8] w-full pt-16 lg:pt-20 pb-16 lg:pb-20 px-6 sm:px-6 lg:px-[60px] rounded-md">
+      <div className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] w-full">
         {/* Heading and description */}
         <motion.div
           className="flex flex-col w-full max-w-4xl items-center gap-4 sm:gap-5"
@@ -155,7 +155,7 @@ export const CallToActionSection = (): JSX.Element => {
           >
             <AnimatedButton
               variant="default"
-              className="w-full max-w-[270px] flex items-center justify-center gap-3 px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 rounded-[48px] bg-[#1a3c34] text-white touch-manipulation hover:bg-[#0f2a24] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="w-full max-w-[270px] flex items-center justify-center gap-3 px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 rounded-[48px] bg-[#1a3c34] text-white touch-manipulation hover:bg-[#0f2a24] transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <motion.div
                 initial={{ x: -8, opacity: 0 }}
@@ -198,7 +198,7 @@ export const CallToActionSection = (): JSX.Element => {
           >
             <AnimatedButton
               variant="default"
-              className="w-full max-w-[270px] flex items-center justify-center gap-3 px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 rounded-[48px] bg-[#4a8b7b] text-white touch-manipulation hover:bg-[#3d7a6a] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="w-full max-w-[270px] flex items-center justify-center gap-3 px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 rounded-[48px] bg-[#4a8b7b] text-white touch-manipulation hover:bg-[#3d7a6a] transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <motion.div
                 initial={{ x: -8, opacity: 0 }}
@@ -439,7 +439,7 @@ export const CallToActionSection = (): JSX.Element => {
                     transition={{
                       duration: durations.normal,
                       ease: easings.smooth,
-                      delay: 1.8 + index * 0.2,
+                      delay: 1.4 + index * 0.2,
                     }}
                     viewport={{ once: true, amount: 0.3 }}
                   >
@@ -452,7 +452,7 @@ export const CallToActionSection = (): JSX.Element => {
                     transition={{
                       duration: durations.normal,
                       ease: easings.smooth,
-                      delay: 2.0 + index * 0.2,
+                      delay: 1.6 + index * 0.2,
                     }}
                     viewport={{ once: true, amount: 0.3 }}
                   >
@@ -509,7 +509,7 @@ export const CallToActionSection = (): JSX.Element => {
                     transition={{
                       duration: durations.normal,
                       ease: easings.smooth,
-                      delay: 2.6 + index * 0.2,
+                      delay: 1.8 + index * 0.2,
                     }}
                     viewport={{ once: true, amount: 0.3 }}
                   >
@@ -539,6 +539,6 @@ export const CallToActionSection = (): JSX.Element => {
           </StaggeredGrid>
         )}
       </div>
-    </section>
+    </div>
   );
 };

@@ -29,14 +29,26 @@ export const AnimatedCard: React.FC<AnimatedCardProps> = ({
   const getHoverVariants = () => {
     switch (hoverEffect) {
       case "lift":
-        return hoverLiftVariants;
+        return {
+          rest: {
+            y: 0,
+            transition: {
+              duration: 0.2,
+              ease: "easeOut",
+            },
+          },
+          hover: {
+            y: -8,
+            transition: {
+              duration: 0.2,
+              ease: "easeOut",
+            },
+          },
+        };
       case "glow":
         return hoverGlowVariants;
       case "scale":
-        return {
-          rest: { scale: 1 },
-          hover: { scale: 1.05 },
-        };
+        return {}; // Remove scaling effect
       default:
         return {};
     }

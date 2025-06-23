@@ -34,29 +34,53 @@ export const Homepage = (): JSX.Element => {
   };
 
   return (
-    <div className="bg-white flex flex-col items-center w-full min-h-screen">
-      <div className="w-full max-w-[1440px]">
+    <div className="bg-white flex flex-col w-full min-h-screen">
+      <div className="w-full">
         <HeroSection />
-        <section id="industries">
-          <LayoutSection />
+        <section id="industries" className="section-fullscreen">
+          <div className="container-inner">
+            <LayoutSection />
+          </div>
         </section>
-        <MainContentSection />
-        <ContentSection />
-        <section id="industries">
-          <IndustriesSection />
+        <section className="section-fullscreen">
+          <div className="container-inner">
+            <MainContentSection />
+          </div>
         </section>
-        <section id="features">
-          <FeatureHighlightSection />
+        <section className="section-fullscreen">
+          <div className="container-inner">
+            <ContentSection />
+          </div>
         </section>
-        <UserTestimonialsSection />
-        <section id="how-it-works">
-          <HowItWorksSection />
+        <section id="industries" className="section-fullscreen">
+          <div className="container-inner">
+            <IndustriesSection />
+          </div>
         </section>
-        <section id="pricing">
-          <CallToActionSection />
+        <section id="features" className="section-fullscreen">
+          <div className="container-inner">
+            <FeatureHighlightSection />
+          </div>
         </section>
-        <section id="contact">
-          <SubscriptionFormSection />
+        <section className="section-fullscreen">
+          <div className="container-inner">
+            <UserTestimonialsSection />
+          </div>
+        </section>
+        <section id="how-it-works" className="section-fullscreen">
+          <div className="container-inner">
+            <HowItWorksSection />
+          </div>
+        </section>
+        <section id="pricing" className="section-fullscreen">
+          <div className="container-inner">
+            <CallToActionSection />
+          </div>
+        </section>
+        <section id="contact" className="section-fullscreen">
+          <div className="container-inner">
+            <SubscriptionFormSection />
+          </div>
         </section>
       </div>
       <FooterSection />

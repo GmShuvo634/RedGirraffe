@@ -268,6 +268,55 @@ module.exports = {
         '.safe-area-bottom': {
           paddingBottom: 'env(safe-area-inset-bottom)',
         },
+        // Full-screen container utilities
+        '.container-fullscreen': {
+          width: '100%',
+          minHeight: '100vh',
+        },
+        '.container-inner': {
+          width: '100%',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          paddingLeft: '1rem',
+          paddingRight: '1rem',
+          '@media (min-width: 640px)': {
+            paddingLeft: '1.5rem',
+            paddingRight: '1.5rem',
+          },
+          '@media (min-width: 768px)': {
+            paddingLeft: '2rem',
+            paddingRight: '2rem',
+          },
+          '@media (min-width: 1024px)': {
+            paddingLeft: '2rem',
+            paddingRight: '2rem',
+          },
+          '@media (min-width: 1280px)': {
+            paddingLeft: '5rem',
+            paddingRight: '5rem',
+          },
+          '@media (min-width: 1536px)': {
+            paddingLeft: '6rem',
+            paddingRight: '6rem',
+          },
+        },
+        '.section-fullscreen': {
+          width: '100%',
+          paddingTop: '2rem',
+          paddingBottom: '2rem',
+          '@media (min-width: 640px)': {
+            paddingTop: '3rem',
+            paddingBottom: '3rem',
+          },
+          '@media (min-width: 1024px)': {
+            paddingTop: '4rem',
+            paddingBottom: '4rem',
+          },
+          '@media (min-width: 1280px)': {
+            paddingTop: '7.5rem',
+            paddingBottom: '7.5rem',
+          },
+        },
       }
       addUtilities(newUtilities)
     }

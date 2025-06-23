@@ -122,7 +122,7 @@ export const LayoutSection = (): JSX.Element => {
   });
 
   return (
-    <section className="flex flex-col items-center gap-8 sm:gap-12 lg:gap-[60px] px-4 sm:px-6 lg:px-8 xl:px-20 py-8 sm:py-12 lg:py-16 xl:py-[120px] w-full bg-[#e0eae8]">
+    <section className="flex flex-col items-center gap-8 sm:gap-12 lg:gap-[60px] w-full bg-[#e0eae8] pt-16 lg:pt-20 pb-16 lg:pb-20 px-6 sm:px-6 lg:px-[60px] rounded-md">
       <motion.div
         className="flex flex-col max-w-4xl items-start gap-4 sm:gap-5"
         initial={{ opacity: 0, y: 30 }}
@@ -570,7 +570,7 @@ export const LayoutSection = (): JSX.Element => {
           >
             <AnimatedButton
               variant="default"
-              className="flex items-center justify-center gap-3 px-8 sm:px-8 lg:px-10 py-4 sm:py-4 lg:py-8 bg-[#4a8b7b] rounded-[48px] text-white w-full max-w-[280px] sm:max-w-[330px] h-14 sm:h-14 lg:h-auto touch-manipulation hover:bg-[#3d7a6a] transition-all duration-300 hover:shadow-lg transform hover:scale-105"
+              className="flex items-center justify-center gap-3 px-8 sm:px-8 lg:px-10 py-4 sm:py-4 lg:py-8 bg-[#4a8b7b] rounded-[48px] text-white w-full max-w-[280px] sm:max-w-[330px] h-14 sm:h-14 lg:h-auto touch-manipulation hover:bg-[#3d7a6a] transition-all duration-300 hover:shadow-lg"
             >
               <motion.div
                 initial={{ x: -5, opacity: 0 }}

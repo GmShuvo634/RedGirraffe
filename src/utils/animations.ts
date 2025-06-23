@@ -191,7 +191,6 @@ export const staggerSlowContainerVariants: Variants = {
 export const hoverLiftVariants: Variants = {
   rest: {
     y: 0,
-    scale: 1,
     transition: {
       duration: durations.fast,
       ease: easings.smooth,
@@ -199,7 +198,6 @@ export const hoverLiftVariants: Variants = {
   },
   hover: {
     y: -8,
-    scale: 1.02,
     transition: {
       duration: durations.fast,
       ease: easings.smooth,

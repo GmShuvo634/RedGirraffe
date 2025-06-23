@@ -339,6 +339,15 @@
     @apply px-4 sm:px-6 lg:px-8 xl:px-20;
   }
 
+  /* Full-screen section backgrounds */
+  .section-fullscreen-bg {
+    @apply w-full min-h-screen;
+  }
+
+  .section-fullscreen-bg-alt {
+    @apply w-full bg-[#e0eae8];
+  }
+
   /* Animation utilities */
   .animate-on-scroll {
     opacity: 0;
@@ -365,7 +374,7 @@
   }
 
   .hover-scale:hover {
-    transform: scale(1.05);
+    /* Scaling effect removed as per user preference */
   }
 
   .hover-glow {

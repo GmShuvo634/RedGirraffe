@@ -79,8 +79,8 @@ const industries = [
 
 export const IndustriesSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] py-12 sm:py-16 lg:py-20 xl:py-[120px] px-4 sm:px-6 lg:px-8 xl:px-20 w-full">
-      <div className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] max-w-7xl">
+    <section className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] w-full">
+      <div className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] w-full">
         <motion.header
           className="flex flex-col items-center gap-4 sm:gap-5 max-w-4xl"
           initial={{ opacity: 0, y: 30 }}

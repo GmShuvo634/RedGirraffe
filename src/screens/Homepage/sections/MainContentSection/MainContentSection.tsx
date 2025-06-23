@@ -100,8 +100,8 @@ export const MainContentSection = (): JSX.Element => {
   const isMobile = useResponsiveCardSlice();
 
   return (
-    <section className="flex flex-col items-center gap-8 sm:gap-12 lg:gap-[60px] px-4 sm:px-6 lg:px-8 xl:px-20 py-8 sm:py-12 lg:py-16 xl:py-[120px] w-full">
-      <div className="flex flex-col items-center gap-8 sm:gap-12 lg:gap-[60px] max-w-7xl">
+    <section className="flex flex-col items-center gap-8 sm:gap-12 lg:gap-[60px] w-full">
+      <div className="flex flex-col items-center gap-8 sm:gap-12 lg:gap-[60px] w-full">
         <motion.div
           ref={headerRef}
           className="flex flex-col w-full max-w-4xl items-center gap-4 sm:gap-5"
