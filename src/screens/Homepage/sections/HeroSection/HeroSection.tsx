@@ -79,18 +79,13 @@ export const HeroSection = (): JSX.Element => {
   };
 
   return (
-    <div className="flex flex-col w-full gap-8 sm:gap-12 lg:gap-16 xl:gap-40 pb-8 sm:pb-12 lg:pb-16 xl:pb-[120px]">
-      {/* Navigation Bar Component */}
-      <NavigationBar
-        navItems={navItems}
-        onNavigate={scrollToSection}
-      />
+    <div className="flex flex-col w-full gap-8 sm:gap-12 lg:gap-16 xl:gap-40 pb-8 sm:pb-12 lg:pb-16 xl:pb-[120px] mt-0 lg:mt-[120px]">
 
       {/* Hero Content */}
       <div className="container-inner">
         <div className="flex flex-col lg:flex-row mt-16 md:mt-0 items-center justify-between gap-6 sm:gap-8 lg:gap-12 xl:gap-28 w-full">
           {/* Left Content */}
-          <div className="flex flex-col w-full xl:w-[560px] items-center gap-6 sm:gap-8 lg:gap-10 xl:gap-[60px] relative bg-white">
+          <div className="flex flex-col lg:w-1/3 w-full xl:w-[560px] items-center gap-6 sm:gap-8 lg:gap-10 xl:gap-[60px] relative bg-white">
             {/* Hero Text Content */}
             <motion.div
               className="flex flex-col place-items-center xl:place-items-start gap-4 lg:gap-5 w-full"
@@ -251,7 +246,7 @@ export const HeroSection = (): JSX.Element => {
 
           {/* Hero Video Player - Mobile optimized with custom controls */}
           <motion.div
-            className="w-full xl:w-auto flex justify-start mt-4 sm:mt-6 lg:mt-0"
+            className="w-full flex justify-center mt-4 sm:mt-6 lg:mt-0"
             initial={{ opacity: 0, x: 60, scale: 0.9 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{

@@ -37,7 +37,7 @@ const processSteps = [
 
 export const HowItWorksSection = (): JSX.Element => {
   return (
-    <div className="flex flex-col items-start gap-2.5 w-full bg-white">
+    <section className="flex flex-col items-start gap-2.5 w-full bg-white">
       <div className="flex items-center gap-8 sm:gap-12 lg:gap-16 xl:gap-[120px] w-full">
         <div className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] flex-1">
           {/* Section Header */}
@@ -261,6 +261,6 @@ export const HowItWorksSection = (): JSX.Element => {
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
