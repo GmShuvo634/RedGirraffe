@@ -221,7 +221,7 @@ export const ContentSection = (): JSX.Element => {
                   threshold={0.1}
                   delay={0.3}
                 >
-                  {businessCategories.slice(0, 6).map((category, index) => (
+                  {businessCategories.slice(0, 7).map((category, index) => (
                     <AnimatedCard
                       key={index}
                       hoverEffect="lift"
@@ -255,7 +255,7 @@ export const ContentSection = (): JSX.Element => {
                   ))}
                 </StaggeredGrid>
 
-                <motion.div
+                {/* <motion.div
                   className="flex justify-center"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -290,7 +290,7 @@ export const ContentSection = (): JSX.Element => {
                       </CardContent>
                     </Card>
                   </AnimatedCard>
-                </motion.div>
+                </motion.div> */}
               </div>
             </TabsContent>
 
@@ -302,7 +302,7 @@ export const ContentSection = (): JSX.Element => {
                   threshold={0.1}
                   delay={0.3}
                 >
-                  {globalCategories.slice(0, 6).map((category, index) => (
+                  {globalCategories.slice(0, 7).map((category, index) => (
                     <AnimatedCard
                       key={index}
                       hoverEffect="lift"
@@ -336,7 +336,7 @@ export const ContentSection = (): JSX.Element => {
                   ))}
                 </StaggeredGrid>
 
-                <motion.div
+                {/* <motion.div
                   className="flex justify-center"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -371,7 +371,7 @@ export const ContentSection = (): JSX.Element => {
                       </CardContent>
                     </Card>
                   </AnimatedCard>
-                </motion.div>
+                </motion.div> */}
               </div>
             </TabsContent>
           </Tabs>

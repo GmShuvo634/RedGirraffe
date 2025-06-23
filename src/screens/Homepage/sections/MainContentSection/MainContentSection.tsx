@@ -198,7 +198,7 @@ export const MainContentSection = (): JSX.Element => {
             transition={{
               duration: durations.fast,
               ease: easings.smooth,
-              delay: createElementDelay(0, 0.25),
+              delay: createElementDelay(1, 0.25),
             }}
             viewport={{ once: true, amount: 0.3 }}
           >
@@ -210,7 +210,7 @@ export const MainContentSection = (): JSX.Element => {
               }}
               whileTap={{ scale: 0.98 }}
             >
-              <Card className={`${isMobile ? "hidden" : "w-[250px]"} bg-abu-bg border-[#ebebeb] rounded-[10px] touch-manipulation group hover:bg-[#1a3c34] hover:border-[#1a3c34]  hover:cursor-pointer transition-all duration-300 ease-in-out ${isMobile ? "w-full" : "w-[550px]"}`}>
+              <Card className={`${isMobile ? "hidden" : "w-[550px] sm:w-[290px]"} bg-abu-bg border-[#ebebeb] rounded-[10px] touch-manipulation group hover:bg-[#1a3c34] hover:border-[#1a3c34]  hover:cursor-pointer transition-all duration-300 ease-in-out`}>
                 <CardContent className="flex flex-col gap-2.5 p-6 sm:p-6 lg:p-10">
                   <h4 className="font-h6-h6-semibold text-black text-base sm:text-base group-hover:text-white lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
                     {bankFeatures[6].title}
