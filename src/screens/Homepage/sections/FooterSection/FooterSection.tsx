@@ -544,7 +544,7 @@ export const FooterSection = (): JSX.Element => {
                       className="w-6 h-6"
                     />
                   </motion.div> */}
-                  <div className="font-bold text-white text-2xl sm:text-2xl lg:text-2xl xl:text-[length:var(--h3-h3-bold-font-size)] leading-tight tracking-[var(--h3-h3-bold-letter-spacing)]">
+                  <div className="text-white text-2xl sm:text-2xl lg:text-2xl font-bold">
                     RedGirraffe
                   </div>
                 </motion.div>
