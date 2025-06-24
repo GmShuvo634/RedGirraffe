@@ -3,10 +3,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../../../../components/ui/button";
 import { SectionHeader } from "../../../../components/ui";
-import {
-  AnimatedCard,
-  StaggeredGrid,
-} from "../../../../components/animations";
+import { AnimatedCard, StaggeredGrid } from "../../../../components/animations";
 import { durations, easings } from "../../../../utils/animations";
 import {
   Card,
@@ -94,7 +91,7 @@ export const CallToActionSection = (): JSX.Element => {
 
         {/* Action buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 w-full max-w-[600px]"
+          className="flex flex-col sm:flex-row items-center gap-4 sm:gap-4 w-full max-w-[600px]"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
@@ -299,7 +296,7 @@ export const CallToActionSection = (): JSX.Element => {
         ) : (
           /* Desktop Grid */
           <StaggeredGrid
-            className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-5 w-full"
+            className="grid grid-cols-1 xl:grid-cols-3 gap-6 sm:gap-8 lg:gap-5 w-full"
             speed="normal"
             threshold={0.2}
             delay={1.4}
@@ -313,11 +310,11 @@ export const CallToActionSection = (): JSX.Element => {
                 className="h-full"
               >
                 <Card
-                  className={`flex flex-col gap-6 sm:gap-8 lg:gap-10 p-6 sm:p-8 lg:p-10 rounded-xl border ${
+                  className={`flex flex-col gap-6 sm:gap-8 lg:gap-10 p-6 sm:p-8 lg:p-10 rounded-xl border group ${
                     card.variant === "white"
-                      ? "bg-white border-[#ebebeb]"
-                      : "[background:url(../frame-1455.png)_50%_50%_/_cover,linear-gradient(30deg,rgba(8,43,36,1)_0%,rgba(16,84,71,0.7)_100%)]"
-                  } shadow-[8px_12px_20px_#00000014] touch-manipulation h-full hover:shadow-xl transition-shadow duration-300`}
+                      ? "bg-white border-[#ebebeb] hover:[background:url(../frame-1455.png)_50%_50%_/_cover,linear-gradient(30deg,rgba(8,43,36,1)_0%,rgba(16,84,71,0.7)_100%)] hover:cursor-pointer"
+                      : "[background:url(../frame-1455.png)_50%_50%_/_cover,linear-gradient(30deg,rgba(8,43,36,1)_0%,rgba(16,84,71,0.7)_100%)] hover:cursor-pointer"
+                  }  shadow-[8px_12px_20px_#00000014] touch-manipulation h-full hover:shadow-xl transition-shadow duration-300`}
                 >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -332,7 +329,9 @@ export const CallToActionSection = (): JSX.Element => {
                     <CardHeader className="p-0">
                       <CardTitle
                         className={`font-h4-h4-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[length:var(--h4-h4-semibold-font-size)] tracking-[var(--h4-h4-semibold-letter-spacing)] leading-tight xl:leading-[var(--h4-h4-semibold-line-height)] ${
-                          card.variant === "white" ? "text-black" : "text-white"
+                          card.variant === "white"
+                            ? "group-hover:text-white"
+                            : "text-white"
                         }`}
                       >
                         {card.title}
@@ -340,7 +339,7 @@ export const CallToActionSection = (): JSX.Element => {
                       <p
                         className={`mt-4 sm:mt-5 font-body-large-body-large-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)] ${
                           card.variant === "white"
-                            ? "text-text"
+                            ? "text-text group-hover:text-white"
                             : "text-[#dbf0e4]"
                         }`}
                       >
@@ -359,7 +358,7 @@ export const CallToActionSection = (): JSX.Element => {
                     }}
                     viewport={{ once: true, amount: 0.3 }}
                   >
-                    <Separator className="h-px w-full" />
+                    <Separator className="h-[1px] w-full" />
                   </motion.div>
 
                   <motion.div
@@ -376,7 +375,7 @@ export const CallToActionSection = (): JSX.Element => {
                       {card.features.map((feature, idx) => (
                         <motion.div
                           key={idx}
-                          className="inline-flex items-center gap-3"
+                          className="inline-flex items-start gap-3"
                           initial={{ opacity: 0, x: -10 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           transition={{
@@ -389,7 +388,7 @@ export const CallToActionSection = (): JSX.Element => {
                           <motion.div
                             className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center flex-shrink-0 ${
                               card.variant === "white"
-                                ? "bg-[#4a8b7b]"
+                                ? "bg-[#4a8b7b] group-hover:bg-white"
                                 : "bg-white"
                             }`}
                             initial={{ scale: 0 }}
@@ -404,7 +403,7 @@ export const CallToActionSection = (): JSX.Element => {
                             <CheckIcon
                               className={`w-3 h-3 sm:w-4 sm:h-4 ${
                                 card.variant === "white"
-                                  ? "text-white"
+                                  ? "text-white group-hover:text-[#4a8b7b]"
                                   : "text-[#4a8b7b]"
                               }`}
                             />
@@ -412,7 +411,7 @@ export const CallToActionSection = (): JSX.Element => {
                           <span
                             className={`font-body-medium-body-medium-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-medium-body-medium-regular-font-size)] tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-medium-body-medium-regular-line-height)] ${
                               card.variant === "white"
-                                ? "text-black"
+                                ? "text-black group-hover:text-white"
                                 : "text-white"
                             }`}
                           >
@@ -434,23 +433,16 @@ export const CallToActionSection = (): JSX.Element => {
                     viewport={{ once: true, amount: 0.3 }}
                   >
                     <CardFooter className="p-0">
-                      <Button
-                        className={`w-full px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 rounded-[48px] touch-manipulation transition-all duration-300 ${
+                      <PrimaryActionButton
+                        showIcon={false}
+                        className={`w-full px-10 sm:px-8 lg:px-10 py-5 sm:py-6 lg:py-7 rounded-[48px] touch-manipulation transition-all duration-300 ${
                           card.variant === "white"
                             ? "bg-[#4a8b7b] text-white hover:bg-[#3d7a6a] hover:shadow-lg"
-                            : "bg-white text-[#4a8b7b] hover:bg-gray-50 hover:shadow-lg"
+                            : "bg-[#4a8b7b] hover:bg-[#3d7a6a] hover:shadow-lg text-white"
                         }`}
                       >
-                        <span
-                          className={`font-h6-h6-semibold text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] ${
-                            card.variant === "white"
-                              ? "hover:text-white"
-                              : "hover:text-[#4a8b7b]"
-                          }`}
-                        >
-                          {card.buttonText}
-                        </span>
-                      </Button>
+                        {card.buttonText}
+                      </PrimaryActionButton>
                     </CardFooter>
                   </motion.div>
                 </Card>

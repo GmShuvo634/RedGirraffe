@@ -51,7 +51,7 @@ export const HowItWorksSection = (): JSX.Element => {
 
           {/* Progress Indicator - Hidden on mobile */}
           <motion.div
-            className="hidden lg:flex items-center"
+            className="hidden xl:flex items-center"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{
@@ -114,7 +114,7 @@ export const HowItWorksSection = (): JSX.Element => {
                 threshold={0.2}
                 className="h-full"
               >
-                <Card className="w-full lg:h-[400px] rounded-[20px] border-[#ebebeb] shadow-[16px_8px_20px_#1b1b1b05] touch-manipulation h-full hover:shadow-xl transition-shadow duration-300">
+                <Card className="w-full xl:h-[400px] rounded-[20px] border-[#ebebeb] shadow-[16px_8px_20px_#1b1b1b05] touch-manipulation h-full hover:shadow-xl group hover:bg-[#1a3c34] hover:border-[#1a3c34] hover:cursor-pointer transition-all duration-300 ease-in-out ">
                   <CardContent className="flex flex-col items-start gap-6 sm:gap-8 lg:gap-10 p-6 sm:p-8 lg:p-10 h-full">
                     <motion.div
                       className="flex flex-col items-start gap-4 sm:gap-5 w-full"
@@ -127,10 +127,10 @@ export const HowItWorksSection = (): JSX.Element => {
                       }}
                       viewport={{ once: true, amount: 0.3 }}
                     >
-                      <h3 className="w-fit font-h5-h5-semibold text-black text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[length:var(--h5-h5-semibold-font-size)] tracking-[var(--h5-h5-semibold-letter-spacing)] leading-tight xl:leading-[var(--h5-h5-semibold-line-height)] whitespace-nowrap">
+                      <h3 className="w-fit font-h5-h5-semibold text-black text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[length:var(--h5-h5-semibold-font-size)] tracking-[var(--h5-h5-semibold-letter-spacing)] leading-tight xl:leading-[var(--h5-h5-semibold-line-height)] whitespace-nowrap group-hover:text-white">
                         {step.title}
                       </h3>
-                      <p className="self-stretch font-h6-h6-regular text-text text-sm sm:text-base lg:text-base xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
+                      <p className="self-stretch font-h6-h6-regular text-text text-sm sm:text-base lg:text-base xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)] group-hover:text-white">
                         {step.description}
                       </p>
                     </motion.div>

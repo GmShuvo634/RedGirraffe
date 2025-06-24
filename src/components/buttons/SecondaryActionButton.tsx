@@ -40,7 +40,8 @@ export const SecondaryActionButton: React.FC<SecondaryActionButtonProps> = ({
     duration-300
     shadow-lg
     hover:shadow-xl
-    text-white
+    text-white,
+    max-w-[270px]
   `;
 
   const widthClasses = fullWidth 

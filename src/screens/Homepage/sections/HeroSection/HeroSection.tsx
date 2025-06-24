@@ -54,11 +54,11 @@ export const HeroSection = (): JSX.Element => {
   };
 
   return (
-    <div className="flex flex-col w-full gap-8 sm:gap-12 lg:gap-16 xl:gap-40 pb-8 sm:pb-12 lg:pb-16 xl:pb-[120px] mt-0 lg:mt-[120px]">
+    <div className="flex flex-col w-full gap-8 sm:gap-12 lg:gap-16 xl:gap-40 pb-8 sm:pb-12 lg:pb-16 xl:pb-[120px] mt-0 sm:mt-20 lg:mt-[120px]">
 
       {/* Hero Content */}
       <div className="container-inner">
-        <div className="flex flex-col lg:flex-row mt-16 md:mt-0 items-center justify-between gap-6 sm:gap-8 lg:gap-12 xl:gap-28 w-full">
+        <div className="flex flex-col md:flex-row mt-16 md:mt-0 items-center justify-between gap-6 sm:gap-8 lg:gap-12 xl:gap-28 w-full">
           {/* Left Content */}
           <div className="flex flex-col lg:w-1/3 w-full xl:w-[560px] items-center gap-6 sm:gap-8 lg:gap-10 xl:gap-[60px] relative bg-white">
             {/* Hero Text Content */}
@@ -73,21 +73,21 @@ export const HeroSection = (): JSX.Element => {
                 <ToggleGroup
                   type="single"
                   defaultValue="commercial"
-                  className="bg-[#e5e9ec] rounded-[40px] p-1 w-fit"
+                  className="bg-[#e5e9ec] rounded-[40px] px-2 py-1 w-fit"
                 >
                   <ToggleGroupItem
                     value="commercial"
-                    className="bg-abu-bg rounded-[32px] px-4 sm:px-4 lg:px-[15px] py-2 data-[state=on]:bg-abu-bg data-[state=off]:bg-transparent text-sm lg:text-base touch-manipulation"
+                    className="bg-[#1a3c34] rounded-[32px] px-4 sm:px-4 lg:px-[15px] py-2 data-[state=on]:bg-[#1a3c34] data-[state=on]:text-white data-[state=off]:bg-transparent text-sm lg:text-base touch-manipulation"
                   >
-                    <span className="font-h6-h6-semibold text-[#1a3c34] text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
+                    <span className="font-h6-h6-semibold text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
                       Commercial
                     </span>
                   </ToggleGroupItem>
                   <ToggleGroupItem
                     value="platforms"
-                    className="px-4 sm:px-4 lg:px-[15px] py-2 data-[state=on]:bg-abu-bg data-[state=off]:bg-transparent text-sm lg:text-base touch-manipulation"
+                    className="px-4 sm:px-4 lg:px-[15px] py-2 rounded-[32px] data-[state=on]:bg-[#1a3c34] data-[state=on]:text-white data-[state=off]:bg-transparent text-sm lg:text-base touch-manipulation !hover:bg-[#1a3c34] !hover:text-white"
                   >
-                    <span className="font-h6-h6-semibold text-[#1a3c34] text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
+                    <span className="font-h6-h6-semibold text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
                       Platforms
                     </span>
                   </ToggleGroupItem>
@@ -147,7 +147,7 @@ export const HeroSection = (): JSX.Element => {
             >
               {/* CTA Buttons - Mobile stacked with animations */}
               <motion.div
-                className="flex flex-col sm:flex-col lg:flex-row items-stretch spacing-mobile w-full"
+                className="flex flex-col items-center md:flex-row spacing-mobile w-full"
                 variants={fadeInUpVariants}
               >
                 <PrimaryActionButton
@@ -217,7 +217,7 @@ export const HeroSection = (): JSX.Element => {
             }}
           >
             <div
-              className="relative w-full max-w-[640px] group"
+              className="relative max-w-[600px] xl:max-w-[640px] group"
               onMouseEnter={() => setShowControls(true)}
               onMouseLeave={() => setShowControls(false)}
               onTouchStart={() => setShowControls(true)}

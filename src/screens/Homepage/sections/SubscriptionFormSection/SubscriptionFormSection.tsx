@@ -72,7 +72,7 @@ export const SubscriptionFormSection = (): JSX.Element => {
       {/* Contact Information */}
       <div className="relative w-full max-w-6xl">
         {/* Desktop Separators - Positioned Absolutely */}
-        <div className="hidden lg:block absolute inset-0 pointer-events-none">
+        <div className="hidden xl:block absolute inset-0 pointer-events-none">
           <motion.div
             className="absolute left-[34%] top-[10px] -translate-x-1/2 -translate-y-1/2 w-[1px] h-[80px] bg-[#4a8b7b]/30"
             initial={{ opacity: 0, scaleY: 0 }}

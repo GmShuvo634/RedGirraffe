@@ -8,10 +8,7 @@ import {
 } from "../../../../components/ui/card";
 import { Separator } from "../../../../components/ui/separator";
 import { SectionHeader } from "../../../../components/ui";
-import {
-  AnimatedCard,
-  StaggeredGrid,
-} from "../../../../components/animations";
+import { AnimatedCard, StaggeredGrid } from "../../../../components/animations";
 import { durations, easings } from "../../../../utils/animations";
 import {
   PrimaryActionButton,
@@ -125,22 +122,12 @@ export const FeatureHighlightSection = (): JSX.Element => {
                     }}
                     viewport={{ once: true, amount: 0.3 }}
                   >
-                    <CardTitle className="w-full font-h6-h6-semibold text-[#1a3c34] text-md sm:text-md lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] text-center tracking-[var(--h6-h6-semibold-letter-spacing)] leading-tight xl:leading-[var(--h6-h6-semibold-line-height)]">
+                    <CardTitle className="w-full font-h5-h5-semibold text-[#1a3c34] text-md sm:text-md lg:text-lg xl:text-[length:var(--h5-h5-semibold-font-size)] text-center tracking-[var(--h5-h5-semibold-letter-spacing)] leading-tight xl:leading-[var(--h5-h5-semibold-line-height)]">
                       {card.title}
                     </CardTitle>
                   </motion.div>
-                  <motion.div
-                    initial={{ scaleX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    transition={{
-                      duration: durations.fast,
-                      ease: easings.smooth,
-                      delay: 0.5 + index * 0.05,
-                    }}
-                    viewport={{ once: true, amount: 0.3 }}
-                  >
-                    <Separator className="w-full h-[1px] bg-[#1a3c34] group-hover:bg-[#1a3c34]/30" />
-                  </motion.div>
+
+                  <Separator className="w-full h-[1px] bg-[#1a3c34] group-hover:bg-[#1a3c34]/30" />
                 </CardHeader>
                 <CardContent className="p-0 mt-8 sm:mt-10 lg:mt-[60px] flex flex-col gap-8 sm:gap-10 lg:gap-[60px]">
                   <div className="flex flex-col items-start gap-4 sm:gap-5 w-full">

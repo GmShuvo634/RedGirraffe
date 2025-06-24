@@ -122,8 +122,8 @@ export const LayoutSection = (): JSX.Element => {
   return (
     <section className="flex flex-col items-center gap-8 sm:gap-12 lg:gap-[60px] w-full bg-[#e0eae8] pt-16 lg:pt-20 pb-16 lg:pb-20 px-6 sm:px-6 lg:px-[60px] rounded-md">
       <SectionHeader
-        title="Traditional B2B payouts fail—and what we"
-        highlightedText="fix."
+        title="Traditional B2B payouts fail—"
+        highlightedText="and what we fix."
         delay={createElementDelay(0, 0.05)}
         threshold={0.3}
       />
@@ -413,7 +413,8 @@ export const LayoutSection = (): JSX.Element => {
         </div>
 
         {/* Solutions Section */}
-        <motion.div
+        <motion.section
+          id="features"
           className="flex flex-col items-center gap-8 sm:gap-12 lg:gap-[60px] w-full rounded-[20px]"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -435,7 +436,7 @@ export const LayoutSection = (): JSX.Element => {
             }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <div className="flex w-full max-w-[440px] items-center gap-3">
+            <div className="flex w-full max-w-[540px] items-center gap-3">
               <AnimatedText
                 as="h3"
                 variant="fadeUp"
@@ -446,22 +447,11 @@ export const LayoutSection = (): JSX.Element => {
                 Our Solutions
               </AnimatedText>
             </div>
-            <motion.div
-              initial={{ opacity: 0, scaleX: 0 }}
-              whileInView={{ opacity: 1, scaleX: 1 }}
-              transition={{
-                duration: durations.normal,
-                ease: easings.smooth,
-                delay: 0.9,
-              }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <Separator className="w-full max-w-[540px] bg-[#4a8b7b]" />
-            </motion.div>
+            <Separator className="w-full max-w-[540px] bg-[#1a3c34]" />
           </motion.div>
 
           <StaggeredGrid
-            className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-5 w-full"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-5 w-full"
             speed="normal"
             threshold={0.2}
             delay={1.0}
@@ -475,7 +465,7 @@ export const LayoutSection = (): JSX.Element => {
                 className="h-full"
               >
                 <Card
-                  className={`flex flex-col h-auto lg:h-[733px] ${
+                  className={`flex flex-col h-auto 2xl:h-[733px] ${
                     solution.bgColor
                   } rounded-[20px] ${
                     solution.hasBorder
@@ -553,7 +543,7 @@ export const LayoutSection = (): JSX.Element => {
           >
             Request a Demo
           </PrimaryActionButton>
-        </motion.div>
+        </motion.section>
       </div>
     </section>
   );

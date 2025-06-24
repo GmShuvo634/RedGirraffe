@@ -40,6 +40,7 @@ export const PrimaryActionButton: React.FC<PrimaryActionButtonProps> = ({
     duration-300
     shadow-lg
     hover:shadow-xl
+    max-w-[270px]
   `;
 
   const widthClasses = fullWidth 

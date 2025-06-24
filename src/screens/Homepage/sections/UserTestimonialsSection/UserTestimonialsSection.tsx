@@ -52,7 +52,7 @@ export const UserTestimonialsSection = (): JSX.Element => {
 
       <div className="relative max-w-7xl w-full">
         {/* Desktop Separators - Positioned Absolutely */}
-        <div className="hidden lg:block absolute inset-0 pointer-events-none">
+        <div className="hidden xl:block absolute inset-0 pointer-events-none">
           <motion.div
             className="absolute left-1/3 top-0 bottom-0 w-[1px] bg-[#00d959] transform -translate-x-1/2"
             initial={{ opacity: 0, scaleY: 0 }}
@@ -79,7 +79,7 @@ export const UserTestimonialsSection = (): JSX.Element => {
 
         {/* Cards Grid */}
         <StaggeredGrid
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 sm:gap-4 lg:gap-6 w-full"
+          className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-1 sm:gap-4 lg:gap-6 w-full"
           speed="normal"
           threshold={0.2}
           delay={0.6}
@@ -100,8 +100,8 @@ export const UserTestimonialsSection = (): JSX.Element => {
                           <CountUpText
                             end={item.countUpValue}
                             start={0}
-                            duration={2500}
-                            delay={200}
+                            duration={5000}
+                            delay={500}
                             decimals={item.decimals || 0}
                             suffix={item.suffix || ""}
                             className="font-bold text-dark-green text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[length:var(--h2-h2-bold-font-size)] tracking-[var(--h2-h2-bold-letter-spacing)] leading-tight xl:leading-[var(--h2-h2-bold-line-height)] whitespace-nowrap"
@@ -139,7 +139,7 @@ export const UserTestimonialsSection = (): JSX.Element => {
                       }}
                       viewport={{ once: true, amount: 0.3 }}
                     >
-                      <p className="w-full px-4 sm:px-6 lg:px-10 font-h6-h6-regular text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
+                      <p className="w-full font-h6-h6-regular text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)] whitespace-nowrap">
                         {item.description}
                       </p>
                     </motion.div>

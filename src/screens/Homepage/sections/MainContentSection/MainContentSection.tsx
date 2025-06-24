@@ -122,12 +122,12 @@ export const MainContentSection = (): JSX.Element => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <motion.h3
-              className="w-full font-h6-h6-semibold text-[#1a3c34] text-xl sm:text-xl lg:text-2xl xl:text-[length:var(--h6-h6-semibold-font-size)] text-center tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]"
+            <motion.h4
+              className="w-full font-h5-h5-semibold text-[#1a3c34] text-xl sm:text-xl lg:text-2xl xl:text-[length:var(--h5-h5-semibold-font-size)] text-center tracking-[var(--h5-h5-semibold-letter-spacing)] leading-[var(--h5-h5-semibold-line-height)]"
               variants={fadeInUpVariants}
             >
               For Banks
-            </motion.h3>
+            </motion.h4>
             {/* <motion.div variants={fadeInUpVariants}> */}
             <Separator
               orientation="horizontal"
@@ -226,12 +226,12 @@ export const MainContentSection = (): JSX.Element => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <motion.h3
-              className="w-full font-h6-h6-semibold text-[#1a3c34] text-xl sm:text-xl lg:text-2xl xl:text-[length:var(--h6-h6-semibold-font-size)] text-center tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]"
+            <motion.h4
+              className="w-full font-h5-h5-semibold text-[#1a3c34] text-xl sm:text-xl lg:text-2xl xl:text-[length:var(--h5-h5-semibold-font-size)] text-center tracking-[var(--h5-h5-semibold-letter-spacing)] leading-[var(--h5-h5-semibold-line-height)]"
               variants={fadeInUpVariants}
             >
               For Cardholding Enterprises
-            </motion.h3>
+            </motion.h4>
             <Separator
               orientation="horizontal"
               className="w-full max-w-[540px] h-[1px] bg-[#ebebeb]"

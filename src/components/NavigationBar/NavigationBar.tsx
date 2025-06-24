@@ -32,10 +32,10 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
 
   // Flag data
   const flags = [
-    { name: "United States", code: "US", flag: "/falg_1.png" },
-    { name: "European Union", code: "EU", flag: "/falg_2.png" },
     { name: "United Kingdom", code: "UK", flag: "/falg_3.png" },
     { name: "India", code: "IN", flag: "/falg_4.png" },
+    { name: "United States", code: "US", flag: "/falg_1.png" },
+    { name: "European Union", code: "EU", flag: "/falg_2.png" },
   ];
 
   // Close dropdowns when clicking outside
@@ -118,7 +118,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
                     src="/logo.png"
                   />
                 </div>
-                <div className="font-h5-h5-bold text-white text-lg sm:text-lg lg:text-xl xl:text-[length:var(--h5-h5-bold-font-size)] leading-tight tracking-[var(--h5-h5-bold-letter-spacing)]">
+                <div className="font-h5-h5-bold text-white text-2xl sm:text-2xl lg:text-2xl xl:text-[length:var(--h5-h5-bold-font-size)] leading-tight tracking-[var(--h5-h5-bold-letter-spacing)]">
                   RedGirraffe
                 </div>
               </div>
@@ -126,16 +126,15 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
               {/* Navigation Links - Hidden on mobile and tablet */}
               <div className="hidden lg:flex items-center gap-6 xl:gap-10">
                 {navItems.map((item, index) => (
-                  <Button
+                  <div
                     key={index}
-                    variant="ghost"
                     className="p-0 h-auto hover:bg-transparent touch-manipulation"
                     onClick={() => scrollToSection(item.sectionId)}
                   >
-                    <div className="font-body-large-body-large-semibold text-text text-sm lg:text-base xl:text-[length:var(--body-large-body-large-semibold-font-size)] text-center tracking-[var(--body-large-body-large-semibold-letter-spacing)] leading-[var(--body-large-body-large-semibold-line-height)] hover:text-app-primary transition-colors cursor-pointer text-white">
+                    <div className="font-body-large-body-large-semibold text-sm lg:text-base xl:text-[length:var(--body-large-body-large-semibold-font-size)] text-center tracking-[var(--body-large-body-large-semibold-letter-spacing)] leading-[var(--body-large-body-large-semibold-line-height)] transition-colors cursor-pointer text-white hover:text-[#00d959]">
                       {item.label}
                     </div>
-                  </Button>
+                  </div>
                 ))}
               </div>
             </div>
