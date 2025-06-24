@@ -99,7 +99,7 @@ export const CallToActionSection = (): JSX.Element => {
           <AnimatedText
             as="h2"
             variant="fadeUp"
-            className="font-h3-h3-semibold text-[#1a3c34] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]"
+            className="w-full font-h3-h3-semibold text-[#1a3c34] text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]"
             delay={0.2}
             threshold={0.3}
           >
@@ -109,7 +109,7 @@ export const CallToActionSection = (): JSX.Element => {
           <AnimatedText
             as="p"
             variant="fadeUp"
-            className="text-[#4a8b7b] text-sm sm:text-base lg:text-lg text-center px-4 sm:px-6 lg:px-10 font-normal leading-relaxed"
+            className="w-full px-4 sm:px-6 lg:px-10 font-h6-h6-regular text-[#4a8b7b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]"
             delay={0.4}
             threshold={0.3}
           >
@@ -220,7 +220,7 @@ export const CallToActionSection = (): JSX.Element => {
                   >
                     <CardHeader className="p-0">
                       <CardTitle
-                        className={`font-h4-h4-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[length:var(--h4-h4-semibold-font-size)] tracking-[var(--h4-h4-semibold-letter-spacing)] leading-tight xl:leading-[var(--h4-h4-semibold-line-height)] ${
+                        className={`font-h6-h6-semibold text-black text-lg sm:text-xl lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] ${
                           pricingCards[currentSlide].variant === "white"
                             ? "text-black"
                             : "text-white"
@@ -229,7 +229,7 @@ export const CallToActionSection = (): JSX.Element => {
                         {pricingCards[currentSlide].title}
                       </CardTitle>
                       <p
-                        className={`mt-4 sm:mt-5 font-body-large-body-large-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)] ${
+                        className={`mt-2 sm:mt-5 font-body-large-body-large-regular text-sm sm:text-base lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)] ${
                           pricingCards[currentSlide].variant === "white"
                             ? "text-text"
                             : "text-[#dbf0e4]"
@@ -264,7 +264,7 @@ export const CallToActionSection = (): JSX.Element => {
                               />
                             </div>
                             <span
-                              className={`font-body-medium-body-medium-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-medium-body-medium-regular-font-size)] tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-medium-body-medium-regular-line-height)] ${
+                              className={`font-body-medium-body-medium-regular text-sm sm:text-base lg:text-base xl:text-[length:var(--body-medium-body-medium-regular-font-size)] tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-medium-body-medium-regular-line-height)] ${
                                 pricingCards[currentSlide].variant === "white"
                                   ? "text-black"
                                   : "text-white"

@@ -105,7 +105,7 @@ export const FeatureHighlightSection = (): JSX.Element => {
           <AnimatedText
             as="h2"
             variant="fadeUp"
-            className="w-full font-h3-h3-semibold text-[#1a3c34] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]"
+            className="w-full font-h3-h3-semibold text-[#1a3c34] text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]"
             delay={0.1}
             threshold={0.3}
           >
@@ -114,7 +114,7 @@ export const FeatureHighlightSection = (): JSX.Element => {
           <AnimatedText
             as="p"
             variant="fadeUp"
-            className="w-full px-4 sm:px-6 lg:px-10 font-h6-h6-regular text-[#4a8b7b] text-sm sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]"
+            className="w-full px-4 sm:px-6 lg:px-10 font-h6-h6-regular text-[#4a8b7b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]"
             delay={0.2}
             threshold={0.3}
           >
@@ -149,7 +149,7 @@ export const FeatureHighlightSection = (): JSX.Element => {
                     }}
                     viewport={{ once: true, amount: 0.3 }}
                   >
-                    <CardTitle className="w-full font-h6-h6-semibold text-[#1a3c34] text-base sm:text-lg lg:text-xl xl:text-[length:var(--h6-h6-semibold-font-size)] text-center tracking-[var(--h6-h6-semibold-letter-spacing)] leading-tight xl:leading-[var(--h6-h6-semibold-line-height)]">
+                    <CardTitle className="w-full font-h6-h6-semibold text-[#1a3c34] text-md sm:text-md lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] text-center tracking-[var(--h6-h6-semibold-letter-spacing)] leading-tight xl:leading-[var(--h6-h6-semibold-line-height)]">
                       {card.title}
                     </CardTitle>
                   </motion.div>
@@ -163,7 +163,7 @@ export const FeatureHighlightSection = (): JSX.Element => {
                     }}
                     viewport={{ once: true, amount: 0.3 }}
                   >
-                    <Separator className="w-full h-[1px] bg-[#ebebeb] group-hover:bg-[#1a3c34]/30" />
+                    <Separator className="w-full h-[1px] bg-[#1a3c34] group-hover:bg-[#1a3c34]/30" />
                   </motion.div>
                 </CardHeader>
                 <CardContent className="p-0 mt-8 sm:mt-10 lg:mt-[60px] flex flex-col gap-8 sm:gap-10 lg:gap-[60px]">
@@ -203,7 +203,7 @@ export const FeatureHighlightSection = (): JSX.Element => {
                             },
                           }}
                         />
-                        <p className="flex-1 font-h6-h6-regular text-text text-xs sm:text-sm lg:text-base xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
+                        <p className="font-h6-h6-regular text-text text-sm sm:text-sm lg:text-base xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
                           {point}
                         </p>
                       </motion.div>
@@ -283,12 +283,12 @@ export const FeatureHighlightSection = (): JSX.Element => {
                         }}
                         viewport={{ once: true, amount: 0.3 }}
                       >
-                        <CardTitle className="font-h6-h6-semibold text-black text-sm sm:text-base lg:text-lg group-hover:text-white xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-tight xl:leading-[var(--h6-h6-semibold-line-height)] min-h-[3rem] sm:min-h-[4rem]">
+                        <CardTitle className="font-h6-h6-semibold text-black text-base sm:text-base group-hover:text-white lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
                           {feature.title}
                         </CardTitle>
                       </motion.div>
                       <motion.p
-                        className="font-h6-h6-regular text-text text-xs sm:text-sm lg:text-base group-hover:text-gray-300 xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)] min-h-[4rem] sm:min-h-[5rem] lg:min-h-[84px] flex-1"
+                        className="font-h6-h6-regular text-text text-sm sm:text-sm lg:text-base group-hover:text-gray-300 xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)] min-h-[4rem] sm:min-h-[5rem] lg:min-h-[84px] flex-1"
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{

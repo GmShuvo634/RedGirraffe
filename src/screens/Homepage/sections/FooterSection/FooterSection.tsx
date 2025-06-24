@@ -576,7 +576,7 @@ export const FooterSection = (): JSX.Element => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 flex items-center justify-center hover:opacity-80 transition-opacity"
+                  className="w-12 h-12 flex items-center justify-center hover:opacity-80 transition-opacity"
                   initial={{ opacity: 0, scale: 0 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{
@@ -591,7 +591,7 @@ export const FooterSection = (): JSX.Element => {
                     transition: { duration: 0.2 }
                   }}
                 >
-                  <img src={icon} alt={name} className="w-6 h-6" />
+                  <img src={icon} alt={name} className="w-10 h-10" />
                 </motion.a>
               ))}
             </motion.div>

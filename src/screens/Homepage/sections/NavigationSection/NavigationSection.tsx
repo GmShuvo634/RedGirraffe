@@ -93,7 +93,7 @@ export const IndustriesSection = (): JSX.Element => {
           <AnimatedText
             as="h2"
             variant="fadeUp"
-            className="w-full font-h4-h4-semibold text-[#1a3c34] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h4-h4-semibold-font-size)] text-center tracking-[var(--h4-h4-semibold-letter-spacing)] leading-tight xl:leading-[var(--h4-h4-semibold-line-height)]"
+            className="w-full font-h3-h3-semibold text-[#1a3c34] text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]"
             delay={0.2}
             threshold={0.3}
           >
@@ -102,7 +102,7 @@ export const IndustriesSection = (): JSX.Element => {
           <AnimatedText
             as="p"
             variant="fadeUp"
-            className="font-h6-h6-regular text-[#4a8b7b] text-center px-4 sm:px-6 lg:px-10 text-sm sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]"
+            className="w-full px-4 sm:px-6 lg:px-10 font-h6-h6-regular text-[#4a8b7b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]"
             delay={0.4}
             threshold={0.3}
           >
@@ -127,7 +127,7 @@ export const IndustriesSection = (): JSX.Element => {
               <Card className="w-full min-h-[200px] sm:min-h-[240px] lg:min-h-[280px] bg-[#f5f5f5] rounded-[20px] pt-4 border border-[#ebebeb] touch-manipulation hover:shadow-lg group hover:bg-[#1a3c34] hover:border-[#1a3c34] hover:cursor-pointer transition-all duration-300 ease-in-out h-full">
                 <CardContent className="flex flex-col items-start gap-3 p-4 sm:p-5 lg:p-6 h-full">
                   <motion.h3
-                    className="font-h6-h6-semibold text-black text-sm sm:text-base group-hover:text-white lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-tight xl:leading-[var(--h6-h6-semibold-line-height)] min-h-[3rem] sm:min-h-[4rem]"
+                    className="font-h6-h6-semibold text-[#1b1b1b] text-base sm:text-base group-hover:text-white lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-tight xl:leading-[var(--h6-h6-semibold-line-height)]"
                     whileHover={{
                       scale: 1.05,
                       transition: {
@@ -139,7 +139,7 @@ export const IndustriesSection = (): JSX.Element => {
                     {industry.title}
                   </motion.h3>
                   <motion.p
-                    className="font-h6-h6-regular text-text text-xs sm:text-sm lg:text-base group-hover:text-gray-300 xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)] flex-1"
+                    className="font-body-large-body-large-regular text-text text-sm sm:text-sm lg:text-base group-hover:text-gray-300 xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)]"
                     whileHover={{
                       y: -2,
                       transition: {

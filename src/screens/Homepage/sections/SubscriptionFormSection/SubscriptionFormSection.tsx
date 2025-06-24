@@ -75,7 +75,7 @@ export const SubscriptionFormSection = (): JSX.Element => {
         <AnimatedText
           as="h2"
           variant="fadeUp"
-          className="w-full font-h3-h3-semibold text-[#1a3c34] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]"
+          className="w-full font-h3-h3-semibold text-[#1a3c34] text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]"
           delay={0.2}
           threshold={0.3}
         >
@@ -85,7 +85,7 @@ export const SubscriptionFormSection = (): JSX.Element => {
         <AnimatedText
           as="p"
           variant="fadeUp"
-          className="w-full px-4 sm:px-6 lg:px-10 font-h6-h6-regular text-[#4a8b7b] text-sm sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]"
+          className="w-full px-4 sm:px-6 lg:px-10 font-h6-h6-regular text-[#4a8b7b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]"
           delay={0.4}
           threshold={0.3}
         >
@@ -166,7 +166,7 @@ export const SubscriptionFormSection = (): JSX.Element => {
                     {info.icon}
                   </motion.div>
                   <motion.span
-                    className="font-h5-h5-semibold text-[#1b1b1b] text-sm sm:text-base lg:text-lg xl:text-[length:var(--h5-h5-semibold-font-size)] leading-tight xl:leading-[var(--h5-h5-semibold-line-height)] tracking-[var(--h5-h5-semibold-letter-spacing)] whitespace-nowrap"
+                    className="font-h5-h5-semibold text-[#1b1b1b] text-lg font-semibold sm:text-lg lg:text-lg xl:text-[length:var(--h5-h5-semibold-font-size)] leading-tight xl:leading-[var(--h5-h5-semibold-line-height)] tracking-[var(--h5-h5-semibold-letter-spacing)] whitespace-nowrap"
                     initial={{ opacity: 0, x: 10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{
@@ -180,7 +180,7 @@ export const SubscriptionFormSection = (): JSX.Element => {
                   </motion.span>
                 </div>
                 <motion.p
-                  className="font-body-large-body-large-regular text-black text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)]"
+                  className="font-body-large-body-large-regular text-black text-base sm:text-base lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)]"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{

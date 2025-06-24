@@ -57,7 +57,7 @@ export const UserTestimonialsSection = (): JSX.Element => {
           <AnimatedText
             as="h2"
             variant="fadeUp"
-            className="font-h3-h3-semibold text-[#1a3c34] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]"
+            className="w-full font-h3-h3-semibold text-[#1a3c34] text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]"
             delay={0.2}
             threshold={0.3}
           >
@@ -69,7 +69,7 @@ export const UserTestimonialsSection = (): JSX.Element => {
           <AnimatedText
             as="p"
             variant="fadeUp"
-            className="font-h6-h6-regular text-[#4a8b7b] text-sm sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]"
+            className="w-full px-4 sm:px-6 lg:px-10 font-h6-h6-regular text-[#4a8b7b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]"
             delay={0.4}
             threshold={0.3}
           >
@@ -134,7 +134,7 @@ export const UserTestimonialsSection = (): JSX.Element => {
                             delay={200}
                             decimals={item.decimals || 0}
                             suffix={item.suffix || ""}
-                            className="font-bold text-dark-green text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[length:var(--h2-h2-bold-font-size)] tracking-[var(--h2-h2-bold-letter-spacing)] leading-tight xl:leading-[var(--h2-h2-bold-line-height)] whitespace-nowrap"
+                            className="font-bold text-dark-green text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[length:var(--h2-h2-bold-font-size)] tracking-[var(--h2-h2-bold-letter-spacing)] leading-tight xl:leading-[var(--h2-h2-bold-line-height)] whitespace-nowrap"
                             threshold={0.2}
                             animationDelay={1.0 + index * 0.2}
                           />
@@ -142,7 +142,7 @@ export const UserTestimonialsSection = (): JSX.Element => {
 
                         <div className="flex items-end gap-2.5 pt-0 pb-2 flex-1 self-stretch">
                           <motion.span
-                            className="font-h6-h6-regular text-app-secondary text-sm sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)] whitespace-nowrap"
+                            className="font-h6-h6-regular text-app-secondary text-xl sm:text-xl lg:text-xl xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)] whitespace-nowrap"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{
@@ -159,7 +159,7 @@ export const UserTestimonialsSection = (): JSX.Element => {
                     </div>
 
                     <motion.div
-                      className="flex items-center justify-center gap-2.5 w-full"
+                      className="flex items-center justify-center gap-2.5 w-full px-4 sm:px-6 lg:px-10"
                       initial={{ opacity: 0, y: 15 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{
@@ -169,7 +169,7 @@ export const UserTestimonialsSection = (): JSX.Element => {
                       }}
                       viewport={{ once: true, amount: 0.3 }}
                     >
-                      <p className="font-h6-h6-regular text-textblack text-xs sm:text-sm lg:text-base xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
+                      <p className="w-full px-4 sm:px-6 lg:px-10 font-h6-h6-regular text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
                         {item.description}
                       </p>
                     </motion.div>

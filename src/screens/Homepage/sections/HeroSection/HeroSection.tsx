@@ -6,6 +6,7 @@ import {
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Card } from "../../../../components/ui/card";
+import { GradientText } from "../../../../components/ui/GradientText";
 import {
   ToggleGroup,
   ToggleGroupItem,
@@ -27,22 +28,6 @@ export const HeroSection = (): JSX.Element => {
     sectionKey: "hero",
     threshold: 0.1,
   });
-
-  // Smooth scroll to section function
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const headerOffset = 80; // Account for fixed header
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-  };
 
   // Video player state
   const [isMuted, setIsMuted] = useState(true);
@@ -109,36 +94,39 @@ export const HeroSection = (): JSX.Element => {
                 </ToggleGroup>
               </motion.div>
 
-              {/* Heading - Mobile optimized with animation */}
-              <motion.h1
-                className="responsive-h1 font-h1-h1-semibold text-app-primary tracking-[var(--h1-h1-semibold-letter-spacing)] xl:text-left text-center w-full"
-                variants={fadeInUpVariants}
+              {/* Heading - Mobile optimized with animation and gradient effect */}
+              <GradientText
+                as="h1"
+                className="responsive-h1 font-h1-h1-semibold tracking-[var(--h1-h1-semibold-letter-spacing)] xl:text-left text-center w-full"
+                useCSS={true}
               >
-                <motion.span
-                  className="inline-block"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: durations.normal,
-                    ease: easings.smooth,
-                    delay: createElementDelay(0, 0.1),
-                  }}
-                >
-                  RedGirraffe Global
-                </motion.span>{" "}
-                <motion.span
-                  className="inline-block"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: durations.normal,
-                    ease: easings.smooth,
-                    delay: createElementDelay(1, 0.1),
-                  }}
-                >
-                  Commercial Card
-                </motion.span>
-              </motion.h1>
+                <motion.div variants={fadeInUpVariants}>
+                  <motion.span
+                    className="inline-block"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: durations.normal,
+                      ease: easings.smooth,
+                      delay: createElementDelay(0, 0.1),
+                    }}
+                  >
+                    RedGirraffe Global
+                  </motion.span>{" "}
+                  <motion.span
+                    className="inline-block"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: durations.normal,
+                      ease: easings.smooth,
+                      delay: createElementDelay(1, 0.1),
+                    }}
+                  >
+                    Commercial Card
+                  </motion.span>
+                </motion.div>
+              </GradientText>
 
               {/* Subheading - Mobile optimized with animation */}
               <motion.p
@@ -172,7 +160,6 @@ export const HeroSection = (): JSX.Element => {
                 <SecondaryActionButton
                   // onClick={() => scrollToSection("contact")}
                   size="mobile-lg"
-                  backgroundColor="#4a8b7b"
                 >
                   Contact Sales
                 </SecondaryActionButton>

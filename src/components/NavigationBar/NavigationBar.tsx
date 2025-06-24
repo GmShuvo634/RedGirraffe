@@ -1,4 +1,4 @@
-import { MenuIcon, ChevronDownIcon } from "lucide-react";
+import { MenuIcon, ChevronDownIcon, X } from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../ui/button";
@@ -27,6 +27,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
   const [showFlagDropdown, setShowFlagDropdown] = useState(false);
   const [selectedFlag, setSelectedFlag] = useState(0);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const mobileMenuButtonRef = useRef<HTMLButtonElement>(null);
   const flagDropdownRef = useRef<HTMLDivElement>(null);
 
   // Flag data
@@ -40,10 +41,18 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
-        setShowMobileMenu(false);
+      const target = event.target as Node;
+
+      // Check if click is outside mobile menu and not on the menu button
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(target)) {
+        // Also check if the click is not on the mobile menu button itself
+        if (!mobileMenuButtonRef.current || !mobileMenuButtonRef.current.contains(target)) {
+          setShowMobileMenu(false);
+        }
       }
-      if (flagDropdownRef.current && !flagDropdownRef.current.contains(event.target as Node)) {
+
+      // Check if click is outside flag dropdown
+      if (flagDropdownRef.current && !flagDropdownRef.current.contains(target)) {
         setShowFlagDropdown(false);
       }
     };
@@ -56,6 +65,10 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [showMobileMenu, showFlagDropdown]);
+
+  const handleMobileMenuClick = () => {
+    setShowMobileMenu(!showMobileMenu);
+  };
 
   // Smooth scroll to section function
   const scrollToSection = (sectionId: string, closeMobileMenu: boolean = false) => {
@@ -92,9 +105,9 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
   return (
     <>
       {/* Navigation Bar - Sticky */}
-      <div className={`sticky top-0 z-50 flex items-center justify-center w-full bg-white/95 backdrop-blur-sm border-b border-[#ebebeb]/50 ${className}`}>
+      <div className={`sticky top-0 z-50 flex items-center justify-center w-full bg-[#1a3c34] text-white backdrop-blur-sm ${className}`} >
         <div className="container-inner">
-          <div className="flex h-16 sm:h-16 lg:h-20 items-center justify-between w-full py-4 sm:py-4 lg:py-6 border-b border-[#ebebeb]">
+          <div className="flex h-16 sm:h-16 lg:h-20 items-center justify-between w-full py-4 sm:py-4 lg:py-6">
             <div className="flex items-center gap-4 lg:gap-12 xl:gap-20">
               {/* Logo */}
               <div className="flex items-center gap-2 sm:gap-3">
@@ -105,7 +118,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
                     src="/logo.png"
                   />
                 </div>
-                <div className="font-h5-h5-bold text-black text-lg sm:text-lg lg:text-xl xl:text-[length:var(--h5-h5-bold-font-size)] leading-tight tracking-[var(--h5-h5-bold-letter-spacing)]">
+                <div className="font-h5-h5-bold text-white text-lg sm:text-lg lg:text-xl xl:text-[length:var(--h5-h5-bold-font-size)] leading-tight tracking-[var(--h5-h5-bold-letter-spacing)]">
                   RedGirraffe
                 </div>
               </div>
@@ -119,7 +132,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
                     className="p-0 h-auto hover:bg-transparent touch-manipulation"
                     onClick={() => scrollToSection(item.sectionId)}
                   >
-                    <div className="font-body-large-body-large-semibold text-text text-sm lg:text-base xl:text-[length:var(--body-large-body-large-semibold-font-size)] text-center tracking-[var(--body-large-body-large-semibold-letter-spacing)] leading-[var(--body-large-body-large-semibold-line-height)] hover:text-app-primary transition-colors cursor-pointer">
+                    <div className="font-body-large-body-large-semibold text-text text-sm lg:text-base xl:text-[length:var(--body-large-body-large-semibold-font-size)] text-center tracking-[var(--body-large-body-large-semibold-letter-spacing)] leading-[var(--body-large-body-large-semibold-line-height)] hover:text-app-primary transition-colors cursor-pointer text-white">
                       {item.label}
                     </div>
                   </Button>
@@ -128,14 +141,38 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
             </div>
 
             {/* Action Buttons */}
-            <div className="flex items-center gap-2 xl:gap-3">
+            <div className="flex items-center justify-center gap-2 xl:gap-3">
               {/* Mobile Menu Button - Show only on mobile */}
               <Button
+                ref={mobileMenuButtonRef}
                 variant="ghost"
-                className="block lg:hidden w-10 h-10 p-2 touch-manipulation"
-                onClick={() => setShowMobileMenu(!showMobileMenu)}
+                className="block lg:hidden w-10 h-10 p-2 touch-manipulation group"
+                data-mobile-menu-button
+                onClick={handleMobileMenuClick}
               >
-                <MenuIcon className="w-6 h-6 text-black" />
+                <motion.div
+                  initial={false}
+                  animate={{ rotate: showMobileMenu ? 90 : 0 }}
+                  transition={{ duration: durations.fast, ease: easings.smooth }}
+                >
+                  {showMobileMenu ? (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: durations.fast }}
+                    >
+                      <X className="w-6 h-6 text-white group-hover:text-app-primary" />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: durations.fast }}
+                    >
+                      <MenuIcon className="w-6 h-6 text-white group-hover:text-app-primary" />
+                    </motion.div>
+                  )}
+                </motion.div>
               </Button>
 
               {/* Desktop Buttons - Hidden on mobile */}
@@ -144,13 +181,13 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
                 <div className="relative" ref={flagDropdownRef}>
                   <Button
                     variant="ghost"
-                    className="w-10 h-10 p-2 rounded-full bg-gray-100 hover:bg-gray-100 transition-colors touch-manipulation"
+                    className="w-10 h-10 p-1.5 rounded-full hover:bg-gray-300 transition-colors touch-manipulation"
                     onClick={() => setShowFlagDropdown(!showFlagDropdown)}
                   >
                     <img
                       src={flags[selectedFlag].flag || flags[0].flag}
                       alt={flags[selectedFlag].code || flags[0].code}
-                      className="w-6 h-4 object-cover rounded-sm"
+                      className="w-8 h-6 object-cover rounded-sm"
                     />
                   </Button>
 
