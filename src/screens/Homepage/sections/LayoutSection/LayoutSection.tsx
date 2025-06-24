@@ -2,11 +2,11 @@ import { ArrowRightIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Separator } from "../../../../components/ui/separator";
+import { SectionHeader } from "../../../../components/ui";
 import {
   AnimatedText,
   AnimatedCard,
   StaggeredGrid,
-  AnimatedButton,
 } from "../../../../components/animations";
 import { durations, easings } from "../../../../utils/animations";
 import { useGlobalAnimationOrchestrator } from "../../../../hooks/useGlobalAnimationOrchestrator";
@@ -121,27 +121,12 @@ export const LayoutSection = (): JSX.Element => {
 
   return (
     <section className="flex flex-col items-center gap-8 sm:gap-12 lg:gap-[60px] w-full bg-[#e0eae8] pt-16 lg:pt-20 pb-16 lg:pb-20 px-6 sm:px-6 lg:px-[60px] rounded-md">
-      <motion.div
-        className="flex flex-col max-w-4xl items-start gap-4 sm:gap-5"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: durations.normal,
-          ease: easings.smooth,
-          delay: createElementDelay(0, 0.05),
-        }}
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <AnimatedText
-          as="h2"
-          variant="fadeUp"
-          className="w-full font-h3-h3-semibold text-[#1a3c34] text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]"
-          delay={createElementDelay(1, 0.05)}
-          threshold={0.3}
-        >
-          Traditional B2B Payouts Fail—And What We Fix
-        </AnimatedText>
-      </motion.div>
+      <SectionHeader
+        title="Traditional B2B payouts fail—and what we"
+        highlightedText="fix."
+        delay={createElementDelay(0, 0.05)}
+        threshold={0.3}
+      />
 
       <div className="flex flex-col items-start gap-12 sm:gap-16 lg:gap-20 xl:gap-[120px] w-full max-w-7xl">
         {/* Problem Section */}

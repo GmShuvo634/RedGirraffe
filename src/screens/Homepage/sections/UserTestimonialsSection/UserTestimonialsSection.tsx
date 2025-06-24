@@ -2,8 +2,8 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Separator } from "../../../../components/ui/separator";
+import { SectionHeader } from "../../../../components/ui";
 import {
-  AnimatedText,
   AnimatedCard,
   StaggeredGrid,
   CountUpText,
@@ -42,43 +42,13 @@ const testimonialData = [
 export const UserTestimonialsSection = (): JSX.Element => {
   return (
     <section className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] w-full bg-[#e0eae8] pt-16 lg:pt-20 pb-16 lg:pb-20 px-6 sm:px-6 lg:px-[60px] rounded-md">
-      <motion.div
-        className="max-w-4xl flex flex-col items-start gap-4 sm:gap-5"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: durations.normal,
-          ease: easings.smooth,
-          delay: 0.1,
-        }}
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <div className="flex items-center justify-center w-full ">
-          <AnimatedText
-            as="h2"
-            variant="fadeUp"
-            className="w-full font-h3-h3-semibold text-[#1a3c34] text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]"
-            delay={0.2}
-            threshold={0.3}
-          >
-            Scale Globally with Unmatched Reliability
-          </AnimatedText>
-        </div>
-
-        <div className="flex items-center justify-center px-4 sm:px-6 lg:px-10 w-full">
-          <AnimatedText
-            as="p"
-            variant="fadeUp"
-            className="w-full px-4 sm:px-6 lg:px-10 font-h6-h6-regular text-[#4a8b7b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]"
-            delay={0.4}
-            threshold={0.3}
-          >
-            Serving 97+ countries with 99.9% uptime and support for 150+
-            currencies—RedGirraffe processes $20B+ annually with top-tier
-            security.
-          </AnimatedText>
-        </div>
-      </motion.div>
+      <SectionHeader
+        title="Scale globally with unmatched"
+        highlightedText="reliability."
+        subtitle="Serving 97+ countries with 99.9% uptime and support for 150+ currencies—RedGirraffe processes $20B+ annually with top-tier security."
+        delay={0.1}
+        threshold={0.3}
+      />
 
       <div className="relative max-w-7xl w-full">
         {/* Desktop Separators - Positioned Absolutely */}

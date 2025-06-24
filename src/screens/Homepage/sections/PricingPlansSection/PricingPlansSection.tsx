@@ -2,11 +2,10 @@ import { ArrowRightIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { Badge } from "../../../../components/ui/badge";
 import { Card, CardContent } from "../../../../components/ui/card";
+import { SectionHeader } from "../../../../components/ui";
 import {
-  AnimatedText,
   AnimatedCard,
   StaggeredGrid,
-  AnimatedButton,
 } from "../../../../components/animations";
 import {
   durations,
@@ -42,41 +41,13 @@ export const HowItWorksSection = (): JSX.Element => {
       <div className="flex items-center gap-8 sm:gap-12 lg:gap-16 xl:gap-[120px] w-full">
         <div className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] flex-1">
           {/* Section Header */}
-          <motion.div
-            className="flex flex-col w-full max-w-4xl items-start gap-4 sm:gap-5"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: durations.fast,
-              ease: easings.smooth,
-              delay: 0.05,
-            }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <div className="flex items-center justify-center gap-2.5 w-full">
-              <AnimatedText
-                as="h2"
-                variant="fadeUp"
-                className="w-full font-h3-h3-semibold text-[#1a3c34] text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]"
-                delay={0.1}
-                threshold={0.3}
-              >
-                How RedGirraffe Works
-              </AnimatedText>
-            </div>
-
-            <div className="flex items-center justify-center gap-2.5 px-4 sm:px-6 lg:px-10 py-0 w-full">
-              <AnimatedText
-                as="p"
-                variant="fadeUp"
-                className="w-full px-4 sm:px-6 lg:px-10 font-h6-h6-regular text-[#4a8b7b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]"
-                delay={0.2}
-                threshold={0.3}
-              >
-                Simplify your payments in three seamless steps.
-              </AnimatedText>
-            </div>
-          </motion.div>
+          <SectionHeader
+            title="How RedGirraffe"
+            highlightedText="works."
+            subtitle="Simplify your payments in three seamless steps."
+            delay={0.05}
+            threshold={0.3}
+          />
 
           {/* Progress Indicator - Hidden on mobile */}
           <motion.div

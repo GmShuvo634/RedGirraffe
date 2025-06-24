@@ -7,11 +7,10 @@ import {
   TabsTrigger,
 } from "../../../../components/ui/tabs";
 import { ArrowRightIcon } from "lucide-react";
+import { SectionHeader } from "../../../../components/ui";
 import {
-  AnimatedText,
   AnimatedCard,
   StaggeredGrid,
-  AnimatedButton,
 } from "../../../../components/animations";
 import { durations, easings } from "../../../../utils/animations";
 import { SecondaryActionButton } from "../../../../components/buttons";
@@ -132,17 +131,12 @@ export const ContentSection = (): JSX.Element => {
   return (
     <section className="flex flex-col items-start gap-6 sm:gap-8 lg:gap-[60px] w-full bg-[#e0eae8] pt-16 lg:pt-20 pb-16 lg:pb-20 px-6 sm:px-6 lg:px-[60px]">
       <div className="flex flex-col items-center gap-6 sm:gap-8 lg:gap-[60px] w-full">
-        <div className="flex flex-col max-w-4xl items-start gap-4 lg:gap-5">
-          <AnimatedText
-            as="h2"
-            variant="fadeUp"
-            className="w-full font-h3-h3-semibold text-[#1a3c34] text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]"
-            delay={0.2}
-            threshold={0.3}
-          >
-            Pay Everything That Matters. At the Speed of Now
-          </AnimatedText>
-        </div>
+        <SectionHeader
+          title="Pay everything that matters."
+          highlightedText="At the speed of now."
+          delay={0.2}
+          threshold={0.3}
+        />
 
         <div className="flex flex-col items-start gap-6 sm:gap-8 lg:gap-[60px] w-full px-6 sm:px-6 lg:px-[60px]">
           <Tabs defaultValue="vendor" className="w-full">

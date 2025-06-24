@@ -2,21 +2,17 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Separator } from "../../../../components/ui/separator";
+import { SectionHeader } from "../../../../components/ui";
 import { SecondaryActionButton } from "../../../../components/buttons";
 import {
-  AnimatedSection,
-  AnimatedCard,
   StaggeredGrid,
 } from "../../../../components/animations";
 import {
   fadeInUpVariants,
   staggerContainerVariants,
-  cardVariants,
   durations,
   easings,
-  createSynchronizedDelay,
 } from "../../../../utils/animations";
-import { useScrollAnimation } from "../../../../hooks/useScrollAnimation";
 import { useResponsiveCardSlice } from "../../../../hooks/useResponsiveCardSlice";
 import { useGlobalAnimationOrchestrator } from "../../../../hooks/useGlobalAnimationOrchestrator";
 
@@ -85,10 +81,6 @@ const enterpriseFeatures = [
 ];
 
 export const MainContentSection = (): JSX.Element => {
-  const { ref: headerRef, isInView: headerInView } = useScrollAnimation({
-    threshold: 0.2,
-  });
-
   // Synchronized animation orchestrator for main content section
   const { createElementDelay } = useGlobalAnimationOrchestrator({
     sectionKey: "mainContent",
@@ -101,27 +93,13 @@ export const MainContentSection = (): JSX.Element => {
   return (
     <section className="flex flex-col items-center gap-8 sm:gap-12 lg:gap-[60px] w-full">
       <div className="flex flex-col items-center gap-8 sm:gap-12 lg:gap-[60px] w-full">
-        <motion.div
-          ref={headerRef}
-          className="flex flex-col w-full max-w-4xl items-center gap-4 sm:gap-5"
-          variants={staggerContainerVariants}
-          initial="hidden"
-          animate={headerInView ? "visible" : "hidden"}
-        >
-          <motion.h2
-            className="w-full font-h3-h3-semibold text-[#1a3c34] text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]"
-            variants={fadeInUpVariants}
-          >
-            Tailored for Your Success
-          </motion.h2>
-
-          <motion.p
-            className="w-full px-4 sm:px-6 lg:px-10 font-h6-h6-regular text-[#4a8b7b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]"
-            variants={fadeInUpVariants}
-          >
-            Unlock smarter payments for banks and enterprises with RedGirraffe.
-          </motion.p>
-        </motion.div>
+        <SectionHeader
+          title="Pay everything that matters."
+          highlightedText="At the speed of now."
+          subtitle="Unlock smarter payments for banks and enterprises with RedGirraffe."
+          delay={0.1}
+          threshold={0.2}
+        />
       </div>
 
       <div className="flex flex-col lg:flex-row w-full max-w-7xl gap-8 sm:gap-10 lg:gap-10">

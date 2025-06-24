@@ -7,8 +7,8 @@ import {
 import { motion } from "framer-motion";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Input } from "../../../../components/ui/input";
+import { SectionHeader } from "../../../../components/ui";
 import {
-  AnimatedText,
   AnimatedCard,
   StaggeredGrid,
   AnimatedButton,
@@ -61,38 +61,13 @@ export const SubscriptionFormSection = (): JSX.Element => {
   return (
     <section className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] bg-white w-full">
       {/* Heading Section */}
-      <motion.div
-        className="flex flex-col items-start gap-4 sm:gap-5 max-w-4xl w-full"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: durations.normal,
-          ease: easings.smooth,
-          delay: 0.1,
-        }}
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <AnimatedText
-          as="h2"
-          variant="fadeUp"
-          className="w-full font-h3-h3-semibold text-[#1a3c34] text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[length:var(--h3-h3-semibold-font-size)] text-center tracking-[var(--h3-h3-semibold-letter-spacing)] leading-tight xl:leading-[var(--h3-h3-semibold-line-height)]"
-          delay={0.2}
-          threshold={0.3}
-        >
-          Ready to Transform Your Business Payments?
-        </AnimatedText>
-
-        <AnimatedText
-          as="p"
-          variant="fadeUp"
-          className="w-full px-4 sm:px-6 lg:px-10 font-h6-h6-regular text-[#4a8b7b] text-base sm:text-base lg:text-lg xl:text-[length:var(--h6-h6-regular-font-size)] text-center tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]"
-          delay={0.4}
-          threshold={0.3}
-        >
-          Join thousands of enterprises, banks, and PSPs simplifying payments
-          with RedGirraffe
-        </AnimatedText>
-      </motion.div>
+      <SectionHeader
+        title="Ready to transform your business"
+        highlightedText="payments?"
+        subtitle="Join thousands of enterprises, banks, and PSPs simplifying payments with RedGirraffe"
+        delay={0.1}
+        threshold={0.3}
+      />
 
       {/* Contact Information */}
       <div className="relative w-full max-w-6xl">
