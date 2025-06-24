@@ -13,10 +13,8 @@ import {
   StaggeredGrid,
   AnimatedButton,
 } from "../../../../components/animations";
-import {
-  durations,
-  easings,
-} from "../../../../utils/animations";
+import { durations, easings } from "../../../../utils/animations";
+import { SecondaryActionButton } from "../../../../components/buttons";
 
 export const ContentSection = (): JSX.Element => {
   // Service category data for Vendor & Payments tab
@@ -194,7 +192,10 @@ export const ContentSection = (): JSX.Element => {
                             whileHover={{
                               scale: 1.1,
                               rotate: 5,
-                              transition: { duration: durations.fast, ease: easings.smooth }
+                              transition: {
+                                duration: durations.fast,
+                                ease: easings.smooth,
+                              },
                             }}
                           />
                           <div className="flex flex-col items-start gap-2.5 w-full">
@@ -238,7 +239,10 @@ export const ContentSection = (): JSX.Element => {
                             whileHover={{
                               scale: 1.1,
                               rotate: 5,
-                              transition: { duration: durations.fast, ease: easings.smooth }
+                              transition: {
+                                duration: durations.fast,
+                                ease: easings.smooth,
+                              },
                             }}
                           />
                           <div className="flex flex-col items-start gap-2.5 w-full">
@@ -319,7 +323,10 @@ export const ContentSection = (): JSX.Element => {
                             whileHover={{
                               scale: 1.1,
                               rotate: 5,
-                              transition: { duration: durations.fast, ease: easings.smooth }
+                              transition: {
+                                duration: durations.fast,
+                                ease: easings.smooth,
+                              },
                             }}
                           />
                           <div className="flex flex-col items-start gap-2.5 w-full">
@@ -377,7 +384,6 @@ export const ContentSection = (): JSX.Element => {
           </Tabs>
         </div>
       </div>
-
       <motion.div
         className="flex flex-col items-center gap-2.5 w-full"
         initial={{ opacity: 0, y: 30 }}
@@ -389,17 +395,13 @@ export const ContentSection = (): JSX.Element => {
         }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        <AnimatedButton className="flex items-center justify-center gap-3 px-8 sm:px-8 lg:px-10 py-4 sm:py-4 lg:py-8 bg-[#4a8b7b] rounded-[48px] text-white w-full max-w-[280px] sm:max-w-[330px] h-14 sm:h-14 lg:h-auto touch-manipulation">
-          <motion.div
-            whileHover={{ x: 5 }}
-            transition={{ duration: durations.fast, ease: easings.smooth }}
-          >
-            <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6" />
-          </motion.div>
-          <span className="font-h6-h6-semibold text-white text-base sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] whitespace-nowrap">
-            Request a Demo
-          </span>
-        </AnimatedButton>
+        <SecondaryActionButton
+          // onClick={() => scrollToSection("contact")}
+          size="mobile-lg"
+          className="w-full max-w-[280px]"
+        >
+          Request a Demo
+        </SecondaryActionButton>
       </motion.div>
     </section>
   );

@@ -302,19 +302,19 @@ module.exports = {
         },
         '.section-fullscreen': {
           width: '100%',
-          paddingTop: '2rem',
+          paddingTop: '0rem',
           paddingBottom: '2rem',
           '@media (min-width: 640px)': {
-            paddingTop: '3rem',
+            paddingTop: '1rem',
             paddingBottom: '3rem',
           },
           '@media (min-width: 1024px)': {
-            paddingTop: '4rem',
+            paddingTop: '1rem',
             paddingBottom: '4rem',
           },
           '@media (min-width: 1280px)': {
-            paddingTop: '7.5rem',
-            paddingBottom: '7.5rem',
+            paddingTop: '1rem',
+            paddingBottom: '7rem',
           },
         },
       }

@@ -8,10 +8,7 @@ import {
   StaggeredGrid,
   AnimatedButton,
 } from "../../../../components/animations";
-import {
-  durations,
-  easings,
-} from "../../../../utils/animations";
+import { durations, easings } from "../../../../utils/animations";
 import {
   Card,
   CardContent,
@@ -21,6 +18,10 @@ import {
 } from "../../../../components/ui/card";
 import { Separator } from "../../../../components/ui/separator";
 import { useResponsiveCardSlice } from "../../../../hooks/useResponsiveCardSlice";
+import {
+  PrimaryActionButton,
+  SecondaryActionButton,
+} from "../../../../components/buttons";
 
 // Data for the cards
 const pricingCards = [
@@ -153,36 +154,12 @@ export const CallToActionSection = (): JSX.Element => {
             }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <AnimatedButton
-              variant="default"
-              className="w-full max-w-[270px] flex items-center justify-center gap-3 px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 rounded-[48px] bg-[#1a3c34] text-white touch-manipulation hover:bg-[#0f2a24] transition-all duration-300 shadow-lg hover:shadow-xl"
+            <PrimaryActionButton
+              size="mobile-lg"
+              className="w-full max-w-[280px]"
             >
-              <motion.div
-                initial={{ x: -8, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{
-                  duration: durations.fast,
-                  ease: easings.smooth,
-                  delay: 1.0,
-                }}
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6" />
-              </motion.div>
-              <motion.span
-                className="font-h6-h6-semibold text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]"
-                initial={{ x: 8, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{
-                  duration: durations.fast,
-                  ease: easings.smooth,
-                  delay: 1.0,
-                }}
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                Request a Demo
-              </motion.span>
-            </AnimatedButton>
+              Request a Demo
+            </PrimaryActionButton>
           </motion.div>
 
           <motion.div
@@ -196,36 +173,12 @@ export const CallToActionSection = (): JSX.Element => {
             }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <AnimatedButton
-              variant="default"
-              className="w-full max-w-[270px] flex items-center justify-center gap-3 px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 rounded-[48px] bg-[#4a8b7b] text-white touch-manipulation hover:bg-[#3d7a6a] transition-all duration-300 shadow-lg hover:shadow-xl"
+            <SecondaryActionButton
+              size="mobile-lg"
+              className="w-full max-w-[280px]"
             >
-              <motion.div
-                initial={{ x: -8, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{
-                  duration: durations.fast,
-                  ease: easings.smooth,
-                  delay: 1.1,
-                }}
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6" />
-              </motion.div>
-              <motion.span
-                className="font-h6-h6-semibold text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]"
-                initial={{ x: 8, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{
-                  duration: durations.fast,
-                  ease: easings.smooth,
-                  delay: 1.1,
-                }}
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                Contact Sales
-              </motion.span>
-            </AnimatedButton>
+              Contact Sales
+            </SecondaryActionButton>
           </motion.div>
         </motion.div>
 
@@ -326,7 +279,7 @@ export const CallToActionSection = (): JSX.Element => {
 
                     <CardFooter className="p-0">
                       <Button
-                        className={`w-full px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 rounded-[48px] touch-manipulation ${
+                        className={`w-full px-6 sm:px-8 lg:px-8 py-6 sm:py-7 lg:py-8 rounded-[48px] touch-manipulation ${
                           pricingCards[currentSlide].variant === "white"
                             ? "bg-[#4a8b7b] text-white"
                             : "bg-white text-[#4a8b7b]"
@@ -425,7 +378,9 @@ export const CallToActionSection = (): JSX.Element => {
                       </CardTitle>
                       <p
                         className={`mt-4 sm:mt-5 font-body-large-body-large-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-large-body-large-regular-font-size)] tracking-[var(--body-large-body-large-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-large-body-large-regular-line-height)] ${
-                          card.variant === "white" ? "text-text" : "text-[#dbf0e4]"
+                          card.variant === "white"
+                            ? "text-text"
+                            : "text-[#dbf0e4]"
                         }`}
                       >
                         {card.description}
@@ -472,7 +427,9 @@ export const CallToActionSection = (): JSX.Element => {
                         >
                           <motion.div
                             className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center flex-shrink-0 ${
-                              card.variant === "white" ? "bg-[#4a8b7b]" : "bg-white"
+                              card.variant === "white"
+                                ? "bg-[#4a8b7b]"
+                                : "bg-white"
                             }`}
                             initial={{ scale: 0 }}
                             whileInView={{ scale: 1 }}
@@ -493,7 +450,9 @@ export const CallToActionSection = (): JSX.Element => {
                           </motion.div>
                           <span
                             className={`font-body-medium-body-medium-regular text-xs sm:text-sm lg:text-base xl:text-[length:var(--body-medium-body-medium-regular-font-size)] tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-relaxed xl:leading-[var(--body-medium-body-medium-regular-line-height)] ${
-                              card.variant === "white" ? "text-black" : "text-white"
+                              card.variant === "white"
+                                ? "text-black"
+                                : "text-white"
                             }`}
                           >
                             {feature}

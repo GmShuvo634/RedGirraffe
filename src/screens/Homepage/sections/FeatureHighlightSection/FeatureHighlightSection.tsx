@@ -14,6 +14,10 @@ import {
   AnimatedButton,
 } from "../../../../components/animations";
 import { durations, easings } from "../../../../utils/animations";
+import {
+  PrimaryActionButton,
+  SecondaryActionButton,
+} from "../../../../components/buttons";
 
 // Data for the advantage cards
 const advantageCards = [
@@ -207,7 +211,7 @@ export const FeatureHighlightSection = (): JSX.Element => {
                   </div>
                   <motion.div
                     className="flex justify-center w-full"
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{
                       duration: durations.fast,
@@ -216,40 +220,21 @@ export const FeatureHighlightSection = (): JSX.Element => {
                     }}
                     viewport={{ once: true, amount: 0.3 }}
                   >
-                    <AnimatedButton className={`flex items-center justify-center gap-3 px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8  ${card.buttonClass} rounded-[48px] text-white w-full max-w-[330px] touch-manipulation transition-all duration-300`}>
-                      <motion.div
-                        initial={{ x: -3, opacity: 0 }}
-                        whileInView={{ x: 0, opacity: 1 }}
-                        transition={{
-                          duration: durations.fast,
-                          ease: easings.smooth,
-                          delay: 0.85 + index * 0.05,
-                        }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        whileHover={{
-                          x: 5,
-                          transition: {
-                            duration: durations.fast,
-                            ease: easings.smooth,
-                          }
-                        }}
-                      >
-                        <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6" />
-                      </motion.div>
-                      <motion.span
-                        className="font-h6-h6-semibold text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]"
-                        initial={{ x: 3, opacity: 0 }}
-                        whileInView={{ x: 0, opacity: 1 }}
-                        transition={{
-                          duration: durations.fast,
-                          ease: easings.smooth,
-                          delay: 0.9 + index * 0.05,
-                        }}
-                        viewport={{ once: true, amount: 0.3 }}
+                    {card.buttonText === "Book a Demo" ? (
+                      <PrimaryActionButton
+                        size="mobile-lg"
+                        className="w-full max-w-[280px]"
                       >
                         {card.buttonText}
-                      </motion.span>
-                    </AnimatedButton>
+                      </PrimaryActionButton>
+                    ) : (
+                      <SecondaryActionButton
+                        size="mobile-lg"
+                        className="w-full max-w-[280px] mt-12"
+                      >
+                        {card.buttonText}
+                      </SecondaryActionButton>
+                    )}
                   </motion.div>
                 </CardContent>
               </Card>

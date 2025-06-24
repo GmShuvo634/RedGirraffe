@@ -1,9 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Separator } from "../../../../components/ui/separator";
-import { ArrowRightIcon } from "lucide-react";
+import { SecondaryActionButton } from "../../../../components/buttons";
 import {
   AnimatedSection,
   AnimatedCard,
@@ -339,21 +338,13 @@ export const MainContentSection = (): JSX.Element => {
         }}
         viewport={{ once: true, amount: 0.5 }}
       >
-        <motion.div
-          whileHover={{
-            scale: 1.05,
-            y: -4,
-            transition: { duration: durations.fast, ease: easings.smooth },
-          }}
-          whileTap={{ scale: 0.95 }}
+        <SecondaryActionButton
+          backgroundColor="#4a8b7b"
+          className="max-w-[280px] sm:max-w-[330px]"
+          size="mobile-lg"
         >
-          <Button className="flex items-center justify-center gap-3 px-8 sm:px-8 lg:px-10 py-4 sm:py-4 lg:py-8 bg-[#4a8b7b] rounded-[48px] text-white w-full max-w-[280px] sm:max-w-[330px] h-14 sm:h-14 lg:h-auto touch-manipulation">
-            <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6" />
-            <span className="font-h6-h6-semibold text-white text-base sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] whitespace-nowrap">
-              Request a Demo
-            </span>
-          </Button>
-        </motion.div>
+          Request a Demo
+        </SecondaryActionButton>
       </motion.div>
     </section>
   );

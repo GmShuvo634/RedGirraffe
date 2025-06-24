@@ -63,7 +63,7 @@ export const Homepage = (): JSX.Element => {
       <div className="w-full">
         <NavigationBar navItems={navItems} onNavigate={scrollToSection} />
         <HeroSection />
-        <section id="industries" className="section-fullscreen">
+        <section id="features" className="section-fullscreen">
           <div className="container-inner">
             <LayoutSection />
           </div>

@@ -144,12 +144,12 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
                 <div className="relative" ref={flagDropdownRef}>
                   <Button
                     variant="ghost"
-                    className="w-10 h-10 p-2 rounded-full hover:bg-gray-100 transition-colors touch-manipulation"
+                    className="w-10 h-10 p-2 rounded-full bg-gray-100 hover:bg-gray-100 transition-colors touch-manipulation"
                     onClick={() => setShowFlagDropdown(!showFlagDropdown)}
                   >
                     <img
-                      src={flags[selectedFlag].flag}
-                      alt={flags[selectedFlag].name}
+                      src={flags[selectedFlag].flag || flags[0].flag}
+                      alt={flags[selectedFlag].code || flags[0].code}
                       className="w-6 h-4 object-cover rounded-sm"
                     />
                   </Button>
@@ -177,12 +177,12 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
                             whileHover={{ backgroundColor: '#f9fafb' }}
                           >
                             <img
-                              src={flag.flag}
-                              alt={flag.name}
+                              src={flag.flag || flags[0].flag}
+                              alt={flag.name || flags[0].name}
                               className="w-6 h-4 object-cover rounded-sm"
                             />
                             <span className="font-body-medium-body-medium-regular text-black text-sm">
-                              {flag.name}
+                              {flag.code || flags[0].code}
                             </span>
                           </motion.button>
                         ))}
@@ -199,7 +199,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
                     Get Demo
                   </span>
                 </Button>
-                <Button className="w-16 sm:w-16 lg:w-20 xl:w-[110px] h-10 sm:h-10 lg:h-10 px-3 sm:px-3 lg:px-6 py-2 lg:py-3 bg-[#1a3c34] rounded-[64px] text-sm touch-manipulation">
+                <Button className="w-16 sm:w-16 lg:w-20 xl:w-[110px] h-10 sm:h-10 lg:h-10 px-3 sm:px-3 lg:px-6 py-2 lg:py-3 bg-[#4a8b7b] rounded-[64px] text-sm touch-manipulation">
                   <span className="font-body-medium-body-medium-regular text-white tracking-[var(--body-medium-body-medium-regular-letter-spacing)] leading-[var(--body-medium-body-medium-regular-line-height)]">
                     Login
                   </span>
@@ -282,7 +282,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
                     Get Demo
                   </span>
                 </Button>
-                <Button className="w-full h-12 bg-[#1a3c34] rounded-[64px] touch-manipulation">
+                <Button className="w-full h-12 bg-[#4a8b7b] rounded-[64px] touch-manipulation">
                   <span className="font-body-medium-body-medium-regular text-white">
                     Login
                   </span>

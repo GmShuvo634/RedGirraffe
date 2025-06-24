@@ -8,11 +8,9 @@ import {
   StaggeredGrid,
   AnimatedButton,
 } from "../../../../components/animations";
-import {
-  durations,
-  easings,
-} from "../../../../utils/animations";
+import { durations, easings } from "../../../../utils/animations";
 import { useGlobalAnimationOrchestrator } from "../../../../hooks/useGlobalAnimationOrchestrator";
+import { PrimaryActionButton } from "../../../../components/buttons";
 
 // Problem cards data
 const problemCards = [
@@ -492,7 +490,13 @@ export const LayoutSection = (): JSX.Element => {
                 className="h-full"
               >
                 <Card
-                  className={`flex flex-col h-auto lg:h-[733px] ${solution.bgColor} rounded-[20px] ${solution.hasBorder ? "border border-solid border-[#4a8b7b]" : ""} touch-manipulation h-full hover:shadow-xl transition-shadow duration-300`}
+                  className={`flex flex-col h-auto lg:h-[733px] ${
+                    solution.bgColor
+                  } rounded-[20px] ${
+                    solution.hasBorder
+                      ? "border border-solid border-[#4a8b7b]"
+                      : ""
+                  } touch-manipulation h-full hover:shadow-xl transition-shadow duration-300`}
                 >
                   <CardContent className="flex flex-col items-start gap-6 sm:gap-8 lg:gap-10 p-6 sm:p-8 lg:p-10 h-full">
                     <motion.h4
@@ -557,48 +561,13 @@ export const LayoutSection = (): JSX.Element => {
             ))}
           </StaggeredGrid>
 
-          <motion.div
-            className="flex flex-col items-center gap-2.5 w-full"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: durations.normal,
-              ease: easings.smooth,
-              delay: 1.5,
-            }}
-            viewport={{ once: true, amount: 0.3 }}
+          <PrimaryActionButton
+            // onClick={() => scrollToSection("contact")}
+            size="mobile-lg"
+            className="w-full max-w-[280px]"
           >
-            <AnimatedButton
-              variant="default"
-              className="flex items-center justify-center gap-3 px-8 sm:px-8 lg:px-10 py-4 sm:py-4 lg:py-8 bg-[#4a8b7b] rounded-[48px] text-white w-full max-w-[280px] sm:max-w-[330px] h-14 sm:h-14 lg:h-auto touch-manipulation hover:bg-[#3d7a6a] transition-all duration-300 hover:shadow-lg"
-            >
-              <motion.div
-                initial={{ x: -5, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{
-                  duration: durations.fast,
-                  ease: easings.smooth,
-                  delay: 1.7,
-                }}
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6" />
-              </motion.div>
-              <motion.span
-                className="font-h6-h6-semibold text-white text-base sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)] whitespace-nowrap"
-                initial={{ x: 5, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{
-                  duration: durations.fast,
-                  ease: easings.smooth,
-                  delay: 1.8,
-                }}
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                Request a Demo
-              </motion.span>
-            </AnimatedButton>
-          </motion.div>
+            Request a Demo
+          </PrimaryActionButton>
         </motion.div>
       </div>
     </section>

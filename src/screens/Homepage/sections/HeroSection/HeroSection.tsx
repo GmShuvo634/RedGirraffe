@@ -1,37 +1,27 @@
 import {
-  ArrowRightIcon,
   Volume2,
   VolumeX,
   Maximize,
 } from "lucide-react";
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { Button } from "../../../../components/ui/button";
 import { Card } from "../../../../components/ui/card";
 import {
   ToggleGroup,
   ToggleGroupItem,
 } from "../../../../components/ui/toggle-group";
-import { NavigationBar, NavigationItem } from "../../../../components/NavigationBar";
+
+import { PrimaryActionButton, SecondaryActionButton } from "../../../../components/buttons";
+import { CountUpText } from "../../../../components/animations";
 import {
   fadeInUpVariants,
   staggerContainerVariants,
   durations,
   easings,
-  createSynchronizedDelay,
 } from "../../../../utils/animations";
 import { useGlobalAnimationOrchestrator } from "../../../../hooks/useGlobalAnimationOrchestrator";
 
 export const HeroSection = (): JSX.Element => {
-  // Navigation menu items with their corresponding section IDs
-  const navItems: NavigationItem[] = [
-    { label: "Features", sectionId: "features" },
-    { label: "Industries", sectionId: "industries" },
-    { label: "How It Works", sectionId: "how-it-works" },
-    { label: "Pricing", sectionId: "pricing" },
-    { label: "Contact", sectionId: "contact" },
-  ];
-
   // Synchronized animation orchestrator for hero section
   const { createElementDelay } = useGlobalAnimationOrchestrator({
     sectionKey: "hero",
@@ -172,38 +162,20 @@ export const HeroSection = (): JSX.Element => {
                 className="flex flex-col sm:flex-col lg:flex-row items-stretch spacing-mobile w-full"
                 variants={fadeInUpVariants}
               >
-                <motion.div
-                  whileHover={{ y: -2 }}
-                  whileTap={{ y: 0 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                <PrimaryActionButton
+                  // onClick={() => scrollToSection("contact")}
+                  size="mobile-lg"
                 >
-                  <Button
-                    size="mobile-lg"
-                    className="w-full lg:w-[200px] xl:w-[270px] bg-app-primary rounded-[48px] flex items-center justify-center gap-3"
-                    onClick={() => scrollToSection("contact")}
-                  >
-                    <ArrowRightIcon className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
-                    <span className="font-h6-h6-semibold text-white tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
-                      Request a Demo
-                    </span>
-                  </Button>
-                </motion.div>
-                <motion.div
-                  whileHover={{ y: -2 }}
-                  whileTap={{ y: 0 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                  Request a Demo
+                </PrimaryActionButton>
+
+                <SecondaryActionButton
+                  // onClick={() => scrollToSection("contact")}
+                  size="mobile-lg"
+                  backgroundColor="#4a8b7b"
                 >
-                  <Button
-                    size="mobile-lg"
-                    className="w-full lg:w-[200px] xl:w-[270px] bg-[#4a8b7b] rounded-[48px] flex items-center justify-center gap-3"
-                    onClick={() => scrollToSection("contact")}
-                  >
-                    <ArrowRightIcon className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
-                    <span className="font-h6-h6-semibold text-white tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
-                      Contact Sales
-                    </span>
-                  </Button>
-                </motion.div>
+                  Contact Sales
+                </SecondaryActionButton>
               </motion.div>
 
               {/* Stats with animation */}
@@ -211,18 +183,17 @@ export const HeroSection = (): JSX.Element => {
                 className="w-full text-center font-h6-h6-regular text-text text-base lg:text-base xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-[var(--h6-h6-regular-line-height)]"
                 variants={fadeInUpVariants}
               >
-                <motion.span
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    duration: durations.fast,
-                    ease: easings.gentle,
-                    delay: createElementDelay(3, 0.2),
-                  }}
+                <CountUpText
+                  end={20}
+                  start={0}
+                  duration={2000}
+                  delay={100}
+                  prefix="$"
+                  suffix="B+"
                   className="font-bold text-app-primary"
-                >
-                  $20B+
-                </motion.span>{" "}
+                  threshold={0.3}
+                  animationDelay={createElementDelay(3, 0.2)}
+                />{" "}
                 processed annually
               </motion.p>
             </motion.div>

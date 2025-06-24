@@ -8,10 +8,8 @@ import {
   StaggeredGrid,
   AnimatedButton,
 } from "../../../../components/animations";
-import {
-  durations,
-  easings,
-} from "../../../../utils/animations";
+import { durations, easings } from "../../../../utils/animations";
+import { SecondaryActionButton } from "../../../../components/buttons";
 
 // Industry data for mapping
 const industries = [
@@ -132,7 +130,10 @@ export const IndustriesSection = (): JSX.Element => {
                     className="font-h6-h6-semibold text-black text-sm sm:text-base group-hover:text-white lg:text-lg xl:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-tight xl:leading-[var(--h6-h6-semibold-line-height)] min-h-[3rem] sm:min-h-[4rem]"
                     whileHover={{
                       scale: 1.05,
-                      transition: { duration: durations.fast, ease: easings.smooth }
+                      transition: {
+                        duration: durations.fast,
+                        ease: easings.smooth,
+                      },
                     }}
                   >
                     {industry.title}
@@ -141,7 +142,10 @@ export const IndustriesSection = (): JSX.Element => {
                     className="font-h6-h6-regular text-text text-xs sm:text-sm lg:text-base group-hover:text-gray-300 xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)] flex-1"
                     whileHover={{
                       y: -2,
-                      transition: { duration: durations.fast, ease: easings.smooth }
+                      transition: {
+                        duration: durations.fast,
+                        ease: easings.smooth,
+                      },
                     }}
                   >
                     {industry.description}
@@ -164,17 +168,12 @@ export const IndustriesSection = (): JSX.Element => {
         }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        <AnimatedButton className="flex items-center justify-center gap-3 px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 bg-[#4a8b7b] rounded-[48px] text-white w-full max-w-[330px] touch-manipulation">
-          <motion.div
-            whileHover={{ x: 5 }}
-            transition={{ duration: durations.fast, ease: easings.smooth }}
-          >
-            <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6" />
-          </motion.div>
-          <span className="font-h6-h6-semibold text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]">
-            Request a Demo
-          </span>
-        </AnimatedButton>
+        <SecondaryActionButton
+          size="mobile-lg"
+          className="w-full max-w-[280px]"
+        >
+          Request a Demo
+        </SecondaryActionButton>
       </motion.div>
     </section>
   );

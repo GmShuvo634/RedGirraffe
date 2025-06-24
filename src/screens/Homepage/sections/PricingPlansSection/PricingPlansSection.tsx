@@ -12,6 +12,7 @@ import {
   durations,
   easings,
 } from "../../../../utils/animations";
+import { PrimaryActionButton } from "../../../../components/buttons";
 
 // Data for the process steps
 const processSteps = [
@@ -228,36 +229,9 @@ export const HowItWorksSection = (): JSX.Element => {
             }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <AnimatedButton
-              variant="default"
-              className="flex w-full max-w-[330px] items-center justify-center gap-3 px-6 sm:px-8 lg:px-10 py-6 sm:py-7 lg:py-8 bg-[#4a8b7b] rounded-[48px] text-white touch-manipulation hover:bg-[#3d7a6a] transition-colors duration-300"
-            >
-              <motion.div
-                initial={{ x: -5, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{
-                  duration: durations.fast,
-                  ease: easings.smooth,
-                  delay: 1.5,
-                }}
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6" />
-              </motion.div>
-              <motion.span
-                className="font-h6-h6-semibold text-sm sm:text-base lg:text-[length:var(--h6-h6-semibold-font-size)] tracking-[var(--h6-h6-semibold-letter-spacing)] leading-[var(--h6-h6-semibold-line-height)]"
-                initial={{ x: 5, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{
-                  duration: durations.fast,
-                  ease: easings.smooth,
-                  delay: 1.55,
-                }}
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                Request a Demo
-              </motion.span>
-            </AnimatedButton>
+            <PrimaryActionButton size="mobile-lg" className="w-full max-w-[280px]">
+              Request a Demo
+            </PrimaryActionButton>
           </motion.div>
         </div>
       </div>

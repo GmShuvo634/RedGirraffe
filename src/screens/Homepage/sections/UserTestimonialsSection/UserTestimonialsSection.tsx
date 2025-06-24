@@ -6,26 +6,34 @@ import {
   AnimatedText,
   AnimatedCard,
   StaggeredGrid,
+  CountUpText,
 } from "../../../../components/animations";
 import {
   durations,
   easings,
 } from "../../../../utils/animations";
 
-// Data for testimonial cards
+// Data for testimonial cards with countup configuration
 const testimonialData = [
   {
     metric: "97+",
+    countUpValue: 97,
+    suffix: "+",
     label: "Countries Covered",
     description: "Global payments made simple",
   },
   {
     metric: "99.9%",
+    countUpValue: 99.9,
+    suffix: "%",
+    decimals: 1,
     label: "Uptime SLA",
     description: "Ensures uninterrupted payments",
   },
   {
     metric: "150+",
+    countUpValue: 150,
+    suffix: "+",
     label: "Currencies Supported",
     description: "Pay in any currency, anywhere",
   },
@@ -119,19 +127,17 @@ export const UserTestimonialsSection = (): JSX.Element => {
                     <div className="flex flex-col items-start justify-center gap-2.5 w-full">
                       <div className="flex items-start gap-2.5 w-full">
                         <div className="inline-flex items-start justify-center">
-                          <motion.span
-                            className="font-h2-h2-bold text-dark-green text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[length:var(--h2-h2-bold-font-size)] tracking-[var(--h2-h2-bold-letter-spacing)] leading-tight xl:leading-[var(--h2-h2-bold-line-height)] whitespace-nowrap"
-                            initial={{ opacity: 0, scale: 0.5 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{
-                              duration: durations.slow,
-                              ease: easings.bouncy,
-                              delay: 1.0 + index * 0.2,
-                            }}
-                            viewport={{ once: true, amount: 0.3 }}
-                          >
-                            {item.metric}
-                          </motion.span>
+                          <CountUpText
+                            end={item.countUpValue}
+                            start={0}
+                            duration={2500}
+                            delay={200}
+                            decimals={item.decimals || 0}
+                            suffix={item.suffix || ""}
+                            className="font-bold text-dark-green text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[length:var(--h2-h2-bold-font-size)] tracking-[var(--h2-h2-bold-letter-spacing)] leading-tight xl:leading-[var(--h2-h2-bold-line-height)] whitespace-nowrap"
+                            threshold={0.2}
+                            animationDelay={1.0 + index * 0.2}
+                          />
                         </div>
 
                         <div className="flex items-end gap-2.5 pt-0 pb-2 flex-1 self-stretch">
@@ -142,7 +148,7 @@ export const UserTestimonialsSection = (): JSX.Element => {
                             transition={{
                               duration: durations.normal,
                               ease: easings.smooth,
-                              delay: 1.2 + index * 0.2,
+                              delay: 1.2 + index * 0.3,
                             }}
                             viewport={{ once: true, amount: 0.3 }}
                           >
@@ -159,7 +165,7 @@ export const UserTestimonialsSection = (): JSX.Element => {
                       transition={{
                         duration: durations.normal,
                         ease: easings.smooth,
-                        delay: 1.4 + index * 0.2,
+                        delay: 1.4 + index * 0.3,
                       }}
                       viewport={{ once: true, amount: 0.3 }}
                     >
@@ -180,7 +186,7 @@ export const UserTestimonialsSection = (): JSX.Element => {
                   transition={{
                     duration: durations.normal,
                     ease: easings.smooth,
-                    delay: 1.6 + index * 0.1,
+                    delay: 1.3 + index * 0.3,
                   }}
                   viewport={{ once: true, amount: 0.3 }}
                 >
