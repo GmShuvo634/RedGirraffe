@@ -91,7 +91,7 @@ export const CallToActionSection = (): JSX.Element => {
 
         {/* Action buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row items-center gap-4 sm:gap-4 w-full max-w-[600px]"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-4 w-full max-w-[600px]"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
@@ -101,43 +101,19 @@ export const CallToActionSection = (): JSX.Element => {
           }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.div
-            className="w-full sm:flex-1 flex justify-center"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: durations.normal,
-              ease: easings.smooth,
-              delay: 0.8,
-            }}
-            viewport={{ once: true, amount: 0.3 }}
+          <PrimaryActionButton
+            size="mobile-lg"
+            className="w-full max-w-[280px]"
           >
-            <PrimaryActionButton
-              size="mobile-lg"
-              className="w-full max-w-[280px]"
-            >
-              Request a Demo
-            </PrimaryActionButton>
-          </motion.div>
+            Request a Demo
+          </PrimaryActionButton>
 
-          <motion.div
-            className="w-full sm:flex-1 flex justify-center"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: durations.normal,
-              ease: easings.smooth,
-              delay: 0.9,
-            }}
-            viewport={{ once: true, amount: 0.3 }}
+          <SecondaryActionButton
+            size="mobile-lg"
+            className="w-full max-w-[280px]"
           >
-            <SecondaryActionButton
-              size="mobile-lg"
-              className="w-full max-w-[280px]"
-            >
-              Contact Sales
-            </SecondaryActionButton>
-          </motion.div>
+            Contact Sales
+          </SecondaryActionButton>
         </motion.div>
 
         {/* Pricing cards - Mobile Slider / Desktop Grid */}
@@ -432,7 +408,7 @@ export const CallToActionSection = (): JSX.Element => {
                     }}
                     viewport={{ once: true, amount: 0.3 }}
                   >
-                    <CardFooter className="p-0">
+                    <CardFooter className="p-0 flex items-center justify-center">
                       <PrimaryActionButton
                         showIcon={false}
                         className={`w-full px-10 sm:px-8 lg:px-10 py-5 sm:py-6 lg:py-7 rounded-[48px] touch-manipulation transition-all duration-300 ${

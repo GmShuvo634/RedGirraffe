@@ -533,7 +533,7 @@ export const FooterSection = (): JSX.Element => {
                   }}
                   viewport={{ once: true, amount: 0.3 }}
                 >
-                  <motion.div
+                  {/* <motion.div
                     className="w-8 h-8 bg-[#00d959] rounded flex items-center justify-center"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.2 }}
@@ -543,13 +543,13 @@ export const FooterSection = (): JSX.Element => {
                       alt="RedGirraffe"
                       className="w-6 h-6"
                     />
-                  </motion.div>
-                  <div className="font-h4-h4-bold text-white text-2xl sm:text-2xl lg:text-2xl xl:text-[length:var(--h4-h4-bold-font-size)] leading-tight tracking-[var(--h4-h4-bold-letter-spacing)]">
+                  </motion.div> */}
+                  <div className="font-bold text-white text-2xl sm:text-2xl lg:text-2xl xl:text-[length:var(--h3-h3-bold-font-size)] leading-tight tracking-[var(--h3-h3-bold-letter-spacing)]">
                     RedGirraffe
                   </div>
                 </motion.div>
                 <motion.div
-                  className="flex items-center gap-2 mb-4"
+                  className="flex items-center gap-6 mb-4"
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{
