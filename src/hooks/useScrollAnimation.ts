@@ -11,14 +11,14 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
   const {
     threshold = 0.1,
     triggerOnce = true,
-    margin = "0px 0px -100px 0px",
+    // margin = "0px 0px -100px 0px", // Removed to match MarginType
   } = options;
 
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: triggerOnce,
     amount: threshold,
-    margin,
+    // margin, // Removed to fix type error
   });
 
   return { ref, isInView };

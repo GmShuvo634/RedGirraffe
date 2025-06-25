@@ -84,7 +84,7 @@ const featureRows = [
 
 export const FeatureHighlightSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] w-full">
+    <section className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] w-full pt-2">
       <div className="flex flex-col items-center gap-12 sm:gap-16 lg:gap-[60px] w-full">
         {/* Header Section */}
         <SectionHeader
@@ -110,7 +110,7 @@ export const FeatureHighlightSection = (): JSX.Element => {
               threshold={0.2}
               className="h-full"
             >
-              <Card className="p-6 sm:p-8 lg:p-10 rounded-[20px] border border-[#ebebeb] touch-manipulation group hover:bg-[#e0eae8] hover:border-[#e0eae8] hover:cursor-pointer transition-all duration-300 ease-in-out h-full">
+              <Card className="p-6 sm:p-8 lg:p-10 rounded-[20px] border border-[#ebebeb] touch-manipulation group hover:bg-[#1a3c34] hover:border-[#1a3c34] hover:cursor-pointer transition-all duration-300 ease-in-out h-full">
                 <CardHeader className="p-0 flex flex-col items-center gap-4 sm:gap-5">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -122,12 +122,12 @@ export const FeatureHighlightSection = (): JSX.Element => {
                     }}
                     viewport={{ once: true, amount: 0.3 }}
                   >
-                    <CardTitle className="w-full font-h5-h5-semibold text-[#1a3c34] text-md sm:text-md lg:text-lg xl:text-[length:var(--h5-h5-semibold-font-size)] text-center tracking-[var(--h5-h5-semibold-letter-spacing)] leading-tight xl:leading-[var(--h5-h5-semibold-line-height)]">
+                    <CardTitle className="w-full font-h5-h5-semibold text-[#1a3c34] group-hover:text-white text-md sm:text-md lg:text-lg xl:text-[length:var(--h5-h5-semibold-font-size)] text-center tracking-[var(--h5-h5-semibold-letter-spacing)] leading-tight xl:leading-[var(--h5-h5-semibold-line-height)]">
                       {card.title}
                     </CardTitle>
                   </motion.div>
 
-                  <Separator className="w-full h-[1px] bg-[#1a3c34] group-hover:bg-[#1a3c34]/30" />
+                  <Separator className="w-full h-[1px] bg-[#1a3c34] group-hover:bg-white/30" />
                 </CardHeader>
                 <CardContent className="p-0 mt-8 sm:mt-10 lg:mt-[60px] flex flex-col gap-8 sm:gap-10 lg:gap-[60px]">
                   <div className="flex flex-col items-start gap-4 sm:gap-5 w-full">
@@ -166,7 +166,7 @@ export const FeatureHighlightSection = (): JSX.Element => {
                             },
                           }}
                         />
-                        <p className="font-h6-h6-regular text-text text-sm sm:text-sm lg:text-base xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
+                        <p className="font-h6-h6-regular text-text group-hover:text-gray-300 text-sm sm:text-sm lg:text-base xl:text-[length:var(--h6-h6-regular-font-size)] tracking-[var(--h6-h6-regular-letter-spacing)] leading-relaxed xl:leading-[var(--h6-h6-regular-line-height)]">
                           {point}
                         </p>
                       </motion.div>

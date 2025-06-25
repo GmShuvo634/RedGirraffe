@@ -3,7 +3,7 @@ import {
   VolumeX,
   Maximize,
 } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card } from "../../../../components/ui/card";
 import { GradientText } from "../../../../components/ui/GradientText";
@@ -32,6 +32,7 @@ export const HeroSection = (): JSX.Element => {
   // Video player state
   const [isMuted, setIsMuted] = useState(true);
   const [showControls, setShowControls] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // Toggle mute/unmute
@@ -52,6 +53,77 @@ export const HeroSection = (): JSX.Element => {
       }
     }
   };
+
+  // Handle fullscreen changes and video events
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    let lastTime = 0;
+    let hasExitedFullscreen = false;
+
+    // Handle fullscreen change events
+    const handleFullscreenChange = () => {
+      const isCurrentlyFullscreen = !!document.fullscreenElement;
+      setIsFullscreen(isCurrentlyFullscreen);
+
+      // Reset the flag when entering fullscreen
+      if (isCurrentlyFullscreen) {
+        hasExitedFullscreen = false;
+      }
+    };
+
+    // Monitor video time to detect when it reaches the end
+    const handleTimeUpdate = () => {
+      const currentTime = video.currentTime;
+      const duration = video.duration;
+
+      // Check if we're in fullscreen and video is about to end (within 0.1 seconds)
+      if (document.fullscreenElement && duration > 0) {
+        // If video is near the end and we haven't already exited fullscreen
+        if (currentTime >= duration - 0.1 && !hasExitedFullscreen) {
+          hasExitedFullscreen = true;
+          document.exitFullscreen().catch(console.error);
+        }
+
+        // Reset flag if video loops back to beginning
+        if (currentTime < lastTime && currentTime < 1) {
+          hasExitedFullscreen = false;
+        }
+      }
+
+      lastTime = currentTime;
+    };
+
+    // Handle video ended event as backup
+    const handleVideoEnded = () => {
+      if (document.fullscreenElement && !hasExitedFullscreen) {
+        hasExitedFullscreen = true;
+        document.exitFullscreen().catch(console.error);
+      }
+    };
+
+    // Handle video metadata loaded
+    const handleLoadedMetadata = () => {
+      // Reset flags when video metadata is loaded
+      hasExitedFullscreen = false;
+      lastTime = 0;
+    };
+
+    // Add event listeners
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    video.addEventListener('timeupdate', handleTimeUpdate);
+    video.addEventListener('ended', handleVideoEnded);
+    video.addEventListener('loadedmetadata', handleLoadedMetadata);
+
+    // Cleanup
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+      video.removeEventListener('timeupdate', handleTimeUpdate);
+      video.removeEventListener('ended', handleVideoEnded);
+      video.removeEventListener('loadedmetadata', handleLoadedMetadata);
+    };
+  }, []);
 
   return (
     <div className="flex flex-col w-full gap-8 sm:gap-12 lg:gap-16 xl:gap-40 pb-8 sm:pb-12 lg:pb-16 xl:pb-[120px] mt-0 sm:mt-20 lg:mt-[120px]">
@@ -230,6 +302,7 @@ export const HeroSection = (): JSX.Element => {
                 loop
                 muted
                 playsInline
+                preload="metadata"
                 src="/hero-video.mp4"
               />
 

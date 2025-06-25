@@ -1,1 +1,1 @@
-export { PricingPlansSection } from "./PricingPlansSection";
+export { HowItWorksSection } from "./PricingPlansSection";

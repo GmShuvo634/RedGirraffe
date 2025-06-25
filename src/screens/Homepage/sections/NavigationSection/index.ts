@@ -1,1 +1,1 @@
-export { NavigationSection } from "./NavigationSection";
+export { IndustriesSection } from "./NavigationSection";
