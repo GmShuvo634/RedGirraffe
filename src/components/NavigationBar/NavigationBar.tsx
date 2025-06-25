@@ -25,7 +25,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
 }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showFlagDropdown, setShowFlagDropdown] = useState(false);
-  const [selectedFlag, setSelectedFlag] = useState(0);
+  const [selectedFlag, setSelectedFlag] = useState(0); // UK is default (index 0)
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const mobileMenuButtonRef = useRef<HTMLButtonElement>(null);
   const flagDropdownRef = useRef<HTMLDivElement>(null);
@@ -70,7 +70,18 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
     setShowMobileMenu(!showMobileMenu);
   };
 
-  // Smooth scroll to section function
+  // Handle flag selection with navigation
+  const handleFlagSelection = (index: number) => {
+    setSelectedFlag(index);
+    setShowFlagDropdown(false);
+
+    // Navigate to India site if IN flag is selected
+    if (flags[index].code === "IN") {
+      window.location.href = "https://redgirraffe.com/in/";
+    }
+  };
+
+  // Enhanced smooth scroll to section function
   const scrollToSection = (sectionId: string, closeMobileMenu: boolean = false) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -81,10 +92,30 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
+        // Enhanced smooth scrolling with optimized performance
+        const startPosition = window.pageYOffset;
+        const distance = offsetPosition - startPosition;
+        // Optimized duration: faster base speed with reasonable max duration
+        const duration = Math.min(Math.abs(distance) * 0.2 + 200, 800); // Much faster scrolling
+        let start: number | null = null;
+
+        const easeInOutCubic = (t: number): number => {
+          return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+        };
+
+        const animateScroll = (timestamp: number) => {
+          if (start === null) start = timestamp;
+          const progress = Math.min((timestamp - start) / duration, 1);
+          const ease = easeInOutCubic(progress);
+
+          window.scrollTo(0, startPosition + distance * ease);
+
+          if (progress < 1) {
+            requestAnimationFrame(animateScroll);
+          }
+        };
+
+        requestAnimationFrame(animateScroll);
       };
 
       if (closeMobileMenu && showMobileMenu) {
@@ -203,10 +234,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
                         {flags.map((flag, index) => (
                           <motion.button
                             key={index}
-                            onClick={() => {
-                              setSelectedFlag(index);
-                              setShowFlagDropdown(false);
-                            }}
+                            onClick={() => handleFlagSelection(index)}
                             className={`w-full flex items-center gap-3 px-4 py-2 text-left hover:bg-gray-50 transition-colors ${
                               index === selectedFlag ? 'bg-gray-50' : ''
                             }`}
@@ -287,7 +315,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
                     {flags.map((flag, index) => (
                       <motion.button
                         key={index}
-                        onClick={() => setSelectedFlag(index)}
+                        onClick={() => handleFlagSelection(index)}
                         className={`flex flex-col items-center gap-1 p-2 rounded-lg transition-colors ${
                           index === selectedFlag ? 'bg-gray-100' : 'hover:bg-gray-50'
                         }`}

@@ -122,7 +122,7 @@ export const LayoutSection = (): JSX.Element => {
   return (
     <section className="flex flex-col items-center gap-8 sm:gap-12 lg:gap-[60px] w-full bg-[#e0eae8] pt-16 lg:pt-20 pb-16 lg:pb-20 px-6 sm:px-6 lg:px-[60px] rounded-md">
       <SectionHeader
-        title="Traditional B2B payouts fail—"
+        title="Traditional B2B payouts fail — "
         highlightedText="and what we fix."
         delay={createElementDelay(0, 0.05)}
         threshold={0.3}

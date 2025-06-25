@@ -178,6 +178,17 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Account for fixed header */
+  }
+
+  /* Enhanced smooth scrolling with custom easing */
+  * {
+    scroll-behavior: smooth;
+  }
+
+  /* Smooth scrolling with momentum on iOS */
+  body {
+    -webkit-overflow-scrolling: touch;
   }
 
   body {
